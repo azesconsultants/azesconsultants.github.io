@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azes Consultants - Architecture, Interior Design, Construction, Solar Systems</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="description" content="Top-tier architecture & construction firm. Dubai, UK, Pakistan.">
+  <title>Azes Consultants - Architecture, Interior Design, Construction, Solar Systems</title>
+  <link rel="icon" href="Azes Logo.jpg" type="image/jpg">
+  <link rel="apple-touch-icon" href="Azes Logo.jpg">
+  <style>
+  </style>
+</head>
         :root {
             --deep-sea-green: #006a6a;
             --white: #ffffff;
@@ -1355,7 +1359,6 @@ nav ul li a {
                     'Images/Azes Logo.png',
                     'Images/hero-bg.jpg',
                     'Images/Naqshi design.jpg',
-                    // Add more critical assets to track
                 ];
                 const totalAssets = assets.length;
                 let loadedAssets = 0;
@@ -1371,7 +1374,6 @@ nav ul li a {
                 }
                 
                 function completeLoading() {
-                    // Final animation to 100%
                     loadingBar.style.width = '100%';
                     setTimeout(() => {
                         document.getElementById('loadingScreen').classList.add('loaded');
@@ -1381,19 +1383,15 @@ nav ul li a {
                     }, 500);
                 }
                 
-                // Simulate asset loading (replace with actual asset loading in production)
                 assets.forEach((asset, index) => {
                     setTimeout(() => {
                         updateProgress();
                     }, 300 * index);
                 });
                 
-                // Fallback in case loading takes too long
                 setTimeout(completeLoading, 5000);
             });
 
-            // Remove the 3D effect from service cards
-            // (The original code had interactive 3D tilt effects that have been removed)
             <!-- Move this ENTIRE script block to just before </body> -->
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -1408,7 +1406,7 @@ nav ul li a {
                 'Images/Bareezeman Lahore.jpg',
                 'Images/Naqshi Design.jpg',
                 'Images/Rang Ja.jpg',
-                'Images/Lanscaping.jpg'
+                'Images/Landsaping.jpg'
             ];
 
             const heroSlideshow = document.querySelector('.hero-slideshow');
@@ -1420,13 +1418,12 @@ nav ul li a {
             let progressInterval;
             let progress = 0;
             const totalSlides = slides.length;
-            const timerDuration = 10000; // 10 seconds
+            const timerDuration = 10000; 
 
-            // Create slides
             slides.forEach((slide, index) => {
                 const slideDiv = document.createElement('div');
                 slideDiv.className = `hero-slide ${index === 0 ? 'active' : ''}`;
-                slideDiv.style.backgroundImage = `url('${slide}')`; // Fixed: Added quotes
+                slideDiv.style.backgroundImage = `url('${slide}')`; 
                 heroSlideshow.appendChild(slideDiv);
             });
 
