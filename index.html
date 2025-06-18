@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Azes Consultants - Architecture, Interior Design, Construction, Solar Systems</title>
     <link rel="icon" href="Images/Azes Logo.png" type="image/png">
+    <!-- Primary Meta Tags -->
+<meta name="title" content="Azes Consultants | Architecture, Construction & Interior Design | UAE, UK, Pakistan">
+<meta name="description" content="Azes Consultants - Premier architecture, construction & interior design firm with offices in UAE, UK & Pakistan. Specializing in sustainable designs since 2005.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://azesconsultants.github.io/">
+<meta property="og:title" content="Azes Consultants | Architecture & Construction Specialists">
+<meta property="og:description" content="International architecture firm offering innovative design solutions in UAE, UK and Pakistan.">
+<meta property="og:image" content="https://azesconsultants.github.io/Images/Azes%20Logo.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://azesconsultants.github.io/">
+<meta property="twitter:title" content="Azes Consultants | Architecture & Construction Specialists">
+<meta property="twitter:description" content="International architecture firm offering innovative design solutions in UAE, UK and Pakistan.">
+<meta property="twitter:image" content="https://azesconsultants.github.io/Images/Azes%20Logo.png">
+<article>
+  <h2>Why Choose Azes Consultants?</h2>
+  <p>With 18+ years experience, our architecture firm...</p>
+</article>
+
+<section aria-label="Azes Consultants Services">
+  <!-- Services content -->
+</section>
     <style>
         :root {
             --deep-sea-green: #006a6a;
@@ -1709,113 +1734,154 @@ nav ul li a {
         </div>
     </footer>
 
-    <script>
-        // Loading Animation
-        window.addEventListener('load', function() {
-            const loadingBar = document.getElementById('loadingBar');
-            let progress = 0;
-            const interval = setInterval(() => {
-                progress += 5;
-                loadingBar.style.width = progress + '%';
-                if (progress >= 100) {
-                    clearInterval(interval);
-                    document.getElementById('loadingScreen').classList.add('loaded');
-                    setTimeout(() => {
-                        document.getElementById('loadingScreen').style.display = 'none';
-                    }, 1200);
-                }
-            }, 100);
-        });
-
-        // Hero Slider
-        document.addEventListener('DOMContentLoaded', function() {
-            const slides = [
-                'Images/Benchmark 45.jpg',
-                'Images/Islamabad Experience Center.jpg',
-                'Images/House Solar.jpg',
-                'Images/Urban Culture.jpg',
-                'Images/Brands Town Interior.jpg',
-                'Images/Faislabad Commercial.jpg',
-                'Images/Sefam 3 Brands.jpg',
-                'Images/Bareezeman Lahore.jpg',
-                'Images/Naqshi design.jpg',
-                'Images/Rang Ja.jpg',
-                'Images/Lanscaping.jpg'
-            ];
-
-            const heroSlideshow = document.querySelector('.hero-slideshow');
-            const progressBar = document.querySelector('.progress-bar');
-            const nextBtn = document.querySelector('.next-btn');
-            const prevBtn = document.querySelector('.prev-btn');
-
-            let currentSlide = 0;
-            let progressInterval;
-            let progress = 0;
-            const totalSlides = slides.length;
-            const timerDuration = 5000; // 5 seconds per slide
-
-            // Create slides
-            slides.forEach((slide, index) => {
-                const slideDiv = document.createElement('div');
-                slideDiv.className = `hero-slide ${index === 0 ? 'active' : ''}`;
-                slideDiv.style.backgroundImage = `url('${slide}')`;
-                heroSlideshow.appendChild(slideDiv);
-            });
-
-            const allSlides = document.querySelectorAll('.hero-slide');
-
-            function startSlider() {
-                clearInterval(progressInterval);
-                progress = 0;
-                progressBar.style.width = '0%';
-
-                progressInterval = setInterval(() => {
-                    progress += 100 / (timerDuration / 100);
-                    progressBar.style.width = `${progress}%`;
-
-                    if (progress >= 100) {
-                        goToNextSlide();
-                    }
-                }, 100);
-            }
-
-            function goToNextSlide() {
-                allSlides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % totalSlides;
-                allSlides[currentSlide].classList.add('active');
-                startSlider();
-            }
-
-            function goToPrevSlide() {
-                allSlides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                allSlides[currentSlide].classList.add('active');
-                startSlider();
-            }
-
-            nextBtn.addEventListener('click', goToNextSlide);
-            prevBtn.addEventListener('click', goToPrevSlide);
-            startSlider();
-
-            // Timeline Animation
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            
-            function checkTimelineVisibility() {
-                timelineItems.forEach((item, index) => {
-                    const itemTop = item.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (itemTop < windowHeight - 100) {
-                        setTimeout(() => {
-                            item.classList.add('visible');
-                        }, index * 200);
-                    }
+            <script>
+                // Loading Animation
+                window.addEventListener('load', function() {
+                    const loadingBar = document.getElementById('loadingBar');
+                    let progress = 0;
+                    const interval = setInterval(() => {
+                        progress += 5;
+                        loadingBar.style.width = progress + '%';
+                        if (progress >= 100) {
+                            clearInterval(interval);
+                            document.getElementById('loadingScreen').classList.add('loaded');
+                            setTimeout(() => {
+                                document.getElementById('loadingScreen').style.display = 'none';
+                            }, 1200);
+                        }
+                    }, 100);
                 });
+
+                // Hero Slider
+                document.addEventListener('DOMContentLoaded', function() {
+                    const slides = [
+                        'Images/Benchmark 45.jpg',
+                        'Images/Islamabad Experience Center.jpg',
+                        'Images/House Solar.jpg',
+                        'Images/Urban Culture.jpg',
+                        'Images/Brands Town Interior.jpg',
+                        'Images/Faislabad Commercial.jpg',
+                        'Images/Sefam 3 Brands.jpg',
+                        'Images/Bareezeman Lahore.jpg',
+                        'Images/Naqshi design.jpg',
+                        'Images/Rang Ja.jpg',
+                        'Images/Lanscaping.jpg'
+                    ];
+
+                    const heroSlideshow = document.querySelector('.hero-slideshow');
+                    const progressBar = document.querySelector('.progress-bar');
+                    const nextBtn = document.querySelector('.next-btn');
+                    const prevBtn = document.querySelector('.prev-btn');
+
+                    let currentSlide = 0;
+                    let progressInterval;
+                    let progress = 0;
+                    const totalSlides = slides.length;
+                    const timerDuration = 5000; // 5 seconds per slide
+
+                    // Create slides
+                    slides.forEach((slide, index) => {
+                        const slideDiv = document.createElement('div');
+                        slideDiv.className = `hero-slide ${index === 0 ? 'active' : ''}`;
+                        slideDiv.style.backgroundImage = `url('${slide}')`;
+                        heroSlideshow.appendChild(slideDiv);
+                    });
+
+                    const allSlides = document.querySelectorAll('.hero-slide');
+
+                    function startSlider() {
+                        clearInterval(progressInterval);
+                        progress = 0;
+                        progressBar.style.width = '0%';
+
+                        progressInterval = setInterval(() => {
+                            progress += 100 / (timerDuration / 100);
+                            progressBar.style.width = `${progress}%`;
+
+                            if (progress >= 100) {
+                                goToNextSlide();
+                            }
+                        }, 100);
+                    }
+
+                    function goToNextSlide() {
+                        allSlides[currentSlide].classList.remove('active');
+                        currentSlide = (currentSlide + 1) % totalSlides;
+                        allSlides[currentSlide].classList.add('active');
+                        startSlider();
+                    }
+
+                    function goToPrevSlide() {
+                        allSlides[currentSlide].classList.remove('active');
+                        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                        allSlides[currentSlide].classList.add('active');
+                        startSlider();
+                    }
+
+                    nextBtn.addEventListener('click', goToNextSlide);
+                    prevBtn.addEventListener('click', goToPrevSlide);
+                    startSlider();
+
+                    // Timeline Animation
+                    const timelineItems = document.querySelectorAll('.timeline-item');
+                    
+                    function checkTimelineVisibility() {
+                        timelineItems.forEach((item, index) => {
+                            const itemTop = item.getBoundingClientRect().top;
+                            const windowHeight = window.innerHeight;
+                            
+                            if (itemTop < windowHeight - 100) {
+                                setTimeout(() => {
+                                    item.classList.add('visible');
+                                }, index * 200);
+                            }
+                        });
+                    }
+                    
+                    window.addEventListener('scroll', checkTimelineVisibility);
+                    checkTimelineVisibility(); // Check on initial load
+                });
+            </script>
+
+            <script type="application/ld+json">
+            {
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Azes Consultants",
+            "image": "https://azesconsultants.github.io/Images/Azes%20Logo.png",
+            "@id": "",
+            "url": "https://azesconsultants.github.io/",
+            "telephone": "+923300003179",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "D-269/270 Green Cap Housing 21-Km Ferozpur Road",
+                "addressLocality": "Lahore",
+                "addressRegion": "Punjab",
+                "postalCode": "",
+                "addressCountry": "PK"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 31.5204,
+                "longitude": 74.3587
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+            },
+            "sameAs": [
+                "https://www.facebook.com/azesconsultants",
+                "https://www.linkedin.com/company/azes-consultants"
+            ] 
             }
-            
-            window.addEventListener('scroll', checkTimelineVisibility);
-            checkTimelineVisibility(); // Check on initial load
-        });
-    </script>
-</body>
-</html>
+            </script>
+        </body>
+        </html>
