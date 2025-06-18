@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Azes Consultants - Architecture, Interior Design, Construction, Solar Systems</title>
+    <link rel="icon" href="Images/Azes Logo.png" type="image/png">
     <style>
         :root {
             --deep-sea-green: #006a6a;
@@ -343,6 +344,243 @@ nav ul li a {
             transform: translateX(-50%);
         }
         
+        /* NEW: About Us Section - Interactive Timeline */
+        #about {
+            background-color: #f0f9f9;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-timeline {
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .about-timeline:before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--deep-sea-green);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            align-self: flex-start;
+            text-align: right;
+            padding-right: 60px;
+        }
+        
+        .timeline-item:nth-child(even) {
+            align-self: flex-end;
+            text-align: left;
+            padding-left: 60px;
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--white);
+            border: 4px solid var(--deep-sea-green);
+            border-radius: 50%;
+            top: 30px;
+        }
+        
+        .timeline-item:nth-child(odd):after {
+            right: -12px;
+        }
+        
+        .timeline-item:nth-child(even):after {
+            left: -12px;
+        }
+        
+        .timeline-year {
+            font-weight: bold;
+            color: var(--deep-sea-green);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .timeline-content {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* NEW: Our Values Section - Flipping Cards */
+        #values {
+            background: linear-gradient(135deg, #e0f2f1 0%, #ffffff 100%);
+        }
+        
+        .values-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            perspective: 1000px;
+        }
+        
+        .value-card {
+            width: 280px;
+            height: 350px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            cursor: pointer;
+        }
+        
+        .value-card:hover {
+            transform: rotateY(180deg);
+        }
+        
+        .value-card-front, .value-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .value-card-front {
+            background: var(--white);
+            transform: rotateY(0deg);
+        }
+        
+        .value-card-back {
+            background: var(--deep-sea-green);
+            color: var(--white);
+            transform: rotateY(180deg);
+        }
+        
+        .value-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: var(--deep-sea-green);
+        }
+        
+        .value-card-back .value-icon {
+            color: var(--white);
+        }
+        
+        .value-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .value-description {
+            text-align: center;
+            font-size: 15px;
+        }
+
+        /* NEW: Mission & Vision Section - Animated Blocks */
+        #mission {
+            background-color: var(--white);
+            position: relative;
+        }
+        
+        .mission-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .mission-block {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            border-radius: 10px;
+            background: #f0f9f9;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-block:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .mission-block:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--deep-sea-green);
+        }
+        
+        .mission-title {
+            font-size: 24px;
+            color: var(--deep-sea-green);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .mission-title:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--deep-sea-green);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .mission-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .mission-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .mission-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--deep-sea-green);
+            font-weight: bold;
+        }
+        
         .about-content {
             display: flex;
             align-items: center;
@@ -419,17 +657,6 @@ nav ul li a {
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             text-align: center;
-        }
-        
-        .team-img {
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .team-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
         
         .team-info {
@@ -551,6 +778,60 @@ nav ul li a {
             margin: 0;
             font-size: 18px;
             font-weight: 600;
+        }
+        
+        .shorts-badge {
+            background: #FF0000; /* YouTube red */
+            color: white;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        #worldwide-offices {
+            background-color: #f9f9f9;
+        }
+        
+        #worldwide-offices .office-card {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        #worldwide-offices .office-card h3 {
+            color: var(--deep-sea-green);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        #worldwide-offices .office-card p {
+            color: #333; /* Darker text for better readability */
+            margin: 0;
+        }
+        
+        #worldwide-offices .partner-card {
+            padding: 20px;
+            background: var(--deep-sea-green);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        #worldwide-offices .partner-card h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        #worldwide-offices .partner-card p {
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+            font-size: 18px;
+            margin: 0;
         }
         
         .contact-info {
@@ -717,28 +998,33 @@ nav ul li a {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
+            
+            /* Timeline responsive */
+            .about-timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 20px;
+                text-align: left;
+            }
+            
+            .timeline-item:after,
+            .timeline-item:nth-child(odd):after,
+            .timeline-item:nth-child(even):after {
+                left: 20px;
+                right: auto;
+            }
+            
+            /* Mission blocks */
+            .mission-block {
+                min-width: 100%;
+            }
         }
-        @media (max-width: 768px) {
-    .videos-grid {
-        grid-template-columns: 1fr; /* Stack videos vertically on mobile */
-    }
-    /* Add to your stylesheet */
-.shorts-badge {
-    background: #FF0000; /* YouTube red */
-    color: white;
-    font-size: 12px;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-left: 8px;
-    vertical-align: middle;
-}
-
-/* Optional: Adjust aspect ratio for Shorts */
-.video-item:nth-child(2) .video-container,
-.video-item:nth-child(4) .video-container {
-    padding-bottom: 177.77%; /* 9:16 vertical aspect ratio for Shorts */
-}
-}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -759,101 +1045,181 @@ nav ul li a {
                 <img src="Images/Azes Logo.png" alt="Azes Consultants Logo" class="logo-img">
                 <div class="logo-text">AZES CONSULTANTS</div>
             </div>
-           <nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#videos">Videos</a></li>
-       <li><a href="#worldwide-offices">Worldwide Offices & Partners</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#videos">Videos</a></li>
+                    <li><a href="#worldwide-offices">Worldwide Offices</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-   <section class="hero" id="home">
-    <div class="hero-slideshow">
-        <!-- Slides will be added dynamically via JavaScript -->
-    </div>
-    <div class="hero-content">
-        <h1>Innovative Design & Sustainable Construction</h1>
-        <p>AZES Consultants is a multi-disciplinary international firm offering comprehensive design and construction services with offices in Pakistan, UAE, and UK.</p>
-        <a href="#contact" class="btn">Get in Touch</a>
-    </div>
-    <div class="slide-controls">
-        <button class="slide-btn prev-btn" aria-label="Previous Slide">❮</button>
-        <button class="slide-btn next-btn" aria-label="Next Slide">❯</button>
-    </div>
-    <div class="progress-timer">
-        <div class="progress-bar"></div>
-    </div>
-</section>
+    <section class="hero" id="home">
+        <div class="hero-slideshow">
+            <!-- Slides will be added by JavaScript -->
+        </div>
+        <div class="hero-content">
+            <h1>Innovative Design & Sustainable Construction</h1>
+            <p>AZES Consultants is a multi-disciplinary international firm offering comprehensive design and construction services with offices in Pakistan, UAE, and UK.</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+        <div class="slide-controls">
+            <button class="slide-btn prev-btn" aria-label="Previous Slide">❮</button>
+            <button class="slide-btn next-btn" aria-label="Next Slide">❯</button>
+        </div>
+        <div class="progress-timer">
+            <div class="progress-bar"></div>
+        </div>
+    </section>
 
+    <!-- NEW: About Us Section - Interactive Timeline -->
     <section id="about">
         <div class="container">
             <div class="section-title">
-                <h2>About Us</h2>
+                <h2>Our Journey</h2>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>AZES CONSULTANTS is a distinguished firm offering essential services in architecture, interior design, construction, land acquisition, and various allied services. Known for our professional and affordable rates, we are committed to excellence in every project.</p>
-                    <p>AZES Design and Fitout LLC, based in the UAE, is a leading design and fitout company, celebrated for delivering high-quality construction and fitout services. We take pride in our ability to transform spaces with innovative and sustainable solutions.</p>
-                    <p>Our firm is unique in services as one of its partners has qualified in Land management From Erasmus university netherland as well Masters degree dissertation in Land Development patterns helping client in Land purchasing guideline real estate investment/development advices.</p>
-                    <p>We feel for people getting poor quality services either by unqualified or less trained professionals in cheapest possible manner in term of fee/expenses. This firm is unique in its service providing both online and offline services for convenience of client.</p>
+            <div class="about-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2005</div>
+                    <div class="timeline-content">
+                        <h3>Foundation</h3>
+                        <p>AZES Consultants was founded with a vision to revolutionize architecture and construction services in Pakistan.</p>
+                    </div>
                 </div>
-                <div class="about-image">
-                    <img src="Images/Naqshi design.jpg" alt="Naqshi Design">
+                <div class="timeline-item">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-content">
+                        <h3>First Major Project</h3>
+                        <p>Completed the People Experience Center in Islamabad, establishing our reputation for innovative design.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content">
+                        <h3>International Expansion</h3>
+                        <p>Opened our UAE office in Dubai, marking our first step into international markets.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <h3>UK Office</h3>
+                        <p>Established our presence in the UK, bringing our expertise to European markets.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <div class="timeline-content">
+                        <h3>Global Reach</h3>
+                        <p>Now serving clients across three continents with a team of dedicated professionals.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="values" style="background-color: #f9f9f9;">
+    <!-- NEW: Our Values Section - Flipping Cards -->
+    <section id="values">
         <div class="container">
             <div class="section-title">
-                <h2>Our Values</h2>
+                <h2>Our Core Values</h2>
             </div>
-            <div class="about-text">
-                <p>AZES CONSULTANTS aims to serve both the affluent and the underserved, rather than catering exclusively to the elite. Our commitment to professional and ethical services promotes mutual growth.</p>
-                <p>The core team, comprising professors, researchers, teachers, and practitioners, is dedicated to preparing more entrepreneurs rather than just job-oriented staff. We are also committed to green and sustainable initiatives.</p>
-                <h3>Our Ideology</h3>
-                <ul>
-                    <li>Our firm incorporates indifferent designs & soothing environment with fabrication bringing imagination to reality along with the multidisciplinary services.</li>
-                    <li>CORPORATE IDENTITY AND RETAIL IS ONE OF MAJOR EXPERTIES WE AIM TO DEVELOP YOUR THROUGH BUILDING ENVELOPE AND ENVIRONMENT HEALTHY LIFESTYLE, GREEN BUILDING SAVING ENERGY FOR PAKISTAN.</li>
-                    <li>Advising to buy appropriate plot suitable for living according to family structure (a utility based investment) and future investment gain within your budget and all solutions/services from design to construction.</li>
-                </ul>
+            <div class="values-container">
+                <div class="value-card">
+                    <div class="value-card-front">
+                        <i class="fas fa-lightbulb value-icon"></i>
+                        <h3 class="value-title">Innovation</h3>
+                        <p class="value-description">Click to learn more about our commitment to innovation</p>
+                    </div>
+                    <div class="value-card-back">
+                        <i class="fas fa-lightbulb value-icon"></i>
+                        <h3 class="value-title">Innovation</h3>
+                        <p class="value-description">We constantly push boundaries to create designs that are both beautiful and functional, incorporating the latest technologies and sustainable practices.</p>
+                    </div>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-front">
+                        <i class="fas fa-hand-holding-heart value-icon"></i>
+                        <h3 class="value-title">Integrity</h3>
+                        <p class="value-description">Click to learn more about our ethical approach</p>
+                    </div>
+                    <div class="value-card-back">
+                        <i class="fas fa-hand-holding-heart value-icon"></i>
+                        <h3 class="value-title">Integrity</h3>
+                        <p class="value-description">We believe in transparent communication, honest pricing, and delivering exactly what we promise - nothing less.</p>
+                    </div>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-front">
+                        <i class="fas fa-leaf value-icon"></i>
+                        <h3 class="value-title">Sustainability</h3>
+                        <p class="value-description">Click to learn about our green initiatives</p>
+                    </div>
+                    <div class="value-card-back">
+                        <i class="fas fa-leaf value-icon"></i>
+                        <h3 class="value-title">Sustainability</h3>
+                        <p class="value-description">From energy-efficient designs to eco-friendly materials, we're committed to reducing environmental impact in all our projects.</p>
+                    </div>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-front">
+                        <i class="fas fa-users value-icon"></i>
+                        <h3 class="value-title">Inclusivity</h3>
+                        <p class="value-description">Click to learn about our diverse approach</p>
+                    </div>
+                    <div class="value-card-back">
+                        <i class="fas fa-users value-icon"></i>
+                        <h3 class="value-title">Inclusivity</h3>
+                        <p class="value-description">We serve clients from all walks of life, creating designs that are accessible and beneficial to everyone in the community.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- NEW: Mission & Vision Section - Animated Blocks -->
     <section id="mission">
         <div class="container">
             <div class="section-title">
-                <h2>Mission & Vision</h2>
+                <h2>Our Purpose</h2>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Mission</h3>
-                    <p>Local/ international development raising quality of services, safe sound, aesthetical, utilitarian, structurally sound and equip with modern infrastructure blend with traditional techniques.</p>
-                    <h3>Vision</h3>
-                    <p>To make it most desirable and suitable firm for architecture/design and construction to all section of society suiting to their budget.</p>
-                    <h3>Our Moto</h3>
-                    <ul>
-                        <li>OPTIMUM UTILIZATION OF RESOURCES</li>
-                        <li>COST EFFECTIVE DESIGN/CONSTRUCTION FOR CLIENTS (SERVING LOW AS WELL AS MONUMENTAL EXPENSIVE DESIGNS)</li>
-                        <li>HIGH COST DESIGN AND CONSTRUCTION FOR CLIENT</li>
-                        <li>BENEFITING CLIENT AND NATION WITH WELL RESARCHED DESIGNS</li>
-                        <li>SOCIALLY RESPONSIVE DESIGN ENERGY EFFICIENT DESIGN</li>
-                        <li>SMART HOME, OFFICES AND PROJECT ECO ARCHITECTURE</li>
-                        <li>ORGANIC ARCHITECTURE</li>
-                        <li>GREEEN ARCHITECTURE</li>
+            <div class="mission-container">
+                <div class="mission-block">
+                    <h3 class="mission-title">Our Mission</h3>
+                    <p>To deliver exceptional architectural and construction services that blend local traditions with international standards, creating spaces that inspire and endure.</p>
+                    <ul class="mission-list">
+                        <li>Combine aesthetic appeal with structural integrity</li>
+                        <li>Implement sustainable building practices</li>
+                        <li>Provide accessible services to all market segments</li>
+                        <li>Foster innovation through continuous learning</li>
                     </ul>
                 </div>
-                <div class="about-image">
-                    <img src="Images/Brands Town.jpg" alt="Brands Town">
+                <div class="mission-block">
+                    <h3 class="mission-title">Our Vision</h3>
+                    <p>To be the most desirable architecture and construction firm globally, recognized for our commitment to quality, sustainability, and client satisfaction.</p>
+                    <ul class="mission-list">
+                        <li>Expand to 10+ countries by 2030</li>
+                        <li>Pioneer in green building technologies</li>
+                        <li>Develop smart city solutions</li>
+                        <li>Train the next generation of architects</li>
+                    </ul>
+                </div>
+                <div class="mission-block">
+                    <h3 class="mission-title">Our Approach</h3>
+                    <p>We believe in a holistic approach that considers every aspect of the built environment and its impact on people and communities.</p>
+                    <ul class="mission-list">
+                        <li>Client-centered design process</li>
+                        <li>Multidisciplinary collaboration</li>
+                        <li>Research-driven solutions</li>
+                        <li>Community-oriented projects</li>
+                        <li>Technological integration</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -1190,74 +1556,74 @@ nav ul li a {
     </section>
 
     <section id="videos">
-    <div class="container">
-        <div class="section-title">
-            <h2>Our Videos & Shorts</h2>  <!-- Updated section title -->
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Videos & Shorts</h2>  
+            </div>
+            <div class="videos-grid">
+                <!-- Regular Video 1 -->
+                <div class="video-item">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/REGULAR_VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Modern Villa Architectural Walkthrough</h3>
+                </div>
+                
+                <!-- YouTube Short 1 -->
+                <div class="video-item">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/SHORT_ID_1" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Solar Installation Time-Lapse <span class="shorts-badge">SHORTS</span></h3>
+                </div>
+                
+                <!-- Regular Video 2 -->
+                <div class="video-item">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/REGULAR_VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Office Interior Design Process</h3>
+                </div>
+                
+                <!-- YouTube Short 2 -->
+                <div class="video-item">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/SHORT_ID_2" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Behind-the-Scenes: Dubai Project <span class="shorts-badge">SHORTS</span></h3>
+                </div>
+            </div>
         </div>
-        <div class="videos-grid">
-            <!-- Regular Video 1 -->
-            <div class="video-item">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/REGULAR_VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <h3 class="video-title">Modern Villa Architectural Walkthrough</h3>
-            </div>
-            
-            <!-- YouTube Short 1 -->
-            <div class="video-item">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/SHORT_ID_1" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <h3 class="video-title">Solar Installation Time-Lapse <span class="shorts-badge">SHORTS</span></h3>
-            </div>
-            
-            <!-- Regular Video 2 -->
-            <div class="video-item">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/REGULAR_VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <h3 class="video-title">Office Interior Design Process</h3>
-            </div>
-            
-            <!-- YouTube Short 2 -->
-            <div class="video-item">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/SHORT_ID_2" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <h3 class="video-title">Behind-the-Scenes: Dubai Project <span class="shorts-badge">SHORTS</span></h3>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-  <section id="worldwide-offices">
-    <div class="container">
-        <div class="section-title">
-            <h2>Worldwide Offices and Our Partners</h2>
+    <section id="worldwide-offices">
+        <div class="container">
+            <div class="section-title">
+                <h2>Worldwide Offices and Our Partners</h2>
+            </div>
+            <div class="about-text"> <!-- Changed from about-content to about-text -->
+                <div class="office-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Pakistan Office</h3>
+                    <p>D-269/270 Green Cap Housing 21-Km Ferozpur Road, Lahore, Pakistan</p>
+                </div>
+                
+                <div class="office-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> UAE Office</h3>
+                    <p>Office no. 318, Mashreq Building, Al Suq Al Kabeer, Bur Dubai, UAE</p>
+                </div>
+                
+                <div class="office-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> UK Office</h3>
+                    <p>Kings court, 91 high street, Camberley, GU153FL UK</p>
+                </div>
+                
+                <div class="partner-card">
+                    <h3><i class="fas fa-handshake"></i> Official Partner</h3>
+                    <p>Azes Design and Fitout LLC (UAE)</p>
+                </div>
+            </div>
         </div>
-        <div class="offices-container" style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <div class="office-card" style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                <h3 style="color: var(--deep-sea-green); margin-bottom: 15px;"><i class="fas fa-map-marker-alt"></i> Pakistan Office</h3>
-                <p>D-269/270 Green Cap Housing 21-Km Ferozpur Road, Lahore, Pakistan</p>
-            </div>
-            
-            <div class="office-card" style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                <h3 style="color: var(--deep-sea-green); margin-bottom: 15px;"><i class="fas fa-map-marker-alt"></i> UAE Office</h3>
-                <p>Office no. 318, Mashreq Building, Al Suq Al Kabeer, Bur Dubai, UAE</p>
-            </div>
-            
-            <div class="office-card" style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                <h3 style="color: var(--deep-sea-green); margin-bottom: 15px;"><i class="fas fa-map-marker-alt"></i> UK Office</h3>
-                <p>Office no. 318, Mashreq Building, Al Suq Al Kabeer, Bur Dubai, UAE</p>
-            </div>
-            
-            <div class="partner-card" style="padding: 20px; background: var(--deep-sea-green); color: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                <h3 style="margin-bottom: 15px;"><i class="fas fa-handshake"></i> Official Partner</h3>
-                <p style="font-weight: 500; font-size: 18px;">Azes Design and Fitout LLC (UAE)</p>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <section id="contact" style="background-color: #f9f9f9;">
         <div class="container">
@@ -1316,18 +1682,18 @@ nav ul li a {
                     <p>AZES Consultants is a multi-disciplinary international firm offering comprehensive design and construction services with offices in Pakistan, UAE, and UK.</p>
                 </div>
                 <div class="footer-column">
-    <h3>Quick Links</h3>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#videos">Videos</a></li>
-       <li><a href="#worldwide-offices">Worldwide Offices & Partners</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#videos">Videos</a></li>
+                        <li><a href="#worldwide-offices">Worldwide Offices</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
                 <div class="footer-column">
                     <h3>Contact Info</h3>
                     <ul>
@@ -1335,7 +1701,6 @@ nav ul li a {
                         <li><i class="fas fa-phone"></i> +92 330 0003179</li>
                         <li><i class="fas fa-map-marker-alt"></i> D-269/270 Green Cap Housing, Lahore</li>
                     </ul>
-                </div>
                 </div>
             </div>
             <div class="copyright">
@@ -1345,124 +1710,112 @@ nav ul li a {
     </footer>
 
     <script>
-    // Enhanced Loading Animation with Real Progress Simulation
-    window.addEventListener('load', function() {
-        const loadingBar = document.getElementById('loadingBar');
-        let progress = 0;
-        const assets = [
-            'Images/Azes Logo.png',
-            'Images/hero-bg.jpg',
-            'Images/Naqshi design.jpg',
-            // Add more critical assets to track
-        ];
-        const totalAssets = assets.length;
-        let loadedAssets = 0;
-        
-        function updateProgress() {
-            loadedAssets++;
-            progress = Math.min(100, Math.round((loadedAssets / totalAssets) * 90));
-            loadingBar.style.width = progress + '%';
-            
-            if (progress >= 90) {
-                completeLoading();
-            }
-        }
-        
-        function completeLoading() {
-            // Final animation to 100%
-            loadingBar.style.width = '100%';
-            setTimeout(() => {
-                document.getElementById('loadingScreen').classList.add('loaded');
-                setTimeout(() => {
-                    document.getElementById('loadingScreen').remove();
-                }, 1200);
-            }, 500);
-        }
-        
-        // Simulate asset loading (replace with actual asset loading in production)
-        assets.forEach((asset, index) => {
-            setTimeout(() => {
-                updateProgress();
-            }, 300 * index);
+        // Loading Animation
+        window.addEventListener('load', function() {
+            const loadingBar = document.getElementById('loadingBar');
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 5;
+                loadingBar.style.width = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    document.getElementById('loadingScreen').classList.add('loaded');
+                    setTimeout(() => {
+                        document.getElementById('loadingScreen').style.display = 'none';
+                    }, 1200);
+                }
+            }, 100);
         });
-        
-        // Fallback in case loading takes too long
-        setTimeout(completeLoading, 5000);
-    });
 
-    // Remove the 3D effect from service cards
-    // (The original code had interactive 3D tilt effects that have been removed)
-    <!-- Move this ENTIRE script block to just before </body> -->
+        // Hero Slider
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = [
+                'Images/Benchmark 45.jpg',
+                'Images/Islamabad Experience Center.jpg',
+                'Images/House Solar.jpg',
+                'Images/Urban Culture.jpg',
+                'Images/Brands Town Interior.jpg',
+                'Images/Faislabad Commercial.jpg',
+                'Images/Sefam 3 Brands.jpg',
+                'Images/Bareezeman Lahore.jpg',
+                'Images/Naqshi design.jpg',
+                'Images/Rang Ja.jpg',
+                'Images/Lanscaping.jpg'
+            ];
 
-document.addEventListener('DOMContentLoaded', function() {
-    const slides = [
-        'Images/Benchmark 45.jpg',
-        'Images/Islamabad Experience Center.jpg',
-        'Images/House Solar.jpg',
-        'Images/Urban Culture.jpg',
-        'Images/Brands Town Interior.jpg',
-        'Images/Faislabad Commercial.jpg',
-        'Images/Sefam 3 Brands.jpg',
-        'Images/Bareezeman Lahore.jpg',
-        'Images/Naqshi Design.jpg',
-        'Images/Rang Ja.jpg',
-        'Images/Lanscaping.jpg'
-    ];
+            const heroSlideshow = document.querySelector('.hero-slideshow');
+            const progressBar = document.querySelector('.progress-bar');
+            const nextBtn = document.querySelector('.next-btn');
+            const prevBtn = document.querySelector('.prev-btn');
 
-    const heroSlideshow = document.querySelector('.hero-slideshow');
-    const progressBar = document.querySelector('.progress-bar');
-    const nextBtn = document.querySelector('.next-btn');
-    const prevBtn = document.querySelector('.prev-btn');
+            let currentSlide = 0;
+            let progressInterval;
+            let progress = 0;
+            const totalSlides = slides.length;
+            const timerDuration = 5000; // 5 seconds per slide
 
-    let currentSlide = 0;
-    let progressInterval;
-    let progress = 0;
-    const totalSlides = slides.length;
-    const timerDuration = 10000; // 10 seconds
+            // Create slides
+            slides.forEach((slide, index) => {
+                const slideDiv = document.createElement('div');
+                slideDiv.className = `hero-slide ${index === 0 ? 'active' : ''}`;
+                slideDiv.style.backgroundImage = `url('${slide}')`;
+                heroSlideshow.appendChild(slideDiv);
+            });
 
-    // Create slides
-    slides.forEach((slide, index) => {
-        const slideDiv = document.createElement('div');
-        slideDiv.className = `hero-slide ${index === 0 ? 'active' : ''}`;
-        slideDiv.style.backgroundImage = `url('${slide}')`; // Fixed: Added quotes
-        heroSlideshow.appendChild(slideDiv);
-    });
+            const allSlides = document.querySelectorAll('.hero-slide');
 
-    const allSlides = document.querySelectorAll('.hero-slide');
+            function startSlider() {
+                clearInterval(progressInterval);
+                progress = 0;
+                progressBar.style.width = '0%';
 
-    function startSlider() {
-        clearInterval(progressInterval);
-        progress = 0;
-        progressBar.style.width = '0%';
+                progressInterval = setInterval(() => {
+                    progress += 100 / (timerDuration / 100);
+                    progressBar.style.width = `${progress}%`;
 
-        progressInterval = setInterval(() => {
-            progress += 100 / (timerDuration / 100);
-            progressBar.style.width = `${progress}%`;
-
-            if (progress >= 100) {
-                goToNextSlide();
+                    if (progress >= 100) {
+                        goToNextSlide();
+                    }
+                }, 100);
             }
-        }, 100);
-    }
 
-    function goToNextSlide() {
-        allSlides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % totalSlides;
-        allSlides[currentSlide].classList.add('active');
-        startSlider();
-    }
+            function goToNextSlide() {
+                allSlides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % totalSlides;
+                allSlides[currentSlide].classList.add('active');
+                startSlider();
+            }
 
-    function goToPrevSlide() {
-        allSlides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        allSlides[currentSlide].classList.add('active');
-        startSlider();
-    }
+            function goToPrevSlide() {
+                allSlides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                allSlides[currentSlide].classList.add('active');
+                startSlider();
+            }
 
-    nextBtn.addEventListener('click', goToNextSlide);
-    prevBtn.addEventListener('click', goToPrevSlide);
-    startSlider();
-});
-</script>
+            nextBtn.addEventListener('click', goToNextSlide);
+            prevBtn.addEventListener('click', goToPrevSlide);
+            startSlider();
+
+            // Timeline Animation
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            function checkTimelineVisibility() {
+                timelineItems.forEach((item, index) => {
+                    const itemTop = item.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (itemTop < windowHeight - 100) {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 200);
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkTimelineVisibility);
+            checkTimelineVisibility(); // Check on initial load
+        });
+    </script>
 </body>
 </html>
