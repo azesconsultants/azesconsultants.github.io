@@ -6,38 +6,24 @@
     <meta name="google-site-verification" content="V2UKnTdacbzAU-ynRSE0D1257gTxdTYdeifyn1PVkeM" />
     <title>Azes Consultants - Architecture, Interior Design, Construction, Solar Systems</title>
     <link rel="icon" href="Images/Azes Logo.png" type="image/png">
-    <!-- Primary Meta Tags -->
-<meta name="title" content="Azes Consultants | Architecture, Construction & Interior Design | UAE, UK, Pakistan">
-<meta name="description" content="Azes Consultants - Premier architecture, construction & interior design firm with offices in UAE, UK & Pakistan. Specializing in sustainable designs since 2005.">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://azesconsultants.github.io/">
-<meta property="og:title" content="Azes Consultants | Architecture & Construction Specialists">
-<meta property="og:description" content="International architecture firm offering innovative design solutions in UAE, UK and Pakistan.">
-<meta property="og:image" content="https://azesconsultants.github.io/Images/Azes%20Logo.png">
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://azesconsultants.github.io/">
-<meta property="twitter:title" content="Azes Consultants | Architecture & Construction Specialists">
-<meta property="twitter:description" content="International architecture firm offering innovative design solutions in UAE, UK and Pakistan.">
-<meta property="twitter:image" content="https://azesconsultants.github.io/Images/Azes%20Logo.png">
-<article>
-  <h2>Why Choose Azes Consultants?</h2>
-  <p>With 18+ years experience, our architecture firm...</p>
-</article>
-
-<section aria-label="Azes Consultants Services">
-  <!-- Services content -->
-</section>
+    <meta name="title" content="Azes Consultants | Architecture, Construction & Interior Design | UAE, UK, Pakistan">
+    <meta name="description" content="Azes Consultants - Premier architecture, construction & interior design firm with offices in UAE, UK & Pakistan. Specializing in sustainable designs since 2005.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://azesconsultants.github.io/">
+    <meta property="og:title" content="Azes Consultants | Architecture & Construction Specialists">
+    <meta property="og:description" content="International architecture firm offering innovative design solutions in UAE, UK and Pakistan.">
+    <meta property="og:image" content="https://azesconsultants.github.io/Images/Azes%20Logo.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://azesconsultants.github.io/">
+    <meta property="twitter:title" content="Azes Consultants | Architecture & Construction Specialists">
+    <meta property="twitter:description" content="International architecture firm offering innovative design solutions in UAE, UK and Pakistan.">
+    <meta property="twitter:image" content="https://azesconsultants.github.io/Images/Azes%20Logo.png">
     <style>
         :root {
             --deep-sea-green: #006a6a;
             --white: #ffffff;
         }
         
-        /* Enhanced Loading Animation */
         .loading-screen {
             position: fixed;
             top: 0;
@@ -99,7 +85,6 @@
             border-radius: 3px;
         }
         
-        /* Hide after load */
         .loaded .loading-screen {
             opacity: 0;
             pointer-events: none;
@@ -110,7 +95,6 @@
             opacity: 0;
         }
 
-        /* Interactive Service Cards */
         .service-card {
             position: relative;
             overflow: hidden;
@@ -136,13 +120,13 @@
             opacity: 1;
         }
         
-        /* Main Styles */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         .container {
@@ -151,182 +135,155 @@
             margin: 0 auto;
         }
 
-       header {
-    background-color: var(--deep-sea-green);
-    color: var(--white);
-    padding: 5px 0; /* Reduced padding */
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    height: 60px; /* Fixed height */
-    display: flex;
-    align-items: center; /* Vertically center content */
-}
+        header {
+            background-color: var(--deep-sea-green);
+            color: var(--white);
+            padding: 5px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
         
-      .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px; /* Side padding */
-}
-@media (max-width: 768px) {
-    .logo-text {
-        font-size: 16px; /* Even smaller on mobile */
-    }
-    nav ul li a {
-        font-size: 12px; /* Smaller links on mobile */
-    }
-}
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
         
         .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Reduced gap */
-}
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.logo-img {
-    height: 40px; /* Smaller logo */
-    width: auto;
-}
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
 
-.logo-text {
-    font-size: 20px; /* Smaller font size */
-    font-weight: bold;
-    color: var(--white);
-    white-space: nowrap; /* Prevent text wrapping */
-}
+        .logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--white);
+            white-space: nowrap;
+        }
         
         nav ul {
             display: flex;
             list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 15px;
         }
-        
-        nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 15px; /* Space between links */
-}
 
-nav ul li a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px; /* Smaller font */
-    transition: all 0.3s ease;
-}
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
         
         nav ul li a:hover {
             opacity: 0.8;
         }
         
         .hero {
-    margin-top: 60px; /* Reduced from 70px to match new header height */
-     position: relative;
-    height: 100vh;
-    overflow: hidden;
-    margin-top: 70px; /* Adjust if header height changes */
-}
-        
-        .hero-content h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
+            margin-top: 0;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
         }
-        
-        .hero-content p {
-            font-size: 20px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
+
         .hero-slideshow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
 
-.hero-slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
+        .hero-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
 
-.hero-slide.active {
-    opacity: 1;
-}
+        .hero-slide.active {
+            opacity: 1;
+        }
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: white;
-    padding: 20px;
-    background: rgba(0, 106, 106, 0.5); /* Semi-transparent overlay */
-    border-radius: 10px;
-    max-width: 800px;
-    margin: 0 auto;
-    top: 50%;
-    transform: translateY(-50%);
-}
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            background: rgba(0, 106, 106, 0.5);
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-/* Slide Controls */
-.slide-controls {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-    z-index: 2;
-}
+        .slide-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 2;
+        }
 
-.slide-btn {
-    background: rgba(0, 106, 106, 0.7);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background0.3s;
-}
+        .slide-btn {
+            background: rgba(0, 106, 106, 0.7);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background0.3s;
+        }
 
-.slide-btn:hover {
-    background: var(--deep-sea-green);
-}
+        .slide-btn:hover {
+            background: var(--deep-sea-green);
+        }
 
-/* Progress Timer */
-.progress-timer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.2);
-    z-index: 2;
-}
+        .progress-timer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 2;
+        }
 
-.progress-bar {
-    height: 100%;
-    width: 0;
-    background: var(--deep-sea-green);
-    transition: width 0.1s linear;
-}
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background: var(--deep-sea-green);
+            transition: width 0.1s linear;
+        }
 
-        
         .btn {
             display: inline-block;
             background-color: var(--white);
@@ -369,168 +326,95 @@ nav ul li a {
             left: 50%;
             transform: translateX(-50%);
         }
-        
-        /* NEW: About Us Section - Interactive Timeline */
-        #about {
-            background-color: #f0f9f9;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .about-timeline {
-            display: flex;
-            flex-direction: column;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .about-timeline:before {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background: var(--deep-sea-green);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .timeline-item {
-            padding: 20px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-            margin-bottom: 30px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-        }
-        
-        .timeline-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .timeline-item:nth-child(odd) {
-            align-self: flex-start;
-            text-align: right;
-            padding-right: 60px;
-        }
-        
-        .timeline-item:nth-child(even) {
-            align-self: flex-end;
-            text-align: left;
-            padding-left: 60px;
-        }
-        
-        .timeline-item:after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: var(--white);
-            border: 4px solid var(--deep-sea-green);
-            border-radius: 50%;
-            top: 30px;
-        }
-        
-        .timeline-item:nth-child(odd):after {
-            right: -12px;
-        }
-        
-        .timeline-item:nth-child(even):after {
-            left: -12px;
-        }
-        
-        .timeline-year {
-            font-weight: bold;
-            color: var(--deep-sea-green);
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-        
-        .timeline-content {
-            background: var(--white);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
 
-        /* NEW: Our Values Section - Flipping Cards */
         #values {
             background: linear-gradient(135deg, #e0f2f1 0%, #ffffff 100%);
         }
-        
+
         .values-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
-            perspective: 1000px;
         }
-        
+
         .value-card {
             width: 280px;
             height: 350px;
             position: relative;
-            transform-style: preserve-3d;
-            transition: transform 1s;
+            transition: all 0.3s ease;
             cursor: pointer;
-        }
-        
-        .value-card:hover {
-            transform: rotateY(180deg);
-        }
-        
-        .value-card-front, .value-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
+            background: var(--white);
             border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .value-card-content {
+            padding: 30px;
+            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
         }
-        
-        .value-card-front {
-            background: var(--white);
-            transform: rotateY(0deg);
-        }
-        
-        .value-card-back {
-            background: var(--deep-sea-green);
-            color: var(--white);
-            transform: rotateY(180deg);
-        }
-        
+
         .value-icon {
             font-size: 50px;
             margin-bottom: 20px;
             color: var(--deep-sea-green);
+            transition: all 0.3s ease;
         }
-        
-        .value-card-back .value-icon {
+
+        .value-card:hover .value-icon {
             color: var(--white);
         }
-        
+
         .value-title {
             font-size: 22px;
             font-weight: bold;
             margin-bottom: 15px;
-            text-align: center;
+            color: var(--deep-sea-green);
+            transition: all 0.3s ease;
         }
-        
+
+        .value-card:hover .value-title {
+            color: var(--white);
+        }
+
         .value-description {
             text-align: center;
             font-size: 15px;
+            color: #333;
+            transition: all 0.3s ease;
         }
 
-        /* NEW: Mission & Vision Section - Animated Blocks */
+        .value-card:hover .value-description {
+            color: var(--white);
+        }
+
+        .value-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: var(--deep-sea-green);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .value-card:hover:before {
+            height: 100%;
+        }
+
         #mission {
             background-color: var(--white);
             position: relative;
@@ -606,7 +490,7 @@ nav ul li a {
             color: var(--deep-sea-green);
             font-weight: bold;
         }
-        
+
         .about-content {
             display: flex;
             align-items: center;
@@ -704,31 +588,39 @@ nav ul li a {
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .project-card {
             position: relative;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .project-img {
             height: 250px;
             overflow: hidden;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
         }
-        
-        .project-img {
-            width: 100%;
-            height: 100%;
-        }
-        
+
         .project-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-        
+
         .project-card:hover .project-img img {
             transform: scale(1.1);
         }
-        
+
+        .project-title {
+            margin: 15px 0 0;
+            font-size: 1.2rem;
+            color: var(--deep-sea-green);
+            font-weight: 600;
+        }
+
         .project-overlay {
             position: absolute;
             top: 0;
@@ -743,19 +635,19 @@ nav ul li a {
             justify-content: center;
             opacity: 0;
             transition: opacity 0.3s ease;
-            overflow-y: auto;
+            border-radius: 8px;
         }
-        
+
         .project-card:hover .project-overlay {
             opacity: 1;
         }
-        
+
         .project-overlay h3 {
             font-size: 1.5rem;
             margin-bottom: 10px;
             color: white;
         }
-        
+
         .project-overlay p {
             font-size: 0.9rem;
             line-height: 1.5;
@@ -783,7 +675,7 @@ nav ul li a {
         
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
         }
@@ -807,7 +699,7 @@ nav ul li a {
         }
         
         .shorts-badge {
-            background: #FF0000; /* YouTube red */
+            background: #FF0000;
             color: white;
             font-size: 12px;
             padding: 2px 6px;
@@ -835,7 +727,7 @@ nav ul li a {
         }
         
         #worldwide-offices .office-card p {
-            color: #333; /* Darker text for better readability */
+            color: #333;
             margin: 0;
         }
         
@@ -989,8 +881,40 @@ nav ul li a {
             padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.1);
         }
-        
-        /* Responsive styles */
+
+        #clients {
+            background-color: #f9f9f9;
+        }
+
+        .clients-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .client-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .client-logo {
+        max-width: 150px;
+        max-height: 80px;
+        transition: all 0.3s ease;
+    }
+
+    .client-logo:hover {
+        transform: scale(1.1);
+    }
+
+    .client-logo:hover {
+        filter: drop-shadow(0 5px 10px rgba(0, 106, 106, 0.2));
+    }
+
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -1025,37 +949,121 @@ nav ul li a {
                 gap: 20px;
             }
             
-            /* Timeline responsive */
-            .about-timeline:before {
-                left: 30px;
-            }
-            
-            .timeline-item,
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 20px;
-                text-align: left;
-            }
-            
-            .timeline-item:after,
-            .timeline-item:nth-child(odd):after,
-            .timeline-item:nth-child(even):after {
-                left: 20px;
-                right: auto;
-            }
-            
-            /* Mission blocks */
             .mission-block {
                 min-width: 100%;
             }
+
+            .clients-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        #chatbot-container {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 350px;
+            height: 400px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        #chatbot-container.active {
+            display: flex;
+        }
+
+        #chatbot-header {
+            background-color: #006a6a;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #chatbot-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .quick-reply-btn {
+            background: #f0f9f9;
+            border: 1px solid var(--deep-sea-green);
+            color: var(--deep-sea-green);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quick-reply-btn:hover {
+            background: var(--deep-sea-green);
+            color: white;
+        }
+
+        .service-options {
+            margin-top: 10px;
+        }
+
+        .service-option {
+            display: block;
+            padding: 8px 15px;
+            margin: 5px 0;
+            background: #f0f9f9;
+            border-left: 3px solid var(--deep-sea-green);
+            cursor: pointer;
+        }
+
+        .service-option:hover {
+            background: #e0f2f1;
+        }
+
+        #chatbot-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #006a6a;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Enhanced Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-content">
             <img src="Images/Azes Logo.png" alt="AZES Consultants" class="loading-logo">
@@ -1074,7 +1082,6 @@ nav ul li a {
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#team">Team</a></li>
                     <li><a href="#projects">Projects</a></li>
@@ -1087,9 +1094,7 @@ nav ul li a {
     </header>
 
     <section class="hero" id="home">
-        <div class="hero-slideshow">
-            <!-- Slides will be added by JavaScript -->
-        </div>
+        <div class="hero-slideshow"></div>
         <div class="hero-content">
             <h1>Innovative Design & Sustainable Construction</h1>
             <p>AZES Consultants is a multi-disciplinary international firm offering comprehensive design and construction services with offices in Pakistan, UAE, and UK.</p>
@@ -1104,53 +1109,6 @@ nav ul li a {
         </div>
     </section>
 
-    <!-- NEW: About Us Section - Interactive Timeline -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Journey</h2>
-            </div>
-            <div class="about-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2005</div>
-                    <div class="timeline-content">
-                        <h3>Foundation</h3>
-                        <p>AZES Consultants was founded with a vision to revolutionize architecture and construction services in Pakistan.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2010</div>
-                    <div class="timeline-content">
-                        <h3>First Major Project</h3>
-                        <p>Completed the People Experience Center in Islamabad, establishing our reputation for innovative design.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2016</div>
-                    <div class="timeline-content">
-                        <h3>International Expansion</h3>
-                        <p>Opened our UAE office in Dubai, marking our first step into international markets.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2020</div>
-                    <div class="timeline-content">
-                        <h3>UK Office</h3>
-                        <p>Established our presence in the UK, bringing our expertise to European markets.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">Present</div>
-                    <div class="timeline-content">
-                        <h3>Global Reach</h3>
-                        <p>Now serving clients across three continents with a team of dedicated professionals.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW: Our Values Section - Flipping Cards -->
     <section id="values">
         <div class="container">
             <div class="section-title">
@@ -1158,48 +1116,28 @@ nav ul li a {
             </div>
             <div class="values-container">
                 <div class="value-card">
-                    <div class="value-card-front">
-                        <i class="fas fa-lightbulb value-icon"></i>
-                        <h3 class="value-title">Innovation</h3>
-                        <p class="value-description">Click to learn more about our commitment to innovation</p>
-                    </div>
-                    <div class="value-card-back">
+                    <div class="value-card-content">
                         <i class="fas fa-lightbulb value-icon"></i>
                         <h3 class="value-title">Innovation</h3>
                         <p class="value-description">We constantly push boundaries to create designs that are both beautiful and functional, incorporating the latest technologies and sustainable practices.</p>
                     </div>
                 </div>
                 <div class="value-card">
-                    <div class="value-card-front">
-                        <i class="fas fa-hand-holding-heart value-icon"></i>
-                        <h3 class="value-title">Integrity</h3>
-                        <p class="value-description">Click to learn more about our ethical approach</p>
-                    </div>
-                    <div class="value-card-back">
+                    <div class="value-card-content">
                         <i class="fas fa-hand-holding-heart value-icon"></i>
                         <h3 class="value-title">Integrity</h3>
                         <p class="value-description">We believe in transparent communication, honest pricing, and delivering exactly what we promise - nothing less.</p>
                     </div>
                 </div>
                 <div class="value-card">
-                    <div class="value-card-front">
-                        <i class="fas fa-leaf value-icon"></i>
-                        <h3 class="value-title">Sustainability</h3>
-                        <p class="value-description">Click to learn about our green initiatives</p>
-                    </div>
-                    <div class="value-card-back">
+                    <div class="value-card-content">
                         <i class="fas fa-leaf value-icon"></i>
                         <h3 class="value-title">Sustainability</h3>
                         <p class="value-description">From energy-efficient designs to eco-friendly materials, we're committed to reducing environmental impact in all our projects.</p>
                     </div>
                 </div>
                 <div class="value-card">
-                    <div class="value-card-front">
-                        <i class="fas fa-users value-icon"></i>
-                        <h3 class="value-title">Inclusivity</h3>
-                        <p class="value-description">Click to learn about our diverse approach</p>
-                    </div>
-                    <div class="value-card-back">
+                    <div class="value-card-content">
                         <i class="fas fa-users value-icon"></i>
                         <h3 class="value-title">Inclusivity</h3>
                         <p class="value-description">We serve clients from all walks of life, creating designs that are accessible and beneficial to everyone in the community.</p>
@@ -1209,7 +1147,6 @@ nav ul li a {
         </div>
     </section>
 
-    <!-- NEW: Mission & Vision Section - Animated Blocks -->
     <section id="mission">
         <div class="container">
             <div class="section-title">
@@ -1262,12 +1199,12 @@ nav ul li a {
                         <img src="Images/BM45 Architecture.jpg" alt="Bench Mark 45">
                     </div>
                     <div class="service-overlay">
-                        <h3>Architecture and Design</h3>
+                        <h3>Architecture and Interior Design</h3>
                         <p>Providing innovative and sustainable architecture services tailored to meet diverse client needs.</p>
                         <a href="#contact" class="btn">Learn More</a>
                     </div>
                     <div class="service-content">
-                        <h3>Architecture and Design</h3>
+                        <h3>Architecture and Interior Design</h3>
                         <p>Providing innovative and sustainable architecture services tailored to meet diverse client needs including interior architecture, space planning, and exhibition stall design.</p>
                         <ul>
                             <li>ARCHITECTURE</li>
@@ -1283,12 +1220,12 @@ nav ul li a {
                         <img src="Images/Islamabad Experience Center.jpg" alt="Islamabad Experience Center">
                     </div>
                     <div class="service-overlay">
-                        <h3>Construction Services</h3>
+                        <h3>Interior and Architecture Construction Services</h3>
                         <p>Delivering exceptional architecture and construction services.</p>
                         <a href="#contact" class="btn">Learn More</a>
                     </div>
                     <div class="service-content">
-                        <h3>Construction Services</h3>
+                        <h3>Interior and Architecture Construction Services</h3>
                         <p>Delivering exceptional architecture and construction services, specializing in building and hardscaping for enduring beauty and functionality.</p>
                         <ul>
                             <li>ARCHITECTURE CONSTRUCTION SERVICES</li>
@@ -1380,6 +1317,74 @@ nav ul li a {
                         </ul>
                     </div>
                 </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="Images/Lanscaping.jpg" alt="Landscaping Services">
+                    </div>
+                    <div class="service-overlay">
+                        <h3>Landscaping</h3>
+                        <p>Creating beautiful, sustainable outdoor environments.</p>
+                        <a href="#contact" class="btn">Learn More</a>
+                    </div>
+                    <div class="service-content">
+                        <h3>Landscaping</h3>
+                        <p>We design and execute comprehensive landscaping solutions that blend aesthetics with functionality for residential and commercial properties.</p>
+                        <ul>
+                            <li>RESIDENTIAL LANDSCAPING</li>
+                            <li>COMMERCIAL LANDSCAPING</li>
+                            <li>SUSTAINABLE LANDSCAPING</li>
+                            <li>HARDSCAPE DESIGN</li>
+                            <li>GARDEN DESIGN</li>
+                            <li>IRRIGATION SYSTEMS</li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="Images/Town Planning.jpg" alt="Town Planning">
+                </div>
+                <div class="service-overlay">
+                    <h3>Town Planning</h3>
+                    <p>Shaping livable, resilient, and thriving communities through expert town planning.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+                <div class="service-content">
+                    <h3>Town Planning</h3>
+                    <p>Shaping livable, resilient, and thriving communities through expert town planning that considers all aspects of urban development and community needs.</p>
+                    <ul>
+                        <li>ZONING REGULATIONS</li>
+                        <li>LAND USE PLANNING</li>
+                        <li>INFRASTRUCTURE DEVELOPMENT</li>
+                        <li>COMMUNITY FACILITIES</li>
+                        <li>SUSTAINABLE DEVELOPMENT</li>
+                        <li>URBAN REGENERATION</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="Images/Project Management.jpg" alt="Project Management">
+                </div>
+                <div class="service-overlay">
+                    <h3>Project Management</h3>
+                    <p>Ensuring project success through comprehensive management from conception to completion.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+                <div class="service-content">
+                    <h3>Project Management</h3>
+                    <p>Ensuring project success through comprehensive management of scheduling, control, and monitoring for construction and design projects.</p>
+                    <ul>
+                        <li>PROJECT SCHEDULING</li>
+                        <li>COST CONTROL</li>
+                        <li>QUALITY ASSURANCE</li>
+                        <li>RISK MANAGEMENT</li>
+                        <li>STAKEHOLDER COORDINATION</li>
+                        <li>DOCUMENTATION</li>
+                    </ul>
+                </div>
+            </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1400,10 +1405,10 @@ nav ul li a {
                 </div>
                 <div class="team-member">
                     <div class="team-info">
-                        <h3>ARCHITECT MUHAMMAD BAJWA</h3>
-                        <p>(EXPERIENCE 18 YEARS)</p>
+                        <h3>ARCHITECT BAJWA</h3>
+                        <p>(EXPERIENCE 15+ YEARS)</p>
                         <p>P.Gd. Erasmus Netherland, M.Arch U.E.T PK., B.Arch U.E.T PK.</p>
-                        <p>Architect Bajwa has done its P.gd in Land management & Informal settlement Regularization from IHS Erasmus University Holland (2016), Masters & Bachelor in Architecture from University of Engineering and Technology, Lahore, Pakistan and Certification in International Heritage from The Boston Architectural college, Boston, America. Along with Running this company he has expanded his services to local as well as international organization. He is has done immense projects in interior especially in retail architecture.</p>
+                        <p>Architect Bajwa has done its Post graduate Diploma in Land management from IHS Erasmus University Holland, Masters in Architecture from University of Engineering and Technology, Pakistan. and Certification in International Heritage from The Boston Architectural college, Boston, America. Along with providing research and design on required projects this company seeks his services to local as well as international organization. He has immense exposure projects in interior especially in retail architecture.</p>
                     </div>
                 </div>
                 <div class="team-member">
@@ -1426,160 +1431,213 @@ nav ul li a {
                 <div class="project-card">
                     <div class="project-img">
                         <img src="Images/Islamabad Experience Center.jpg" alt="People Experience Center">
+                        <div class="project-overlay">
+                            <h3>People Experience Center</h3>
+                            <p>C-Block G8 Islamabad</p>
+                            <p>Client: Ahtesalat UAE</p>
+                            <p>Area: 339.096 Sq M (3650 Sq Ft)</p>
+                            <p>Cost: 2.4 Crore PKR</p>
+                        </div>
                     </div>
-                    <div class="project-overlay">
-                        <h3>People Experience Center</h3>
-                        <p>C-Block G8 Islamabad. Main Client: Ahtesalat UAE.</p>
-                        <p>Area: 339.096 Sq M(3650 Sq Ft), Cost: 2.4 Crore PKR</p>
-                    </div>
+                    <h3 class="project-title">People Experience Center</h3>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
                         <img src="Images/Brands Town Interior.jpg" alt="Brands Town">
+                        <div class="project-overlay">
+                            <h3>Brands Town</h3>
+                            <p>Architecture/Interior Shoes Outlet</p>
+                            <p>Location: G.T. Road, Lahore</p>
+                            <p>Scope: Interior design & exterior renovation</p>
+                        </div>
                     </div>
-                    <div class="project-overlay">
-                        <h3>BRANDS TOWN</h3>
-                        <p>(ARCHITECTURE/INTERIOR) SHOES OUTLET MULTIPLE BRANDS, G.T. ROAD, LAHORE, PAKISTAN</p>
-                        <p>INTERIOR ARCHITECTURE DESIGN, EXTERIOR ARCHITECTURAL ENVELOPE RENOVATION, Architectural space design ,Interior furniture and finishes</p>
-                    </div>
+                    <h3 class="project-title">Brands Town</h3>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
                         <img src="Images/Naqshi design.jpg" alt="Naqshi Studio">
+                        <div class="project-overlay">
+                            <h3>Naqshi Studio</h3>
+                            <p>Retail Architecture/Interior</p>
+                            <p>Location: Emporium, Pakistan</p>
+                            <p>Features: Fabric module design</p>
+                        </div>
                     </div>
-                    <div class="project-overlay">
-                        <h3>NAQSHI STUDIO BRAND</h3>
-                        <p>RETAIL (ARCHITECTURE/INTERIOR) OUTLET, EMPORIUM, PAKISTAN</p>
-                        <p>Exterior Architecture Interior design space layout, fabric module design, drawings and construction supervision.</p>
-                    </div>
+                    <h3 class="project-title">Naqshi Studio</h3>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
                         <img src="Images/Aroshi Design.jpg" alt="Aroshi Brand">
+                        <div class="project-overlay">
+                            <h3>Aroshi Brand</h3>
+                            <p>Retail Outlet Design</p>
+                            <p>Location: Emporium, Pakistan</p>
+                            <p>Scope: Complete interior execution</p>
+                        </div>
                     </div>
-                    <div class="project-overlay">
-                        <h3>AROSHI BRAND</h3>
-                        <p>RETAIL (ARCHITECTURE/INTERIOR) OUTLET, EMPORIUM, PAKISTAN</p>
-                        <p>Exterior Architecture Interior design space layout, fabric module design, drawings and construction supervision.</p>
-                    </div>
+                    <h3 class="project-title">Aroshi Brand</h3>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
                         <img src="Images/Bareezeman Lahore.jpg" alt="Bareezeman Lahore">
+                        <div class="project-overlay">
+                            <h3>Bareezeman Lahore</h3>
+                            <p>Exhibition stall with foldable mechanism</p>
+                            <p>Client: Major retail group</p>
+                            <p>Specialty: Pop-up display system</p>
+                        </div>
                     </div>
-                    <div class="project-overlay">
-                        <h3>BAREEZEMAN LAHORE</h3>
-                        <p>Exhibition stall with foldable mechanism, made for one of the large retail groups of brands, as pop up in center as inhouse consultant by core member of company.</p>
-                    </div>
+                    <h3 class="project-title">Bareezeman Lahore</h3>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="Images/Multiple Exhibition Stalls.jpg" alt="Multiple Exhibition Stalls">
+                        <img src="Images/Multiple Exhibition Stalls.jpg" alt="Exhibition Stalls">
+                        <div class="project-overlay">
+                            <h3>Exhibition Stalls</h3>
+                            <p>Brands: Bareeze, Rangja, Urban Culture</p>
+                            <p>Scope: Multi-brand exhibition solutions</p>
+                            <p>Locations: Pakistan & India</p>
+                        </div>
                     </div>
-                    <div class="project-overlay">
-                        <h3>MULTIPLE EXHIBITION STALLS</h3>
-                        <p>For renoned brands Bareeze, rangja, urban culture, chinyere, home expression, keyseria, minnie minor and their bussiness development unit were made in india later in pakistan with on site execution in india is an exhibition stalls with retail groups of brands by core member axes as inhouse consultant architect.</p>
-                    </div>
+                    <h3 class="project-title">Exhibition Stalls</h3>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
                         <img src="Images/Bareeze UAE.jpg" alt="Bareeze UAE">
+                        <div class="project-overlay">
+                            <h3>Bareeze UAE</h3>
+                            <p>International Project</p>
+                            <p>Location: UAE</p>
+                            <p>Services: Design & construction management</p>
+                        </div>
                     </div>
-                    <div class="project-overlay">
-                        <h3>BAREEZE UAE</h3>
-                        <p>It was design and construction management by our core team members in UAE showing international design exposure and experience.</p>
-                    </div>
+                    <h3 class="project-title">Bareeze UAE</h3>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
                         <img src="Images/Rang Ja.jpg" alt="Rang Ja">
+                        <div class="project-overlay">
+                            <h3>Rang Ja</h3>
+                            <p>Retail Interior Outlet</p>
+                            <p>Location: Lucky Mall, Karachi</p>
+                            <p>Features: Mall-approved designs</p>
+                        </div>
                     </div>
-                    <div class="project-overlay">
-                        <h3>RANG JA</h3>
-                        <p>LUCKY MALL KARACHI RETAIL INTERIOR OUTLET, PAKISTAN</p>
-                        <p>Interior design drawings for Rangja, MEP Drawings and all drawings for mall approval and execution. Updating previous few designed module where required by client</p>
-                    </div>
+                    <h3 class="project-title">Rang Ja</h3>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="Images/Sefam 3 Brands.jpg" alt="SEFAM 3 Brands">
+                        <img src="Images/Faislabad Commercial.jpg" alt="Faisalabad Commercial">
+                        <div class="project-overlay">
+                            <h3>Faisalabad Commercial</h3>
+                            <p>Architecture/Interior Outlet</p>
+                            <p>Location: Sefam, Lahore</p>
+                            <p>Scope: Multi-brand space design</p>
+                        </div>
                     </div>
-                    <div class="project-overlay">
-                        <h3>SEFAM 3 BRANDS</h3>
-                        <p>COMMERCIAL (ARCHITECTURE/INTERIOR) OUTLET, BANK ROAD RAWALPINDI, PAKISTAN</p>
-                        <p>Architectural space design inclusive of stair void entrance and exterior for Chinyere , Urban culture & Rangja. Interior design drawings for Chinyere , Urban culture & Rangja</p>
-                    </div>
+                    <h3 class="project-title">Faisalabad Commercial</h3>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="Images/Faislabad Commercial.jpg" alt="FAISLABAD COMMERCIAL">
+                        <img src="Images/Urban Culture.jpg" alt="Mall of Peshawar">
+                        <div class="project-overlay">
+                            <h3>Mall of Peshawar</h3>
+                            <p>Architecture/Interior Outlet</p>
+                            <p>5 Brands in one location</p>
+                            <p>Location: Peshawar, Pakistan</p>
+                        </div>
                     </div>
-                    <div class="project-overlay">
-                        <h3>FAISLABAD COMMERCIAL</h3>
-                        <p>(ARCHITECTURE/INTERIOR) OUTLET SEFAM, LAHORE, PAKISTAN</p>
-                        <p>Architectural space design inclusive of stair void entrance and exterior for Chinyere , Urban culture,Minnies Minor ,Super Squad & Rangja. Interior design drawings for Chinyere , Urban culture & Rangja</p>
-                    </div>
+                    <h3 class="project-title">Mall of Peshawar</h3>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="Images/Urban Culture.jpg" alt="MALL OF PESHAWAR">
+                        <img src="Images/Chinyere.jpg" alt="Chinyere Brands">
+                        <div class="project-overlay">
+                            <h3>Chinyere Brands</h3>
+                            <p>Retail Architecture/Interior</p>
+                            <p>Location: Link Road, Pakistan</p>
+                            <p>Features: Stair well feature design</p>
+                        </div>
                     </div>
-                    <div class="project-overlay">
-                        <h3>MALL OF PESHAWAR</h3>
-                        <p>(ARCHITECTURE/INTERIOR) OUTLET 5 BRANDS, PESHAWAR, PAKISTAN</p>
-                        <p>Architectural space design inclusive of stair void entrance and exterior for Chinyere, Urban culture, Minnies Minor , Super Squad & Rangja. Interior design drawings for Chinyere , Urban culture</p>
-                    </div>
+                    <h3 class="project-title">Chinyere Brands</h3>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="Images/Chinyere.jpg" alt="CHINYERE BRANDS">
+                        <img src="Images/Lanscaping.jpg" alt="Landscape Design">
+                        <div class="project-overlay">
+                            <h3>Landscape Design</h3>
+                            <p>Proposal for Mayor of Islamabad</p>
+                            <p>Sponsor: Aftesalat Group</p>
+                            <p>Style: Modern landscape design</p>
+                        </div>
                     </div>
-                    <div class="project-overlay">
-                        <h3>CHINYERE BRANDS</h3>
-                        <p>RETAIL (ARCHITECTURE/INTERIOR) OUTLET, LINK ROAD, PAKISTAN</p>
-                        <p>Exterior Architecture inclusive of stair void design upgradation interior design space layout,fabric module design,Stair well feature design and drawings and using some previous module as per client consent and construction</p>
-                    </div>
+                    <h3 class="project-title">Landscape Design</h3>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="Images/Lanscaping.jpg" alt="LANDSCAPE DESIGN">
+                        <img src="Images/Benchmark 45.jpg" alt="Bench Mark 45">
+                        <div class="project-overlay">
+                            <h3>Bench Mark 45</h3>
+                            <p>Entertainment & Corporate Project</p>
+                            <p>Location: Bahanvalpur</p>
+                            <p>Client: Army interested resources</p>
+                        </div>
                     </div>
-                    <div class="project-overlay">
-                        <h3>LANDSCAPE DESIGN PROPOSAL</h3>
-                        <p>3D VIEW PROPOSAL 1 BIRDS EYE VIEW IN MODERN STYLE</p>
-                        <p>LANDSCAPING FOR MAYOR OF ISLAMABAD WITH AFTESALAT GROUP AS SPONSOR, ISLAMABAD, PAKISTAN</p>
-                    </div>
+                    <h3 class="project-title">Bench Mark 45</h3>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="Images/Benchmark 45.jpg" alt="BENCH MARK 45">
+                        <img src="Images/1 Canal Residence.jpg" alt="One Canal Residence">
+                        <div class="project-overlay">
+                            <h3>One Canal Residence</h3>
+                            <p>Residential Project</p>
+                            <p>Location: Star UET Society Lahore</p>
+                            <p>Features: Contemporary design</p>
+                        </div>
                     </div>
-                    <div class="project-overlay">
-                        <h3>BENCH MARK 45 - BAHANVALPUR</h3>
-                        <p>A RIDUAL PROJECT ENTERTAINMENT & CORPORATE PROJECT FOR ARMY INTER INTERESTED RESOURCES, ASSEMBLED BY AN ABANDONATED PINK, HIS IS CLASSICAL CONTEMPORARY SIZE IN REDUCED SYMPTOM VOILY CONCEPT OF BALLOUD BUTTERFLOPES.</p>
-                    </div>
+                    <h3 class="project-title">One Canal Residence</h3>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="Images/1 Canal Residence.jpg" alt="ONE CANAL RESIDENCE">
+                        <img src="Images/10 Marla Residence UET.jpg" alt="10 Marla Residence">
+                        <div class="project-overlay">
+                            <h3>10 Marla Residence</h3>
+                            <p>Residential Project</p>
+                            <p>Location: Bahria Orchard, Lahore</p>
+                            <p>Client: Private residence</p>
+                        </div>
                     </div>
-                    <div class="project-overlay">
-                        <h3>ONE CANAL RESIDENCE</h3>
-                        <p>STAR UET SOCIETY LAHORE CHRIST JUISHER SAID</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/10 Marla Residence UET.jpg" alt="AD MARIA RESIDENCE">
-                    </div>
-                    <div class="project-overlay">
-                        <h3>AD MARIA RESIDENCE</h3>
-                        <p>AT DAHRIA ORCHARD LAHORE CLIENT: NACITRATION SECRET TEXT: AND ATTENTION ESCAPE FOR THE GROUP</p>
-                    </div>
+                    <h3 class="project-title">10 Marla Residence</h3>
                 </div>
             </div>
         </div>
     </section>
+
+            <section id="clients">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Clients</h2>
+                </div>
+                <div class="clients-grid">
+                    <div class="client-item">
+                        <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Naqshi</h3>
+                        <img src="Images/Naqshi Logo.png" alt="Naqshi" class="client-logo">
+                    </div>
+                    <div class="client-item">
+                        <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Aroshi</h3>
+                        <img src="Images/Aroshi Logo.png" alt="Aroshi" class="client-logo">
+                    </div>
+                    <div class="client-item">
+                        <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Brands Town</h3>
+                        <img src="Images/Brands Town Logo.png" alt="Brands Town" class="client-logo">
+                    </div>
+                    <div class="client-item">
+                        <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Islamabad Experience Center</h3>
+                        <img src="Images/Islamabad Experience Center.jpg" alt="Ahtesalat" class="client-logo">
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <section id="videos">
         <div class="container">
@@ -1587,31 +1645,24 @@ nav ul li a {
                 <h2>Our Videos & Shorts</h2>  
             </div>
             <div class="videos-grid">
-                <!-- Regular Video 1 -->
                 <div class="video-item">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/REGULAR_VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h3 class="video-title">Modern Villa Architectural Walkthrough</h3>
                 </div>
-                
-                <!-- YouTube Short 1 -->
                 <div class="video-item">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/SHORT_ID_1" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h3 class="video-title">Solar Installation Time-Lapse <span class="shorts-badge">SHORTS</span></h3>
                 </div>
-                
-                <!-- Regular Video 2 -->
                 <div class="video-item">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/REGULAR_VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h3 class="video-title">Office Interior Design Process</h3>
                 </div>
-                
-                <!-- YouTube Short 2 -->
                 <div class="video-item">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/SHORT_ID_2" frameborder="0" allowfullscreen></iframe>
@@ -1627,22 +1678,19 @@ nav ul li a {
             <div class="section-title">
                 <h2>Worldwide Offices and Our Partners</h2>
             </div>
-            <div class="about-text"> <!-- Changed from about-content to about-text -->
+            <div class="about-text">
                 <div class="office-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Pakistan Office</h3>
                     <p>D-269/270 Green Cap Housing 21-Km Ferozpur Road, Lahore, Pakistan</p>
                 </div>
-                
                 <div class="office-card">
                     <h3><i class="fas fa-map-marker-alt"></i> UAE Office</h3>
                     <p>Office no. 318, Mashreq Building, Al Suq Al Kabeer, Bur Dubai, UAE</p>
                 </div>
-                
                 <div class="office-card">
                     <h3><i class="fas fa-map-marker-alt"></i> UK Office</h3>
                     <p>Kings court, 91 high street, Camberley, GU153FL UK</p>
                 </div>
-                
                 <div class="partner-card">
                     <h3><i class="fas fa-handshake"></i> Official Partner</h3>
                     <p>Azes Design and Fitout LLC (UAE)</p>
@@ -1660,7 +1708,7 @@ nav ul li a {
                 <div class="contact-card">
                     <i class="fas fa-envelope"></i>
                     <h3>Email</h3>
-                    <p>azesconsultants@gmail.com</p>
+                    <p>azesdesign@gmail.com</p>
                 </div>
                 <div class="contact-card">
                     <i class="fas fa-phone"></i>
@@ -1677,7 +1725,9 @@ nav ul li a {
                 </div>
             </div>
             <div class="contact-form">
-                <form>
+                <form id="contactForm" action="https://formspree.io/f/xbjndkdz" method="POST">
+                    <input type="hidden" name="_subject" value="New message from AZES website">
+                    <input type="hidden" name="_replyto" value="azesdesign@gmail.com">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -1711,7 +1761,6 @@ nav ul li a {
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#team">Team</a></li>
                         <li><a href="#projects">Projects</a></li>
@@ -1735,154 +1784,352 @@ nav ul li a {
         </div>
     </footer>
 
-            <script>
-                // Loading Animation
-                window.addEventListener('load', function() {
-                    const loadingBar = document.getElementById('loadingBar');
-                    let progress = 0;
-                    const interval = setInterval(() => {
-                        progress += 5;
-                        loadingBar.style.width = progress + '%';
-                        if (progress >= 100) {
-                            clearInterval(interval);
-                            document.getElementById('loadingScreen').classList.add('loaded');
-                            setTimeout(() => {
-                                document.getElementById('loadingScreen').style.display = 'none';
-                            }, 1200);
+    <div id="chatbot-container">
+        <div id="chatbot-header">
+            <span>AZES Design Assistant</span>
+            <button id="chatbot-close">×</button>
+        </div>
+        <div id="chatbot-messages"></div>
+    </div>
+    <button id="chatbot-toggle" class="chatbot-visible">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <script>
+        window.addEventListener('load', function() {
+            const loadingBar = document.getElementById('loadingBar');
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 5;
+                loadingBar.style.width = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    document.getElementById('loadingScreen').classList.add('loaded');
+                    setTimeout(() => {
+                        document.getElementById('loadingScreen').style.display = 'none';
+                    }, 1200);
+                }
+            }, 100);
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = [
+                'Images/Benchmark 45.jpg',
+                'Images/Islamabad Experience Center.jpg',
+                'Images/House Solar.jpg',
+                'Images/Urban Culture.jpg',
+                'Images/Brands Town Interior.jpg',
+                'Images/Faislabad Commercial.jpg',
+                'Images/Bareezeman Lahore.jpg',
+                'Images/Naqshi design.jpg',
+                'Images/Rang Ja.jpg',
+                'Images/Lanscaping.jpg'
+            ];
+
+            const heroSlideshow = document.querySelector('.hero-slideshow');
+            const progressBar = document.querySelector('.progress-bar');
+            const nextBtn = document.querySelector('.next-btn');
+            const prevBtn = document.querySelector('.prev-btn');
+
+            let currentSlide = 0;
+            let progressInterval;
+            let progress = 0;
+            const totalSlides = slides.length;
+            const timerDuration = 5000;
+
+            slides.forEach((slide, index) => {
+                const slideDiv = document.createElement('div');
+                slideDiv.className = `hero-slide ${index === 0 ? 'active' : ''}`;
+                slideDiv.style.backgroundImage = `url('${slide}')`;
+                heroSlideshow.appendChild(slideDiv);
+            });
+
+            const allSlides = document.querySelectorAll('.hero-slide');
+
+            function startSlider() {
+                clearInterval(progressInterval);
+                progress = 0;
+                progressBar.style.width = '0%';
+
+                progressInterval = setInterval(() => {
+                    progress += 100 / (timerDuration / 100);
+                    progressBar.style.width = `${progress}%`;
+
+                    if (progress >= 100) {
+                        goToNextSlide();
+                    }
+                }, 100);
+            }
+
+            function goToNextSlide() {
+                allSlides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % totalSlides;
+                allSlides[currentSlide].classList.add('active');
+                startSlider();
+            }
+
+            function goToPrevSlide() {
+                allSlides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                allSlides[currentSlide].classList.add('active');
+                startSlider();
+            }
+
+            nextBtn.addEventListener('click', goToNextSlide);
+            prevBtn.addEventListener('click', goToPrevSlide);
+            startSlider();
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatbotContainer = document.getElementById('chatbot-container');
+            const toggleBtn = document.getElementById('chatbot-toggle');
+            const closeBtn = document.getElementById('chatbot-close');
+            const messagesDiv = document.getElementById('chatbot-messages');
+
+            toggleBtn.addEventListener('click', function() {
+                chatbotContainer.classList.toggle('active');
+            });
+
+            closeBtn.addEventListener('click', function() {
+                chatbotContainer.classList.remove('active');
+            });
+
+            const services = {
+                main: {
+                    question: "Welcome to AZES Consultants! I'm your design assistant. We specialize in comprehensive architecture, interior design, construction, and solar solutions. How can I help you today?",
+                    options: [
+                        { text: "Architecture Services", next: "architecture" },
+                        { text: "Interior Design", next: "interior" },
+                        { text: "Construction", next: "construction" },
+                        { text: "Solar Systems", next: "solar" },
+                        { text: "Contact Information", next: "contact" }
+                    ]
+                },
+                architecture: {
+                    question: "Our architecture services blend creativity with functionality to deliver exceptional spaces. We offer:",
+                    options: [
+                        { 
+                            text: "Residential Design", 
+                            response: "Our residential architecture services create homes that perfectly match your lifestyle. We design everything from modern apartments to luxury villas, focusing on space optimization, natural lighting, and sustainable materials. Our process includes 3D visualizations to help you envision your dream home before construction begins." 
+                        },
+                        { 
+                            text: "Commercial Spaces", 
+                            response: "We design innovative commercial spaces that enhance business operations while making powerful brand statements. Our portfolio includes office buildings, retail stores, restaurants, and mixed-use developments. We focus on creating spaces that improve workflow, customer experience, and employee wellbeing." 
+                        },
+                        { 
+                            text: "Urban Planning", 
+                            response: "Our urban planning team creates sustainable, livable communities. We consider all aspects including infrastructure, zoning regulations, environmental impact, and community needs. Our solutions range from neighborhood revitalization to large-scale city planning projects, always with a focus on green spaces and efficient land use." 
+                        },
+                        { text: "← Back to Main Menu", next: "main" }
+                    ]
+                },
+                interior: {
+                    question: "Our interior design services transform spaces into beautiful, functional environments. Choose an area to learn more:",
+                    options: [
+                        { 
+                            text: "Residential Interiors", 
+                            response: "We create residential interiors that reflect your personality while maximizing functionality. Our services include space planning, material selection, color schemes, lighting design, and custom furniture. We work with you to understand your lifestyle needs and aesthetic preferences, delivering designs that are both stunning and practical for everyday living." 
+                        },
+                        { 
+                            text: "Retail Spaces", 
+                            response: "Our retail interior designs drive customer engagement and sales. We create immersive brand experiences through strategic layouts, lighting, and material selections. Our designs consider customer flow, product display, and brand identity to create spaces that tell your brand's story while optimizing the shopping experience." 
+                        },
+                        { 
+                            text: "Office Design", 
+                            response: "We design offices that boost productivity and employee satisfaction. Our approach considers workflow efficiency, collaborative spaces, ergonomic furniture, and biophilic design elements. From startups to corporate headquarters, we create work environments that support your company culture and business objectives while incorporating the latest workplace design trends." 
+                        },
+                        { text: "← Back to Main Menu", next: "main" }
+                    ]
+                },
+                construction: {
+                    question: "Our construction services deliver quality craftsmanship with meticulous attention to detail. We specialize in:",
+                    options: [
+                        { 
+                            text: "New Builds", 
+                            response: "Our new construction services handle projects from groundbreaking to completion. We manage all aspects including site preparation, foundation work, structural framing, and finishing. Using high-quality materials and skilled craftsmanship, we ensure every detail meets our exacting standards. Our team coordinates all trades and maintains strict quality control throughout the construction process." 
+                        },
+                        { 
+                            text: "Renovations", 
+                            response: "We breathe new life into existing structures through thoughtful renovations. Our team carefully assesses structural integrity before designing upgrades that preserve a building's character while improving functionality. We specialize in sensitive renovations that maintain historical elements while introducing modern comforts and technologies." 
+                        },
+                        { 
+                            text: "Project Management", 
+                            response: "Our comprehensive project management ensures your construction project stays on time and on budget. We oversee all phases including planning, permitting, contractor coordination, and quality control. With regular progress reports and strict timeline management, we minimize surprises and keep your project moving smoothly from conception to completion." 
+                        },
+                        { text: "← Back to Main Menu", next: "main" }
+                    ]
+                },
+                solar: {
+                    question: "Our solar energy solutions provide sustainable, cost-effective power alternatives. Learn about our offerings:",
+                    options: [
+                        { 
+                            text: "Residential Solar", 
+                            response: "Our residential solar systems reduce energy costs while minimizing environmental impact. We design customized solar solutions based on your home's architecture and energy needs. Our installations include high-efficiency panels, inverters, and monitoring systems. We handle everything from initial assessment and permitting to installation and maintenance, ensuring optimal performance for years to come." 
+                        },
+                        { 
+                            text: "Commercial Solar", 
+                            response: "We design solar solutions that help businesses reduce operating costs and demonstrate environmental responsibility. Our commercial systems are scalable for businesses of all sizes, from small shops to large industrial facilities. We analyze your energy usage patterns to design systems that maximize ROI while integrating seamlessly with your building's architecture and electrical infrastructure." 
+                        },
+                        { 
+                            text: "Hybrid Systems", 
+                            response: "Our hybrid solar systems combine solar panels with battery storage for reliable, independent power. These systems provide energy security during outages and maximize self-consumption of solar energy. We design hybrid solutions that intelligently manage power flow between solar panels, batteries, and the grid, ensuring you always have power when you need it while minimizing electricity costs." 
+                        },
+                        { text: "← Back to Main Menu", next: "main" }
+                    ]
+                },
+                contact: {
+                    question: "Get in touch with AZES Consultants for your project needs:",
+                    options: [
+                        { 
+                            text: "Email: azesdesign@gmail.com", 
+                            response: "For inquiries, project consultations, or service information, please email us at azesdesign@gmail.com. Our team typically responds within 24 hours. Please include details about your project requirements, location, and timeline for a more comprehensive response." 
+                        },
+                        { 
+                            text: "Phone: +92 330 0003179", 
+                            response: "Call us at +92 330 0003179 to speak directly with one of our consultants. Our office hours are Monday through Friday, 9:00 AM to 6:00 PM. For international calls, please note we have offices in Pakistan, UAE, and UK to serve your regional needs." 
+                        },
+                        { 
+                            text: "Office Locations", 
+                            response: "We have offices in: \n\n- Pakistan: D-269/270 Green Cap Housing, 21-Km Ferozpur Road, Lahore \n- UAE: Office 318, Mashreq Building, Al Suq Al Kabeer, Bur Dubai \n- UK: Kings Court, 91 High Street, Camberley GU15 3FL \n\nVisit us during business hours or schedule an appointment for a consultation." 
+                        },
+                        { text: "← Back to Main Menu", next: "main" }
+                    ]
+                }
+            };
+
+            function showMenu(menuKey) {
+                messagesDiv.innerHTML = '';
+                const menu = services[menuKey];
+                
+                const question = document.createElement('div');
+                question.className = 'chat-message bot-message';
+                question.textContent = menu.question;
+                messagesDiv.appendChild(question);
+                
+                const optionsDiv = document.createElement('div');
+                optionsDiv.className = 'service-options';
+                
+                menu.options.forEach(option => {
+                    const button = document.createElement('button');
+                    button.className = 'service-option';
+                    button.textContent = option.text;
+                    
+                    button.addEventListener('click', function() {
+                        if (option.next) {
+                            showMenu(option.next);
+                        } else if (option.response) {
+                            showResponse(option.response);
                         }
-                    }, 100);
-                });
-
-                // Hero Slider
-                document.addEventListener('DOMContentLoaded', function() {
-                    const slides = [
-                        'Images/Benchmark 45.jpg',
-                        'Images/Islamabad Experience Center.jpg',
-                        'Images/House Solar.jpg',
-                        'Images/Urban Culture.jpg',
-                        'Images/Brands Town Interior.jpg',
-                        'Images/Faislabad Commercial.jpg',
-                        'Images/Sefam 3 Brands.jpg',
-                        'Images/Bareezeman Lahore.jpg',
-                        'Images/Naqshi design.jpg',
-                        'Images/Rang Ja.jpg',
-                        'Images/Lanscaping.jpg'
-                    ];
-
-                    const heroSlideshow = document.querySelector('.hero-slideshow');
-                    const progressBar = document.querySelector('.progress-bar');
-                    const nextBtn = document.querySelector('.next-btn');
-                    const prevBtn = document.querySelector('.prev-btn');
-
-                    let currentSlide = 0;
-                    let progressInterval;
-                    let progress = 0;
-                    const totalSlides = slides.length;
-                    const timerDuration = 5000; // 5 seconds per slide
-
-                    // Create slides
-                    slides.forEach((slide, index) => {
-                        const slideDiv = document.createElement('div');
-                        slideDiv.className = `hero-slide ${index === 0 ? 'active' : ''}`;
-                        slideDiv.style.backgroundImage = `url('${slide}')`;
-                        heroSlideshow.appendChild(slideDiv);
                     });
-
-                    const allSlides = document.querySelectorAll('.hero-slide');
-
-                    function startSlider() {
-                        clearInterval(progressInterval);
-                        progress = 0;
-                        progressBar.style.width = '0%';
-
-                        progressInterval = setInterval(() => {
-                            progress += 100 / (timerDuration / 100);
-                            progressBar.style.width = `${progress}%`;
-
-                            if (progress >= 100) {
-                                goToNextSlide();
-                            }
-                        }, 100);
-                    }
-
-                    function goToNextSlide() {
-                        allSlides[currentSlide].classList.remove('active');
-                        currentSlide = (currentSlide + 1) % totalSlides;
-                        allSlides[currentSlide].classList.add('active');
-                        startSlider();
-                    }
-
-                    function goToPrevSlide() {
-                        allSlides[currentSlide].classList.remove('active');
-                        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                        allSlides[currentSlide].classList.add('active');
-                        startSlider();
-                    }
-
-                    nextBtn.addEventListener('click', goToNextSlide);
-                    prevBtn.addEventListener('click', goToPrevSlide);
-                    startSlider();
-
-                    // Timeline Animation
-                    const timelineItems = document.querySelectorAll('.timeline-item');
                     
-                    function checkTimelineVisibility() {
-                        timelineItems.forEach((item, index) => {
-                            const itemTop = item.getBoundingClientRect().top;
-                            const windowHeight = window.innerHeight;
-                            
-                            if (itemTop < windowHeight - 100) {
-                                setTimeout(() => {
-                                    item.classList.add('visible');
-                                }, index * 200);
-                            }
-                        });
-                    }
-                    
-                    window.addEventListener('scroll', checkTimelineVisibility);
-                    checkTimelineVisibility(); // Check on initial load
+                    optionsDiv.appendChild(button);
                 });
-            </script>
+                
+                messagesDiv.appendChild(optionsDiv);
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }
 
-            <script type="application/ld+json">
-            {
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            "name": "Azes Consultants",
-            "image": "https://azesconsultants.github.io/Images/Azes%20Logo.png",
-            "@id": "",
-            "url": "https://azesconsultants.github.io/",
-            "telephone": "+923300003179",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "D-269/270 Green Cap Housing 21-Km Ferozpur Road",
-                "addressLocality": "Lahore",
-                "addressRegion": "Punjab",
-                "postalCode": "",
-                "addressCountry": "PK"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 31.5204,
-                "longitude": 74.3587
-            },
-            "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
+            function showResponse(message) {
+                messagesDiv.innerHTML = '';
+                
+                const response = document.createElement('div');
+                response.className = 'chat-message bot-message';
+                
+                const formattedMessage = message.replace(/\n/g, '<br>');
+                response.innerHTML = formattedMessage;
+                
+                messagesDiv.appendChild(response);
+                
+                const backBtn = document.createElement('button');
+                backBtn.className = 'service-option';
+                backBtn.textContent = '← Back to Main Menu';
+                backBtn.addEventListener('click', function() {
+                    showMenu('main');
+                });
+                
+                messagesDiv.appendChild(backBtn);
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            } 
+
+            setTimeout(() => {
+                showMenu('main');
+            }, 1000);
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Message sent successfully!');
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                alert('Error sending message. Please try again or email us directly at azesdesign@gmail.com');
+                console.error('Form submission error:', error);
+            })
+            .finally(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Azes Consultants",
+        "image": "https://azesconsultants.github.io/Images/Azes%20Logo.png",
+        "@id": "",
+        "url": "https://azesconsultants.github.io/",
+        "telephone": "+923300003179",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "D-269/270 Green Cap Housing 21-Km Ferozpur Road",
+            "addressLocality": "Lahore",
+            "addressRegion": "Punjab",
+            "postalCode": "",
+            "addressCountry": "PK"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 31.5204,
+            "longitude": 74.3587
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
                 "Monday",
                 "Tuesday",
                 "Wednesday",
                 "Thursday",
                 "Friday"
-                ],
-                "opens": "09:00",
-                "closes": "18:00"
-            },
-            "sameAs": [
-                "https://www.facebook.com/azesconsultants",
-                "https://www.linkedin.com/company/azes-consultants"
-            ] 
-            }
-            </script>
-        </body>
-        </html>
+            ],
+            "opens": "09:00",
+            "closes": "18:00"
+        },
+        "sameAs": [
+            "https://www.facebook.com/azesconsultants",
+            "https://www.linkedin.com/company/azes-consultants"
+        ] 
+    }
+    </script>
+</body>
+</html>
