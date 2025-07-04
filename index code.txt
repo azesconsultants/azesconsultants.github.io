@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="V2UKnTdacbzAU-ynRSE0D1257gTxdTYdeifyn1PVkeM" />
     <title>Azes Consultants - Architecture, Interior Design, Construction, Solar Systems</title>
-    <link rel="icon" href="Images/Azes Logo.png" type="image/png">
+    <link rel="icon" href="Images/Azes/Azes Logo.png" type="image/png">
     <meta name="title" content="Azes Consultants | Architecture, Construction & Interior Design | UAE, UK, Pakistan">
     <meta name="description" content="Azes Consultants - Premier architecture, construction & interior design firm with offices in UAE, UK & Pakistan. Specializing in sustainable designs since 2005.">
     <meta property="og:type" content="website">
