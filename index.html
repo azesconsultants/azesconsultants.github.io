@@ -24,75 +24,27 @@
             --white: #ffffff;
         }
         
-        .loading-screen {
+         .loading-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: var(--deep-sea-green);
+            background-color: black;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            opacity: 1;
-            transition: opacity 1.2s cubic-bezier(0.65, 0, 0.35, 1);
         }
         
-        .loading-content {
-            text-align: center;
-            transform: translateY(0);
-            transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1), opacity 1s cubic-bezier(0.65, 0, 0.35, 1);
-        }
-        
-        .loading-logo {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto;
-            opacity: 1;
-            animation: pulse 2s infinite ease-in-out, float 3s infinite ease-in-out;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.8; }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-        
-        .loading-progress {
-            width: 200px;
-            height: 3px;
-            background: rgba(255,255,255,0.2);
-            margin: 30px auto 0;
-            overflow: hidden;
-            position: relative;
-            border-radius: 3px;
-        }
-        
-        .loading-progress-bar {
-            position: absolute;
-            left: 0;
-            top: 0;
+        .loading-video {
+            width: 100%;
             height: 100%;
-            width: 0%;
-            background: var(--white);
-            transition: width 0.4s ease-out;
-            border-radius: 3px;
+            object-fit: cover;
         }
         
-        .loaded .loading-screen {
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .loaded .loading-content {
-            transform: translateY(-30px);
-            opacity: 0;
+        body.loaded .loading-screen {
+            display: none;
         }
 
         .service-card {
@@ -610,10 +562,6 @@
             transition: transform 0.5s ease;
         }
 
-        .project-card:hover .project-img img {
-            transform: scale(1.1);
-        }
-
         .project-title {
             margin: 15px 0 0;
             font-size: 1.2rem;
@@ -638,10 +586,6 @@
             border-radius: 8px;
         }
 
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-
         .project-overlay h3 {
             font-size: 1.5rem;
             margin-bottom: 10px;
@@ -652,6 +596,19 @@
             font-size: 0.9rem;
             line-height: 1.5;
             margin-bottom: 8px;
+        }
+
+        #project-detail {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 10000;
+            overflow-y: auto;
+            padding: 20px;
+            display: none; 
         }
         
         .videos-grid {
@@ -860,6 +817,13 @@
         .footer-column ul li a:hover {
             opacity: 0.8;
         }
+
+        footer .disclaimer {
+            font-size: 0.8rem; 
+            opacity: 0.4; 
+            margin: 5px 0 0 0; 
+            font-weight: 300;
+        }
         
         .social-links {
             display: flex;
@@ -922,6 +886,137 @@
         font-style: italic;
     }
 
+        .project-detail-container {
+            padding: 80px 0;
+        }
+
+        .project-detail-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .project-detail-header h1 {
+            color: var(--deep-sea-green);
+            margin-bottom: 20px;
+        }
+
+        .project-detail-header p {
+            font-size: 18px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .project-gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        .project-video {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .project-video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .project-description {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .project-description h2 {
+            color: var(--deep-sea-green);
+            margin-bottom: 20px;
+        }
+
+        .project-description p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .project-specs {
+            background: #f0f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .project-specs h3 {
+            color: var(--deep-sea-green);
+            margin-bottom: 20px;
+        }
+
+        .project-specs ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .project-specs li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .project-specs li:before {
+            content: '•';
+            position: absolute;
+            left: 10px;
+            color: var(--deep-sea-green);
+            font-weight: bold;
+        }
+
+        .back-to-projects {
+            display: inline-block;
+            background-color: var(--deep-sea-green);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .back-to-projects:hover {
+            background-color: #005959;
+        }
+
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -963,6 +1058,10 @@
             .clients-grid {
                 grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
                 gap: 20px;
+            }
+
+            .project-gallery {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1072,26 +1171,24 @@
 </head>
 <body>
     <div class="loading-screen" id="loadingScreen">
-        <div class="loading-content">
-            <img src="Images/Azes Logo.png" alt="AZES Consultants" class="loading-logo">
-            <div class="loading-progress">
-                <div class="loading-progress-bar" id="loadingBar"></div>
-            </div>
-        </div>
+        <video autoplay muted playsinline class="loading-video" id="loadingVideo">
+            <source src="Azes Intro Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
     <header>
         <div class="container header-container">
             <div class="logo-container">
-                <img src="Images/Azes Logo.png" alt="Azes Consultants Logo" class="logo-img">
+                <img src="Images/Azes/Azes Logo.png" alt="Azes Consultants Logo" class="logo-img">
                 <div class="logo-text">AZES CONSULTANTS</div>
             </div>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#team">Team</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#team">Team</a></li>
                     <li><a href="#videos">Videos</a></li>
                     <li><a href="#worldwide-offices">Worldwide Offices</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -1100,719 +1197,692 @@
         </div>
     </header>
 
-    <section class="hero" id="home">
-        <div class="hero-slideshow"></div>
-        <div class="hero-content">
-            <h1>Innovative Design & Sustainable Construction</h1>
-            <p>AZES Consultants is a multi-disciplinary international firm offering comprehensive design and construction services with offices in Pakistan, UAE, and UK.</p>
-            <a href="#contact" class="btn">Get in Touch</a>
-        </div>
-        <div class="slide-controls">
-            <button class="slide-btn prev-btn" aria-label="Previous Slide">❮</button>
-            <button class="slide-btn next-btn" aria-label="Next Slide">❯</button>
-        </div>
-        <div class="progress-timer">
-            <div class="progress-bar"></div>
-        </div>
-    </section>
+    <div id="project-detail" style="display: none;">
+        <section class="project-detail-container">
+            <div class="container">
+                <div class="project-detail-header">
+                    <h1 id="project-detail-title">Project Title</h1>
+                    <p id="project-detail-subtitle">Project location and brief description</p>
+                </div>
 
-    <section id="values">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Core Values</h2>
-            </div>
-            <div class="values-container">
-                <div class="value-card">
-                    <div class="value-card-content">
-                        <i class="fas fa-lightbulb value-icon"></i>
-                        <h3 class="value-title">Innovation</h3>
-                        <p class="value-description">We constantly push boundaries to create designs that are both beautiful and functional, incorporating the latest technologies and sustainable practices.</p>
-                    </div>
+                <div class="project-gallery" id="project-gallery">
                 </div>
-                <div class="value-card">
-                    <div class="value-card-content">
-                        <i class="fas fa-hand-holding-heart value-icon"></i>
-                        <h3 class="value-title">Integrity</h3>
-                        <p class="value-description">We believe in transparent communication, honest pricing, and delivering exactly what we promise - nothing less.</p>
-                    </div>
-                </div>
-                <div class="value-card">
-                    <div class="value-card-content">
-                        <i class="fas fa-leaf value-icon"></i>
-                        <h3 class="value-title">Sustainability</h3>
-                        <p class="value-description">From energy-efficient designs to eco-friendly materials, we're committed to reducing environmental impact in all our projects.</p>
-                    </div>
-                </div>
-                <div class="value-card">
-                    <div class="value-card-content">
-                        <i class="fas fa-users value-icon"></i>
-                        <h3 class="value-title">Inclusivity</h3>
-                        <p class="value-description">We serve clients from all walks of life, creating designs that are accessible and beneficial to everyone in the community.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="mission">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Purpose</h2>
-            </div>
-            <div class="mission-container">
-                <div class="mission-block">
-                    <h3 class="mission-title">Our Mission</h3>
-                    <p>To deliver exceptional architectural and construction services that blend local traditions with international standards, creating spaces that inspire and endure.</p>
-                    <ul class="mission-list">
-                        <li>Combine aesthetic appeal with structural integrity</li>
-                        <li>Implement sustainable building practices</li>
-                        <li>Provide accessible services to all market segments</li>
-                        <li>Foster innovation through continuous learning</li>
+                <div id="project-video-container" class="project-video" style="display: none;">
+                    <h2>Project Video</h2>
+                    <div class="project-video-container">
+                        <iframe id="project-video" src="" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <h2>Project Description</h2>
+                    <div id="project-description-content">
+                    </div>
+                </div>
+
+                <div class="project-specs">
+                    <h3>Project Specifications</h3>
+                    <ul id="project-specs-list">
                     </ul>
                 </div>
-                <div class="mission-block">
-                    <h3 class="mission-title">Our Vision</h3>
-                    <p>To be the most desirable architecture and construction firm globally, recognized for our commitment to quality, sustainability, and client satisfaction.</p>
-                    <ul class="mission-list">
-                        <li>Expand to 10+ countries by 2030</li>
-                        <li>Pioneer in green building technologies</li>
-                        <li>Develop smart city solutions</li>
-                        <li>Train the next generation of architects</li>
-                    </ul>
-                </div>
-                <div class="mission-block">
-                    <h3 class="mission-title">Our Approach</h3>
-                    <p>We believe in a holistic approach that considers every aspect of the built environment and its impact on people and communities.</p>
-                    <ul class="mission-list">
-                        <li>Client-centered design process</li>
-                        <li>Multidisciplinary collaboration</li>
-                        <li>Research-driven solutions</li>
-                        <li>Community-oriented projects</li>
-                        <li>Technological integration</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="services" style="background-color: #f9f9f9;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
+                <a href="#projects" class="back-to-projects">Back to Projects</a>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="Images/BM45 Architecture.jpg" alt="Bench Mark 45">
-                    </div>
-                    <div class="service-overlay">
-                        <h3>Architecture and Interior Design</h3>
-                        <p>Providing innovative and sustainable architecture services tailored to meet diverse client needs.</p>
-                        <a href="#contact" class="btn">Learn More</a>
-                    </div>
-                    <div class="service-content">
-                        <h3>Architecture and Interior Design</h3>
-                        <p>Providing innovative and sustainable architecture services tailored to meet diverse client needs including interior architecture, space planning, and exhibition stall design.</p>
-                        <ul>
-                            <li>ARCHITECTURE</li>
-                            <li>INTERIOR DESIGN</li>
-                            <li>EXHIBITION STALL DESIGN & CONSTRUCTION</li>
-                            <li>LAND AQUISITION & DEVELOPMENT</li>
-                            <li>ERGONOMICS DESIGN SERVICES</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="Images/Islamabad Experience Center.jpg" alt="Islamabad Experience Center">
-                    </div>
-                    <div class="service-overlay">
-                        <h3>Interior and Architecture Construction Services</h3>
-                        <p>Delivering exceptional architecture and construction services.</p>
-                        <a href="#contact" class="btn">Learn More</a>
-                    </div>
-                    <div class="service-content">
-                        <h3>Interior and Architecture Construction Services</h3>
-                        <p>Delivering exceptional architecture and construction services, specializing in building and hardscaping for enduring beauty and functionality.</p>
-                        <ul>
-                            <li>ARCHITECTURE CONSTRUCTION SERVICES</li>
-                            <li>INTERIOR WORK CONSTRUCTION SERVICES</li>
-                            <li>WOODWORK EXECUTION</li>
-                            <li>INTERIOR HVAC CONSTRUCTION</li>
-                            <li>INTERIOR ELECTRICAL CONSTRUCTION</li>
-                            <li>DETAILED SUPERVISION</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="Images/House Solar.jpg" alt="Solar Systems">
-                    </div>
-                    <div class="service-overlay">
-                        <h3>Solar Systems</h3>
-                        <p>Harnessing the power of the sun to create sustainable energy solutions.</p>
-                        <a href="#contact" class="btn">Learn More</a>
-                    </div>
-                    <div class="service-content">
-                        <h3>Solar Systems</h3>
-                        <p>Harnessing the power of the sun to create sustainable energy solutions for residential, commercial, and industrial applications.</p>
-                        <ul>
-                            <li>OFF GRID SYSTEMS</li>
-                            <li>ON GRID SYSTEMS</li>
-                            <li>HYBRID SYSTEMS</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="Images/Urban Culture.jpg" alt="Urban Design">
-                    </div>
-                    <div class="service-overlay">
-                        <h3>Urban Design & Planning</h3>
-                        <p>Crafting dynamic and sustainable urban environments.</p>
-                        <a href="#contact" class="btn">Learn More</a>
-                    </div>
-                    <div class="service-content">
-                        <h3>Urban Design & Planning</h3>
-                        <p>Crafting dynamic and sustainable urban environments through innovative design and strategic planning.</p>
-                        <ul>
-                            <li>URBAN DESIGN & PLANNING</li>
-                            <li>TOWN PLANNING</li>
-                            <li>MASTER PLANNING</li>
-                            <li>DEVELOPMENTS & INFRASTRUCTURE PLANNING</li>
-                            <li>LANDSCAPING</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="Images/Bareezeman Lahore.jpg" alt="Conservation">
-                    </div>
-                    <div class="service-overlay">
-                        <h3>Conservation & Restoration</h3>
-                        <p>Preserving historical and cultural heritage.</p>
-                        <a href="#contact" class="btn">Learn More</a>
-                    </div>
-                    <div class="service-content">
-                        <h3>Conservation & Restoration</h3>
-                        <p>Preserving historical and cultural heritage through expert documentation, restoration, and adaptive reuse of buildings.</p>
-                        <ul>
-                            <li>DOCUMENTATION HISTORICAL BUILDING</li>
-                            <li>RESTORATION</li>
-                            <li>RENOVATION</li>
-                            <li>ADAPTIVE REUSE</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="Images/Chinyere.jpg" alt="Management">
-                    </div>
-                    <div class="service-overlay">
-                        <h3>Construction Management</h3>
-                        <p>Ensuring project success through comprehensive management.</p>
-                        <a href="#contact" class="btn">Learn More</a>
-                    </div>
-                    <div class="service-content">
-                        <h3>Construction Management</h3>
-                        <p>Ensuring project success through comprehensive management of scheduling, control, and monitoring.</p>
-                        <ul>
-                            <li>PROJECT SCHEDULING</li>
-                            <li>CONTROL & MONITORING</li>
-                            <li>PROJECT MANAGEMENT</li>
-                            <li>FEASIBILITY STUDIES</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="Images/Lanscaping.jpg" alt="Landscaping Services">
-                    </div>
-                    <div class="service-overlay">
-                        <h3>Landscaping</h3>
-                        <p>Creating beautiful, sustainable outdoor environments.</p>
-                        <a href="#contact" class="btn">Learn More</a>
-                    </div>
-                    <div class="service-content">
-                        <h3>Landscaping</h3>
-                        <p>We design and execute comprehensive landscaping solutions that blend aesthetics with functionality for residential and commercial properties.</p>
-                        <ul>
-                            <li>RESIDENTIAL LANDSCAPING</li>
-                            <li>COMMERCIAL LANDSCAPING</li>
-                            <li>SUSTAINABLE LANDSCAPING</li>
-                            <li>HARDSCAPE DESIGN</li>
-                            <li>GARDEN DESIGN</li>
-                            <li>IRRIGATION SYSTEMS</li>
-                        </ul>
-                    </div>
-                </div>
-            <div class="service-card">
-                <div class="service-img">
-                    <img src="Images/Town Planning.jpg" alt="Town Planning">
-                </div>
-                <div class="service-overlay">
-                    <h3>Town Planning</h3>
-                    <p>Shaping livable, resilient, and thriving communities through expert town planning.</p>
-                    <a href="#contact" class="btn">Learn More</a>
-                </div>
-                <div class="service-content">
-                    <h3>Town Planning</h3>
-                    <p>Shaping livable, resilient, and thriving communities through expert town planning that considers all aspects of urban development and community needs.</p>
-                    <ul>
-                        <li>ZONING REGULATIONS</li>
-                        <li>LAND USE PLANNING</li>
-                        <li>INFRASTRUCTURE DEVELOPMENT</li>
-                        <li>COMMUNITY FACILITIES</li>
-                        <li>SUSTAINABLE DEVELOPMENT</li>
-                        <li>URBAN REGENERATION</li>
-                    </ul>
-                </div>
-            </div>
+        </section>
+    </div>
 
-            <div class="service-card">
-                <div class="service-img">
-                    <img src="Images/Project Management.jpg" alt="Project Management">
-                </div>
-                <div class="service-overlay">
-                    <h3>Project Management</h3>
-                    <p>Ensuring project success through comprehensive management from conception to completion.</p>
-                    <a href="#contact" class="btn">Learn More</a>
-                </div>
-                <div class="service-content">
-                    <h3>Project Management</h3>
-                    <p>Ensuring project success through comprehensive management of scheduling, control, and monitoring for construction and design projects.</p>
-                    <ul>
-                        <li>PROJECT SCHEDULING</li>
-                        <li>COST CONTROL</li>
-                        <li>QUALITY ASSURANCE</li>
-                        <li>RISK MANAGEMENT</li>
-                        <li>STAKEHOLDER COORDINATION</li>
-                        <li>DOCUMENTATION</li>
-                    </ul>
-                </div>
+    <div id="main-content">
+        <section class="hero" id="home">
+            <div class="hero-slideshow"></div>
+            <div class="hero-content">
+                <h1>Innovative Design & Sustainable Construction</h1>
+                <p>AZES Consultants is a multi-disciplinary international firm offering comprehensive design and construction services with offices in Pakistan, UAE, and UK.</p>
+                <a href="#contact" class="btn">Get in Touch</a>
             </div>
-                </div>
+            <div class="slide-controls">
+                <button class="slide-btn prev-btn" aria-label="Previous Slide">❮</button>
+                <button class="slide-btn next-btn" aria-label="Next Slide">❯</button>
             </div>
-        </div>
-    </section>
+            <div class="progress-timer">
+                <div class="progress-bar"></div>
+            </div>
+        </section>
 
-    <section id="team">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Team</h2>
-            </div>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="team-info">
-                        <h3>ARCHITECT ADNAN ALI</h3>
-                        <p>Managing Partner International resident at UK branch and Pakistan (EXPERIENCE 18 YEARS)</p>
-                        <p>PHD Scholar London South Bank University UK, M.Arch UK Cardif, B.Arch UET PK.</p>
-                        <p>Adnan Ali is PHD scholar doing his PHD in from London South Bank University UK (2020-cont.), Masters in Supply chain from MBA Cardiff UK and Bachelor in Architecture from University of Engineering and Technology, Lahore, Pakistan. Along with Running this company he has expanded his services to local as well as international organization. He is working for design, and construction management and have done various project in UK and Pakistan.</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="team-info">
-                        <h3>ARCHITECT BAJWA</h3>
-                        <p>(EXPERIENCE 15+ YEARS)</p>
-                        <p>P.Gd. Erasmus Netherland, M.Arch U.E.T PK., B.Arch U.E.T PK.</p>
-                        <p>Architect Bajwa has done its Post graduate Diploma in Land management from IHS Erasmus University Holland, Masters in Architecture from University of Engineering and Technology, Pakistan. and Certification in International Heritage from The Boston Architectural college, Boston, America. Along with providing research and design on required projects this company seeks his services to local as well as international organization. He has immense exposure projects in interior especially in retail architecture.</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="team-info">
-                        <h3>MUHAMMAD AFZAL BAJWA</h3>
-                        <p>CEO (EXPERIENCE 30+ YEARS)</p>
-                        <p>In the realm of construction and innovation, one name shines like a beacon of excellence—Muhammad Afzal Bajwa. At more than seventy years old, he stands tall not only with the wisdom of age but also with a mind as sharp and inventive as ever. As the founder of Azes Consultants, Afzal has dedicated over 30 years to mastering the intricate art of construction, solar installation and management, and design. His journey is a testament to the power of intelligence, perseverance, and an insatiable curiosity for innovation.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" style="background-color: #f9f9f9;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Projects</h2>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/Islamabad Experience Center.jpg" alt="People Experience Center">
-                        <div class="project-overlay">
-                            <h3>People Experience Center</h3>
-                            <p>C-Block G8 Islamabad</p>
-                            <p>Client: Ahtesalat UAE</p>
-                            <p>Area: 339.096 Sq M (3650 Sq Ft)</p>
-                            <p>Cost: 2.4 Crore PKR</p>
-                        </div>
-                    </div>
-                    <h3 class="project-title">People Experience Center</h3>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/Brands Town Interior.jpg" alt="Brands Town">
-                        <div class="project-overlay">
-                            <h3>Brands Town</h3>
-                            <p>Architecture/Interior Shoes Outlet</p>
-                            <p>Location: G.T. Road, Lahore</p>
-                            <p>Scope: Interior design & exterior renovation</p>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Brands Town</h3>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/Naqshi design.jpg" alt="Naqshi Studio">
-                        <div class="project-overlay">
-                            <h3>Naqshi Studio</h3>
-                            <p>Retail Architecture/Interior</p>
-                            <p>Location: Emporium, Pakistan</p>
-                            <p>Features: Fabric module design</p>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Naqshi Studio</h3>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/Aroshi Design.jpg" alt="Aroshi Brand">
-                        <div class="project-overlay">
-                            <h3>Aroshi Brand</h3>
-                            <p>Retail Outlet Design</p>
-                            <p>Location: Emporium, Pakistan</p>
-                            <p>Scope: Complete interior execution</p>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Aroshi Brand</h3>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/Bareezeman Lahore.jpg" alt="Bareezeman Lahore">
-                        <div class="project-overlay">
-                            <h3>Bareezeman Lahore</h3>
-                            <p>Exhibition stall with foldable mechanism</p>
-                            <p>Client: Major retail group</p>
-                            <p>Specialty: Pop-up display system</p>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Bareezeman Lahore</h3>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/Multiple Exhibition Stalls.jpg" alt="Exhibition Stalls">
-                        <div class="project-overlay">
-                            <h3>Exhibition Stalls</h3>
-                            <p>Brands: Bareeze, Rangja, Urban Culture</p>
-                            <p>Scope: Multi-brand exhibition solutions</p>
-                            <p>Locations: Pakistan & India</p>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Exhibition Stalls</h3>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/Bareeze UAE.jpg" alt="Bareeze UAE">
-                        <div class="project-overlay">
-                            <h3>Bareeze UAE</h3>
-                            <p>International Project</p>
-                            <p>Location: UAE</p>
-                            <p>Services: Design & construction management</p>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Bareeze UAE</h3>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/Rang Ja.jpg" alt="Rang Ja">
-                        <div class="project-overlay">
-                            <h3>Rang Ja</h3>
-                            <p>Retail Interior Outlet</p>
-                            <p>Location: Lucky Mall, Karachi</p>
-                            <p>Features: Mall-approved designs</p>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Rang Ja</h3>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/Faislabad Commercial.jpg" alt="Faisalabad Commercial">
-                        <div class="project-overlay">
-                            <h3>Faisalabad Commercial</h3>
-                            <p>Architecture/Interior Outlet</p>
-                            <p>Location: Sefam, Lahore</p>
-                            <p>Scope: Multi-brand space design</p>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Faisalabad Commercial</h3>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/Urban Culture.jpg" alt="Mall of Peshawar">
-                        <div class="project-overlay">
-                            <h3>Mall of Peshawar</h3>
-                            <p>Architecture/Interior Outlet</p>
-                            <p>5 Brands in one location</p>
-                            <p>Location: Peshawar, Pakistan</p>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Mall of Peshawar</h3>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/Chinyere.jpg" alt="Chinyere Brands">
-                        <div class="project-overlay">
-                            <h3>Chinyere Brands</h3>
-                            <p>Retail Architecture/Interior</p>
-                            <p>Location: Link Road, Pakistan</p>
-                            <p>Features: Stair well feature design</p>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Chinyere Brands</h3>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/Lanscaping.jpg" alt="Landscape Design">
-                        <div class="project-overlay">
-                            <h3>Landscape Design</h3>
-                            <p>Proposal for Mayor of Islamabad</p>
-                            <p>Sponsor: Aftesalat Group</p>
-                            <p>Style: Modern landscape design</p>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Landscape Design</h3>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/Benchmark 45.jpg" alt="Bench Mark 45">
-                        <div class="project-overlay">
-                            <h3>Bench Mark 45</h3>
-                            <p>Entertainment & Corporate Project</p>
-                            <p>Location: Bahawalpur</p>
-                            <p>Client: Army interested resources</p>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Bench Mark 45</h3>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/1 Canal Residence.jpg" alt="One Canal Residence">
-                        <div class="project-overlay">
-                            <h3>One Canal Residence</h3>
-                            <p>Residential Project</p>
-                            <p>Location: Star UET Society Lahore</p>
-                            <p>Features: Contemporary design</p>
-                        </div>
-                    </div>
-                    <h3 class="project-title">One Canal Residence</h3>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="Images/10 Marla Residence UET.jpg" alt="10 Marla Residence">
-                        <div class="project-overlay">
-                            <h3>10 Marla Residence</h3>
-                            <p>Residential Project</p>
-                            <p>Location: Bahria Orchard, Lahore</p>
-                            <p>Client: Private residence</p>
-                        </div>
-                    </div>
-                    <h3 class="project-title">10 Marla Residence</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-                <section id="clients">
+        <section id="values">
             <div class="container">
                 <div class="section-title">
-                    <h2>Our Clients</h2>
+                    <h2>Our Core Values</h2>
                 </div>
-                <div class="clients-grid">
-                    <div class="client-item">
-                        <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Naqshi</h3>
-                        <img src="Images/Naqshi Logo.png" alt="Naqshi" class="client-logo">
+                <div class="values-container">
+                    <div class="value-card">
+                        <div class="value-card-content">
+                            <i class="fas fa-lightbulb value-icon"></i>
+                            <h3 class="value-title">Innovation</h3>
+                            <p class="value-description">We constantly push boundaries to create designs that are both beautiful and functional, incorporating the latest technologies and sustainable practices.</p>
+                        </div>
                     </div>
-                    <div class="client-item">
-                        <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Aroshi</h3>
-                        <img src="Images/Aroshi Logo.png" alt="Aroshi" class="client-logo">
+                    <div class="value-card">
+                        <div class="value-card-content">
+                            <i class="fas fa-hand-holding-heart value-icon"></i>
+                            <h3 class="value-title">Integrity</h3>
+                            <p class="value-description">We believe in transparent communication, honest pricing, and delivering exactly what we promise - nothing less.</p>
+                        </div>
                     </div>
-                    <div class="client-item">
-                        <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Brands Town</h3>
-                        <img src="Images/Brands Town Logo.png" alt="Brands Town" class="client-logo">
+                    <div class="value-card">
+                        <div class="value-card-content">
+                            <i class="fas fa-leaf value-icon"></i>
+                            <h3 class="value-title">Sustainability</h3>
+                            <p class="value-description">From energy-efficient designs to eco-friendly materials, we're committed to reducing environmental impact in all our projects.</p>
+                        </div>
                     </div>
-                    <div class="client-item">
-                        <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Ahtesalat</h3>
-                        <img src="Images/Islamabad Experience Center.jpg" alt="Ahtesalat" class="client-logo">
-                    </div>
-                    <div class="client-item">
-                        <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Shoe Hub</h3>
-                        <img src="Images/Shoe Hub Logo.png" alt="Shoe Hub" class="client-logo">
-                    </div>
-                    <div class="client-item">
-                        <h3 style="color: var(--deep-sea-green); margin-bottom: 5px;">Chinyere</h3>
-                        <p style="font-size: 14px; color: #666; margin: 0;">(Manager)</p>
-                        <img src="Images/Chinyere Logo.png" alt="Chinyere" class="client-logo">
+                    <div class="value-card">
+                        <div class="value-card-content">
+                            <i class="fas fa-users value-icon"></i>
+                            <h3 class="value-title">Inclusivity</h3>
+                            <p class="value-description">We serve clients from all walks of life, creating designs that are accessible and beneficial to everyone in the community.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-            <section id="videos">
+        <section id="mission">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Purpose</h2>
+                </div>
+                <div class="mission-container">
+                    <div class="mission-block">
+                        <h3 class="mission-title">Our Mission</h3>
+                        <p>To deliver exceptional architectural and construction services that blend local traditions with international standards, creating spaces that inspire and endure.</p>
+                        <ul class="mission-list">
+                            <li>Combine aesthetic appeal with structural integrity</li>
+                            <li>Implement sustainable building practices</li>
+                            <li>Provide accessible services to all market segments</li>
+                            <li>Foster innovation through continuous learning</li>
+                        </ul>
+                    </div>
+                    <div class="mission-block">
+                        <h3 class="mission-title">Our Vision</h3>
+                        <p>To be the most desirable architecture and construction firm globally, recognized for our commitment to quality, sustainability, and client satisfaction.</p>
+                        <ul class="mission-list">
+                            <li>Expand to 10+ countries by 2030</li>
+                            <li>Pioneer in green building technologies</li>
+                            <li>Develop smart city solutions</li>
+                            <li>Train the next generation of architects</li>
+                        </ul>
+                    </div>
+                    <div class="mission-block">
+                        <h3 class="mission-title">Our Approach</h3>
+                        <p>We believe in a holistic approach that considers every aspect of the built environment and its impact on people and communities.</p>
+                        <ul class="mission-list">
+                            <li>Client-centered design process</li>
+                            <li>Multidisciplinary collaboration</li>
+                            <li>Research-driven solutions</li>
+                            <li>Community-oriented projects</li>
+                            <li>Technological integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" style="background-color: #f9f9f9;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Services</h2>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="Images/Benchmark 45/Benchmark 45 {1}.jpg" alt="Bench Mark 45">
+                        </div>
+                        <div class="service-overlay">
+                            <h3>Architecture and Interior Design</h3>
+                            <p>Providing innovative and sustainable architecture services tailored to meet diverse client needs.</p>
+                            <a href="#contact" class="btn">Learn More</a>
+                        </div>
+                        <div class="service-content">
+                            <h3>Architecture and Interior Design</h3>
+                            <p>Providing innovative and sustainable architecture services tailored to meet diverse client needs including interior architecture, space planning, and exhibition stall design.</p>
+                            <ul>
+                                <li>ARCHITECTURE</li>
+                                <li>INTERIOR DESIGN</li>
+                                <li>EXHIBITION STALL DESIGN & CONSTRUCTION</li>
+                                <li>LAND AQUISITION & DEVELOPMENT</li>
+                                <li>ERGONOMICS DESIGN SERVICES</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="Images/Experience Center/Islamabad Experience Center 1.jpg" alt="Islamabad Experience Center">
+                        </div>
+                        <div class="service-overlay">
+                            <h3>Interior and Architecture Construction Services</h3>
+                            <p>Delivering exceptional architecture and construction services.</p>
+                            <a href="#contact" class="btn">Learn More</a>
+                        </div>
+                        <div class="service-content">
+                            <h3>Interior and Architecture Construction Services</h3>
+                            <p>Delivering exceptional architecture and construction services, specializing in building and hardscaping for enduring beauty and functionality.</p>
+                            <ul>
+                                <li>ARCHITECTURE CONSTRUCTION SERVICES</li>
+                                <li>INTERIOR WORK CONSTRUCTION SERVICES</li>
+                                <li>WOODWORK EXECUTION</li>
+                                <li>INTERIOR HVAC CONSTRUCTION</li>
+                                <li>INTERIOR ELECTRICAL CONSTRUCTION</li>
+                                <li>DETAILED SUPERVISION</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="Images/Solar/House Solar.jpg" alt="Solar Systems">
+                        </div>
+                        <div class="service-overlay">
+                            <h3>Solar Systems</h3>
+                            <p>Harnessing the power of the sun to create sustainable energy solutions.</p>
+                            <a href="#contact" class="btn">Learn More</a>
+                        </div>
+                        <div class="service-content">
+                            <h3>Solar Systems</h3>
+                            <p>Harnessing the power of the sun to create sustainable energy solutions for residential, commercial, and industrial applications.</p>
+                            <ul>
+                                <li>OFF GRID SYSTEMS</li>
+                                <li>ON GRID SYSTEMS</li>
+                                <li>HYBRID SYSTEMS</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="Images/Mall of Peshawar/Urban Culture 1.jpg" alt="Urban Design">
+                        </div>
+                        <div class="service-overlay">
+                            <h3>Urban Design & Planning</h3>
+                            <p>Crafting dynamic and sustainable urban environments.</p>
+                            <a href="#contact" class="btn">Learn More</a>
+                        </div>
+                        <div class="service-content">
+                            <h3>Urban Design & Planning</h3>
+                            <p>Crafting dynamic and sustainable urban environments through innovative design and strategic planning.</p>
+                            <ul>
+                                <li>URBAN DESIGN & PLANNING</li>
+                                <li>TOWN PLANNING</li>
+                                <li>MASTER PLANNING</li>
+                                <li>DEVELOPMENTS & INFRASTRUCTURE PLANNING</li>
+                                <li>LANDSCAPING</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="Images/Bareezeman Lahore/Bareezeman Lahore 1.jpg" alt="Conservation">
+                        </div>
+                        <div class="service-overlay">
+                            <h3>Conservation & Restoration</h3>
+                            <p>Preserving historical and cultural heritage.</p>
+                            <a href="#contact" class="btn">Learn More</a>
+                        </div>
+                        <div class="service-content">
+                            <h3>Conservation & Restoration</h3>
+                            <p>Preserving historical and cultural heritage through expert documentation, restoration, and adaptive reuse of buildings.</p>
+                            <ul>
+                                <li>DOCUMENTATION HISTORICAL BUILDING</li>
+                                <li>RESTORATION</li>
+                                <li>RENOVATION</li>
+                                <li>ADAPTIVE REUSE</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="Images/Chinyere/Chinyere.jpg" alt="Management">
+                        </div>
+                        <div class="service-overlay">
+                            <h3>Construction Management</h3>
+                            <p>Ensuring project success through comprehensive management.</p>
+                            <a href="#contact" class="btn">Learn More</a>
+                        </div>
+                        <div class="service-content">
+                            <h3>Construction Management</h3>
+                            <p>Ensuring project success through comprehensive management of scheduling, control, and monitoring.</p>
+                            <ul>
+                                <li>PROJECT SCHEDULING</li>
+                                <li>CONTROL & MONITORING</li>
+                                <li>PROJECT MANAGEMENT</li>
+                                <li>FEASIBILITY STUDIES</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="Images/Landscaping/Landscaping 1.jpg" alt="Landscaping Services">
+                        </div>
+                        <div class="service-overlay">
+                            <h3>Landscaping</h3>
+                            <p>Creating beautiful, sustainable outdoor environments.</p>
+                            <a href="#contact" class="btn">Learn More</a>
+                        </div>
+                        <div class="service-content">
+                            <h3>Landscaping</h3>
+                            <p>We design and execute comprehensive landscaping solutions that blend aesthetics with functionality for residential and commercial properties.</p>
+                            <ul>
+                                <li>RESIDENTIAL LANDSCAPING</li>
+                                <li>COMMERCIAL LANDSCAPING</li>
+                                <li>SUSTAINABLE LANDSCAPING</li>
+                                <li>HARDSCAPE DESIGN</li>
+                                <li>GARDEN DESIGN</li>
+                                <li>IRRIGATION SYSTEMS</li>
+                            </ul>
+                        </div>
+                    </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="Images/Green Cap/Green cap Map.jpg" alt="Town Planning">
+                    </div>
+                    <div class="service-overlay">
+                        <h3>Town Planning</h3>
+                        <p>Shaping livable, resilient, and thriving communities through expert town planning.</p>
+                        <a href="#contact" class="btn">Learn More</a>
+                    </div>
+                    <div class="service-content">
+                        <h3>Town Planning</h3>
+                        <p>Shaping livable, resilient, and thriving communities through expert town planning that considers all aspects of urban development and community needs.</p>
+                        <ul>
+                            <li>ZONING REGULATIONS</li>
+                            <li>LAND USE PLANNING</li>
+                            <li>INFRASTRUCTURE DEVELOPMENT</li>
+                            <li>COMMUNITY FACILITIES</li>
+                            <li>SUSTAINABLE DEVELOPMENT</li>
+                            <li>URBAN REGENERATION</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="Images/Project Management.jpg" alt="Project Management">
+                    </div>
+                    <div class="service-overlay">
+                        <h3>Project Management</h3>
+                        <p>Ensuring project success through comprehensive management from conception to completion.</p>
+                        <a href="#contact" class="btn">Learn More</a>
+                    </div>
+                    <div class="service-content">
+                        <h3>Project Management</h3>
+                        <p>Ensuring project success through comprehensive management of scheduling, control, and monitoring for construction and design projects.</p>
+                        <ul>
+                            <li>PROJECT SCHEDULING</li>
+                            <li>COST CONTROL</li>
+                            <li>QUALITY ASSURANCE</li>
+                            <li>RISK MANAGEMENT</li>
+                            <li>STAKEHOLDER COORDINATION</li>
+                            <li>DOCUMENTATION</li>
+                        </ul>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" style="background-color: #f9f9f9;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Projects</h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card" onclick="showProjectDetail('People Experience Center', 'C-Block G8 Islamabad', 'people-experience-center')">
+                        <div class="project-img">
+                            <img src="Images/Experience Center/Islamabad Experience Center 1.jpg" alt="People Experience Center">
+                        </div>
+                        <h3 class="project-title">People Experience Center</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('Brands Town', 'G.T. Road, Lahore', 'brands-town')">
+                        <div class="project-img">
+                            <img src="Images/Brands Town/Brands Town 1.jpg" alt="Brands Town">
+                        </div>
+                        <h3 class="project-title">Brands Town</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('Naqshi Studio', 'Emporium, Pakistan', 'naqshi-studio')">
+                        <div class="project-img">
+                            <img src="Images/Naqshi Emporium/Naqshi emp facade.jpeg" alt="Naqshi Studio">
+                        </div>
+                        <h3 class="project-title">Naqshi Studio</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('Aroshi Brand', 'Emporium, Pakistan', 'aroshibrand')">
+                        <div class="project-img">
+                            <img src="Images/Aroshi/Aroshi 3.jpg" alt="Aroshi Brand">
+                        </div>
+                        <h3 class="project-title">Aroshi Brand</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('Bareezeman Lahore', 'Exhibition stall with foldable mechanism', 'bareezeman-lahore')">
+                        <div class="project-img">
+                            <img src="Images/Bareezeman Lahore/Bareezeman Lahore 1.jpg" alt="Bareezeman Lahore">
+                        </div>
+                        <h3 class="project-title">Bareezeman Lahore</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('Exhibition Stalls', 'Brands: Bareeze, Rangja, Urban Culture', 'exhibition-stalls')">
+                        <div class="project-img">
+                            <img src="Images/Exhibition Stall/Multiple Exhibition Stalls.jpg" alt="Exhibition Stalls">
+                        </div>
+                        <h3 class="project-title">Exhibition Stalls</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('Bareeze UAE', 'International Project', 'bareeze-uae')">
+                        <div class="project-img">
+                            <img src="Images/Bareeze UAE/Bareeze UAE 1.jpg" alt="Bareeze UAE">
+                        </div>
+                        <h3 class="project-title">Bareeze UAE</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('Rang Ja', 'Retail Interior Outlet', 'rang-ja')">
+                        <div class="project-img">
+                            <img src="Images/Rang Ja/Rang Ja 1.jpg" alt="Rang Ja">
+                        </div>
+                        <h3 class="project-title">Rang Ja</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('Faisalabad Commercial', 'Architecture/Interior Outlet', 'faisalabad-commercial')">
+                        <div class="project-img">
+                            <img src="Images/Faislabad Commercial/Faislabad Commercial 1.jpg" alt="Faisalabad Commercial">
+                        </div>
+                        <h3 class="project-title">Faisalabad Commercial</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('Mall of Peshawar', '5 Brands in one location', 'mall-of-peshawar')">
+                        <div class="project-img">
+                            <img src="Images/Mall of Peshawar/Urban Culture 1.jpg" alt="Mall of Peshawar">
+                        </div>
+                        <h3 class="project-title">Mall of Peshawar</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('Chinyere Brands', 'Retail Architecture/Interior', 'chinyere-brands')">
+                        <div class="project-img">
+                            <img src="Images/Chinyere/Chinyere.jpg" alt="Chinyere Brands">
+                        </div>
+                        <h3 class="project-title">Chinyere Brands</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('Landscape Design', 'Proposal for Mayor of Islamabad', 'landscape-design')">
+                        <div class="project-img">
+                            <img src="Images/Landscaping/Landscaping 1.jpg" alt="Landscape Design">
+                        </div>
+                        <h3 class="project-title">Landscape Design</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('Bench Mark 45', 'Entertainment & Corporate Project', 'bench-mark-45')">
+                        <div class="project-img">
+                            <img src="Images/Benchmark 45/Benchmark 45 {1}.jpg" alt="Bench Mark 45">
+                        </div>
+                        <h3 class="project-title">Bench Mark 45</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('One Canal Residence', 'Residential Project', 'one-canal-residence')">
+                        <div class="project-img">
+                            <img src="Images/10 Marla Residence UET/10 Marla Residence UET.jpg" alt="10 Marla Residence">
+                        </div>
+                        <h3 class="project-title">One Canal Residence</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('10 Marla Residence', 'Residential Project', '10-marla-residence')">
+                        <div class="project-img">
+                            <img src="Images/1 Canal Residence/1 Canal Residence.jpg" alt="1 Canal Residence">
+                        </div>
+                        <h3 class="project-title">10 Marla Residence</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('10 Marla House', 'Eden Housing Society', '10-marla-house-eden')">
+                        <div class="project-img">
+                            <img src="Images/10 Marla House/10 Marla House Exterior.jpg" alt="10 Marla House Eden">
+                        </div>
+                        <h3 class="project-title">10 Marla House</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('Sourcing Solutions', 'Corporate Office Design', 'sourcing-solutions')">
+                        <div class="project-img">
+                            <img src="Images/Sourcing Solution/Sourcing Solutions Office.jpg" alt="Sourcing Solutions">
+                        </div>
+                        <h3 class="project-title">Sourcing Solutions</h3>
+                    </div>
+                    <div class="project-card" onclick="showProjectDetail('2 Kanal Residence', 'DHA Islamabad', '2-kanal-residence-dha')">
+                        <div class="project-img">
+                            <img src="Images/2 kanal House/House 1.jpeg" alt="2 Kanal Residence DHA Islamabad">
+                        </div>
+                        <h3 class="project-title">2 Kanal Residence</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="clients">
                 <div class="container">
                     <div class="section-title">
-                        <h2>Our Videos & Shorts</h2>  
+                        <h2>Our Clients</h2>
                     </div>
-                    <div class="videos-grid">
-                        <div class="video-item">
-                            <div class="video-container">
-                                <iframe src="https://www.youtube.com/embed/REGULAR_VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                            <h3 class="video-title">Modern Villa Architectural Walkthrough</h3>
+                    <div class="clients-grid">
+                        <div class="client-item">
+                            <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Naqshi</h3>
+                            <img src="Images/Naqshi Emporium/Naqshi Logo.png" alt="Naqshi" class="client-logo">
                         </div>
-                        <div class="video-item">
-                            <div class="video-container">
-                                <iframe src="https://www.youtube.com/embed/SHORT_ID_1" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                            <h3 class="video-title">Solar Installation Time-Lapse <span class="shorts-badge">SHORTS</span></h3>
+                        <div class="client-item">
+                            <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Aroshi</h3>
+                            <img src="Images/Aroshi/Aroshi Logo.png" alt="Aroshi" class="client-logo">
                         </div>
-                        <div class="video-item">
-                            <div class="video-container">
-                                <iframe src="https://www.youtube.com/embed/REGULAR_VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                            <h3 class="video-title">Office Interior Design Process</h3>
+                        <div class="client-item">
+                            <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Brands Town</h3>
+                            <img src="Images/Brands Town/Brands Town Logo.png" alt="Brands Town" class="client-logo">
                         </div>
-                        <div class="video-item">
-                            <div class="video-container">
-                                <iframe src="https://www.youtube.com/embed/SHORT_ID_2" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                            <h3 class="video-title">Behind-the-Scenes: Dubai Project <span class="shorts-badge">SHORTS</span></h3>
+                        <div class="client-item">
+                            <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Etisalat Group</h3>
+                            <img src="Images/Experience Center/Etisalat Logo.png" alt="Etisalat Logo" class="client-logo">
                         </div>
-                        
-                        <div class="video-item">
-                            <div class="video-container">
-                                <iframe src="https://www.youtube.com/embed/REGULAR_VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                            <h3 class="video-title">Sustainable Architecture Showcase</h3>
+                        <div class="client-item">
+                            <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Shoe Hub</h3>
+                            <img src="Images/Shoe Hub/Shoe Hub Logo.png" alt="Shoe Hub" class="client-logo">
                         </div>
-                        
-                        <div class="video-item">
-                            <div class="video-container">
-                                <iframe src="https://www.youtube.com/embed/SHORT_ID_3" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                            <h3 class="video-title">Construction Timelapse <span class="shorts-badge">SHORTS</span></h3>
+                        <div class="client-item">
+                            <h3 style="color: var(--deep-sea-green); margin-bottom: 5px;">Chinyere</h3>
+                            <p style="font-size: 14px; color: #666; margin: 0;">(Manager)</p>
+                            <img src="Images/Chinyere/Chinyere Logo.png" alt="Chinyere" class="client-logo">
                         </div>
+                         <div class="client-item">
+                        <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">PTCL</h3>
+                        <img src="Images/PTCL/PTCL Logo.png" alt="PTCL" class="client-logo">
+                         </div>
+                        <div class="client-item">
+                        <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Sourcing Solutions</h3>
+                        <img src="Images/Sourcing Solution/Sourcing Solutions Logo.png" alt="Sourcing Solutions" class="client-logo">
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-    <section id="worldwide-offices">
-        <div class="container">
-            <div class="section-title">
-                <h2>Worldwide Offices and Our Partners</h2>
+        <section id="team">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Team</h2>
+                </div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-info">
+                            <h3>ARCHITECT ADNAN ALI</h3>
+                            <p>Managing Partner International resident at UK branch and Pakistan (EXPERIENCE 18 YEARS)</p>
+                            <p>PHD Scholar London South Bank University UK, M.Arch UK Cardif, B.Arch UET PK.</p>
+                            <p>Adnan Ali is PHD scholar doing his PHD in from London South Bank University UK (2020-cont.), Masters in Supply chain from MBA Cardiff UK and Bachelor in Architecture from University of Engineering and Technology, Lahore, Pakistan. Along with Running this company he has expanded his services to local as well as international organization. He is working for design, and construction management and have done various project in UK and Pakistan.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-info">
+                            <h3>ARCHITECT BAJWA</h3>
+                            <p>(EXPERIENCE 15+ YEARS)</p>
+                            <p>P.Gd. Erasmus Netherland, M.Arch U.E.T PK., B.Arch U.E.T PK.</p>
+                            <p>Architect Bajwa has done its Post graduate Diploma in Land management from IHS Erasmus University Holland, Masters in Architecture from University of Engineering and Technology, Pakistan. and Certification in International Heritage from The Boston Architectural college, Boston, America. Along with providing research and design on required projects this company seeks his services to local as well as international organization. He has immense exposure projects in interior especially in retail architecture.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-info">
+                            <h3>MUHAMMAD AFZAL BAJWA</h3>
+                            <p>CEO (EXPERIENCE 30+ YEARS)</p>
+                            <p>In the realm of construction and innovation, one name shines like a beacon of excellence—Muhammad Afzal Bajwa. At more than seventy years old, he stands tall not only with the wisdom of age but also with a mind as sharp and inventive as ever. As the founder of Azes Consultants, Afzal has dedicated over 30 years to mastering the intricate art of construction, solar installation and management, and design. His journey is a testament to the power of intelligence, perseverance, and an insatiable curiosity for innovation.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="about-text">
-                <div class="office-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Pakistan Office</h3>
-                    <p>D-269/270 Green Cap Housing 21-Km Ferozpur Road, Lahore, Pakistan</p>
-                </div>
-                <div class="office-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> UAE Office</h3>
-                    <p>Office no. 318, Mashreq Building, Al Suq Al Kabeer, Bur Dubai, UAE</p>
-                </div>
-                <div class="office-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> UK Office</h3>
-                    <p>Kings court, 91 high street, Camberley, GU153FL UK</p>
-                </div>
-                <div class="partner-card">
-                    <h3><i class="fas fa-handshake"></i> Official Partner</h3>
-                    <p>Azes Design and Fitout LLC (UAE)</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" style="background-color: #f9f9f9;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-            </div>
-            <div class="contact-info">
-                <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email</h3>
-                    <p>azesdesign@gmail.com</p>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-phone"></i>
-                    <h3>Phone</h3>
-                    <p>For Pakistan dialing: 0330 0003179</p>
-                    <p>For International dialing: +92 330 0003179</p>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Locations</h3>
-                    <p>D-269/270 Green Cap Housing 21-Km Ferozpur Road, Lahore, Pakistan</p>
-                    <p>Office no. 318, Mashreq Building, Al Suq Al Kabeer, Bur Dubai, UAE</p>
-                    <p>Kings court, 91 high street, Camberley, GU153FL UK</p>
-                </div>
-            </div>
-            <div class="contact-form">
-                <form id="contactForm" action="https://formspree.io/f/xbjndkdz" method="POST">
-                    <input type="hidden" name="_subject" value="New message from AZES website">
-                    <input type="hidden" name="_replyto" value="azesdesign@gmail.com">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                <section id="videos">
+                    <div class="container">
+                        <div class="section-title">
+                            <h2>Our Videos & Shorts</h2>  
+                        </div>
+                        <div class="videos-grid">
+                            <div class="video-item">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/REGULAR_VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <h3 class="video-title">Modern Villa Architectural Walkthrough</h3>
+                            </div>
+                            <div class="video-item">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/SHORT_ID_1" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <h3 class="video-title">Solar Installation Time-Lapse <span class="shorts-badge">SHORTS</span></h3>
+                            </div>
+                            <div class="video-item">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/REGULAR_VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <h3 class="video-title">Office Interior Design Process</h3>
+                            </div>
+                            <div class="video-item">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/SHORT_ID_2" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <h3 class="video-title">Behind-the-Scenes: Dubai Project <span class="shorts-badge">SHORTS</span></h3>
+                            </div>
+                            
+                            <div class="video-item">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/REGULAR_VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <h3 class="video-title">Sustainable Architecture Showcase</h3>
+                            </div>
+                            
+                            <div class="video-item">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/SHORT_ID_3" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <h3 class="video-title">Construction Timelapse <span class="shorts-badge">SHORTS</span></h3>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
+                </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>About Us</h3>
-                    <p>AZES Consultants is a multi-disciplinary international firm offering comprehensive design and construction services with offices in Pakistan, UAE, and UK.</p>
+        <section id="worldwide-offices">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Worldwide Offices and Our Partners</h2>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#videos">Videos</a></li>
-                        <li><a href="#worldwide-offices">Worldwide Offices</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> azesconsultants@gmail.com</li>
-                        <li><i class="fas fa-phone"></i> +92 330 0003179</li>
-                        <li><i class="fas fa-map-marker-alt"></i> D-269/270 Green Cap Housing, Lahore</li>
-                    </ul>
+                <div class="about-text">
+                    <div class="office-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Pakistan Office</h3>
+                        <p>D-269/270 Green Cap Housing 21-Km Ferozpur Road, Lahore, Pakistan</p>
+                    </div>
+                    <div class="office-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> UAE Office</h3>
+                        <p>Office no. 318, Mashreq Building, Al Suq Al Kabeer, Bur Dubai, UAE</p>
+                    </div>
+                    <div class="office-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> UK Office</h3>
+                        <p>Kings court, 91 high street, Camberley, GU153FL UK</p>
+                    </div>
+                    <div class="partner-card">
+                        <h3><i class="fas fa-handshake"></i> Official Partner</h3>
+                        <p>Azes Design and Fitout LLC (UAE)</p>
+                    </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 AZES Consultants. All Rights Reserved.</p>
+        </section>
+
+        <section id="contact" style="background-color: #f9f9f9;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>azesdesign@gmail.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p>For Pakistan dialing: 0330 0003179</p>
+                        <p>For International dialing: +92 330 0003179</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Locations</h3>
+                        <p>D-269/270 Green Cap Housing 21-Km Ferozpur Road, Lahore, Pakistan</p>
+                        <p>Office no. 318, Mashreq Building, Al Suq Al Kabeer, Bur Dubai, UAE</p>
+                        <p>Kings court, 91 high street, Camberley, GU153FL UK</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/xbjndkdz" method="POST">
+                        <input type="hidden" name="_subject" value="New message from AZES website">
+                        <input type="hidden" name="_replyto" value="azesdesign@gmail.com">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>About Us</h3>
+                        <p>AZES Consultants is a multi-disciplinary international firm offering comprehensive design and construction services with offices in Pakistan, UAE, and UK.</p>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#team">Team</a></li>
+                            <li><a href="#videos">Videos</a></li>
+                            <li><a href="#worldwide-offices">Worldwide Offices</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact Info</h3>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i> azesconsultants@gmail.com</li>
+                            <li><i class="fas fa-phone"></i> +92 330 0003179</li>
+                            <li><i class="fas fa-map-marker-alt"></i> D-269/270 Green Cap Housing, Lahore</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2023 AZES Consultants. All Rights Reserved.</p>
+                    <p class="disclaimer">Disclaimer: Information Error and Omissions</p>
+                </div>
+            </div>
+        </footer>
+    </div>
 
     <div id="chatbot-container">
         <div id="chatbot-header">
@@ -1826,6 +1896,545 @@
     </button>
 
     <script>
+        const projects = {
+            'people-experience-center': {
+                title: 'People Experience Center',
+                subtitle: 'C-Block G8 Islamabad',
+                images: [
+                    'Images/Experience Center/Islamabad Experience Center 1.jpg',
+                    'Images/Experience Center/Islamabad Experience Center 2.jpg',
+                    'Images/Experience Center/Islamabad Experience Center 3.jpg',
+                    'Images/Experience Center/Islamabad Experience Center 4.jpg',
+                    'Images/Experience Center/Islamabad Experience Center 5.jpg',
+                    'Images/Experience Center/Islamabad Experience Center 6.jpg',
+                    'Images/Experience Center/Islamabad Experience Center 7.jpg',
+                    'Images/Experience Center/Islamabad Experience Center 8.jpg',
+                    'Images/Experience Center/Islamabad Experience Center 9.jpg'
+                ],
+                video: null,
+                description: `
+                    <p>The People Experience Center in Islamabad is a state-of-the-art facility designed to showcase Etisalat's services and create an immersive brand experience for visitors. This project involved comprehensive interior design and execution, transforming a standard commercial space into a dynamic, interactive environment.</p>
+                    <p>Our design approach focused on creating distinct zones within the center, each highlighting different aspects of Etisalat's services while maintaining a cohesive brand identity throughout. The space includes reception areas, product demonstration zones, interactive displays, and comfortable lounge spaces for consultations.</p>
+                    <p>Key design elements include custom lighting solutions that change color to guide visitors through different sections, modular display units that can be reconfigured for various events, and a central interactive wall that serves as both an information hub and a striking visual centerpiece.</p>
+                    <p>The materials palette was carefully selected to reflect Etisalat's brand colors while creating a premium feel. We incorporated sustainable materials wherever possible, including recycled glass countertops and low-VOC paints, aligning with both the client's environmental commitments and our own sustainability values.</p>
+                    <p>One of the project's standout features is the "Future of Connectivity" installation - a suspended kinetic sculpture that responds to visitor movement, symbolizing the dynamic nature of telecommunications technology. This piece required close collaboration with kinetic artists and engineers to achieve the desired effect while meeting all safety requirements.</p>
+                `,
+                specs: [
+                    'Client: Etisalat UAE',
+                    'Location: C-Block G8 Islamabad',
+                    'Area: 339.096 Sq M (3650 Sq Ft)',
+                    'Project Cost: 2.4 Crore PKR',
+                    'Services Provided: Interior Design, Space Planning, Construction Management',
+                    'Materials: Custom millwork, Recycled glass, LED lighting systems',
+                    'Special Features: Interactive displays, Kinetic sculpture, Modular furniture system'
+                ]
+            },
+            'brands-town': {
+                title: 'Brands Town',
+                subtitle: 'G.T. Road, Lahore',
+                images: [
+                    'Images/Brands Town/Brands Town 1.jpg',
+                    'Images/Brands Town/Brands Town 2.jpg',
+                    'Images/Brands Town/Brands Town 3.jpg',
+                    'Images/Brands Town/Brands Town 4.jpg',
+                    'Images/Brands Town/Brands Town 5.jpg',
+                    'Images/Brands Town/Brands Town 6.jpg',
+                ],
+                video: 'https://www.youtube.com/embed/BRANDS_TOWN_VIDEO',
+                description: `
+                    <p>Brands Town on G.T. Road, Lahore represents a complete transformation of a traditional shoe retail space into a contemporary shopping experience. This project involved both architectural interventions to the building facade and comprehensive interior design to create a cohesive brand environment.</p>
+                    <p>The exterior renovation included structural modifications to create larger display windows, a new entrance canopy, and a dynamic lighting scheme that enhances nighttime visibility. The facade design incorporates the client's branding elements while maintaining architectural harmony with the surrounding commercial district.</p>
+                    <p>Inside, we created a customer journey that guides visitors through different product categories while maintaining clear sightlines throughout the store. The layout includes dedicated zones for men's, women's, and children's footwear, each with distinct but complementary design treatments.</p>
+                    <p>A key challenge was designing display systems that could accommodate the client's extensive inventory while keeping the space feeling open and uncluttered. Our solution included custom-designed shelving with integrated lighting and a central "feature wall" that highlights seasonal collections.</p>
+                    <p>The material palette combines warm wood tones with industrial-inspired metal accents, creating a contemporary yet inviting atmosphere. We paid special attention to flooring materials that would withstand heavy foot traffic while providing comfort for customers trying on shoes.</p>
+                `,
+                specs: [
+                    'Location: G.T. Road, Lahore',
+                    'Project Type: Retail Renovation',
+                    'Scope: Architecture & Interior Design',
+                    'Area: 2800 Sq Ft',
+                    'Key Features: Custom display systems, Dynamic lighting, Branded environment',
+                    'Materials: Engineered wood flooring, Powder-coated metal, Tempered glass'
+                ]
+            },
+            'naqshi-studio': {
+                title: 'Naqshi Studio',
+                subtitle: 'Emporium, Pakistan',
+                images: [
+                    'Images/Naqshi Emporium/Naqshi Clothe emp.jpeg',
+                    'Images/Naqshi Emporium/Naqshi Clothing emp.jpeg',
+                    'Images/Naqshi Emporium/Naqshi Design emp.jpeg',
+                    'Images/Naqshi Emporium/Naqshi Interior Design emp.jpeg',
+                    'Images/Naqshi Emporium/Naqshi emp facade.jpeg'
+                ],
+                video: null,
+                description: `
+                    <p>Naqshi Studio at Emporium Mall represents a fusion of traditional textile artistry with contemporary retail design. This project involved creating a retail environment that showcases Naqshi's exquisite fabrics while providing an immersive brand experience.</p>
+                    <p>The store design incorporates several innovative fabric display systems that allow customers to appreciate the textures and patterns of Naqshi's collections. These include rotating fabric panels, backlit display walls, and interactive tables where customers can examine fabric swatches.</p>
+                    <p>A central feature of the design is the "Fabric Cloud" - a suspended installation made from layers of translucent fabric that filters light and creates a soft, ethereal atmosphere. This element serves both as a striking visual centerpiece and as a demonstration of the quality and versatility of Naqshi's materials.</p>
+                    <p>The color scheme was carefully developed to complement Naqshi's product lines without competing with them. Neutral backgrounds allow the fabrics to take center stage, while strategic pops of color highlight key areas like the checkout counter and fitting rooms.</p>
+                    <p>We paid special attention to lighting design, using a combination of track lighting for general illumination and carefully positioned spotlights to highlight merchandise. Dimmable controls allow staff to adjust lighting for different times of day and special events.</p>
+                `,
+                specs: [
+                    'Location: Emporium Mall, Pakistan',
+                    'Project Type: Retail Interior',
+                    'Area: 1800 Sq Ft',
+                    'Special Features: Custom fabric display systems, "Fabric Cloud" installation',
+                    'Materials: Fabric panels, Glass displays, Custom millwork',
+                    'Lighting: LED track system, Dimmable controls'
+                ]
+            },
+            'aroshibrand': {
+                title: 'Aroshi Brand',
+                subtitle: 'Emporium, Pakistan',
+                images: [
+                    'Images/Aroshi/Aroshi 3.jpg',
+                    'Images/Aroshi/Aroshi 2.jpg',
+                    'Images/Aroshi/Aroshi.jpg'
+                ],
+                video: null,
+                description: `
+                    <p>The Aroshi Brand outlet at Emporium Mall is a sophisticated retail space designed to showcase the brand's premium product line. Our design approach focused on creating a luxurious yet approachable environment that reflects Aroshi's brand values of quality and craftsmanship.</p>
+                    <p>The store layout was carefully planned to create a natural customer flow that guides visitors through different product categories while maintaining visual connections between areas. We incorporated flexible display systems that can be easily reconfigured for seasonal collections or special promotions.</p>
+                    <p>Material selections emphasize texture and tactility, with rich wood finishes, brushed metal accents, and soft fabric panels that create a sensory experience complementing the products. The checkout counter features a striking stone top that serves as both a functional surface and a design statement.</p>
+                    <p>Lighting plays a crucial role in the design, with a combination of ambient lighting for general illumination and carefully positioned accent lights to highlight merchandise. We used color-corrected LEDs to ensure products are displayed in their true colors.</p>
+                    <p>The fitting rooms were designed as private retreats with premium finishes and flattering lighting. Each room includes thoughtful details like garment hooks, seating, and full-length mirrors positioned for optimal viewing.</p>
+                `,
+                specs: [
+                    'Location: Emporium Mall, Pakistan',
+                    'Project Type: Retail Interior',
+                    'Area: 1500 Sq Ft',
+                    'Key Features: Flexible display systems, Premium material palette',
+                    'Materials: Walnut veneer, Brushed brass, Textured stone',
+                    'Lighting: LED track system, Color-corrected displays'
+                ]
+            },
+            'bareezeman-lahore': {
+                title: 'Bareezeman Lahore',
+                subtitle: 'Exhibition stall with foldable mechanism',
+                images: [
+                    'Images/Bareezeman Lahore/Bareezeman Lahore 1.jpg',
+                    'Images/Bareezeman Lahore/Bareezeman Lahore 2.jpg',
+                    'Images/Bareezeman Lahore/Bareezeman Lahore 3.jpg'
+                ],
+                video: null,
+                description: `
+                    <p>The Bareezeman Lahore exhibition stall is an innovative portable display system designed for trade shows and temporary retail events. This project required a solution that could be easily transported, quickly assembled, and provide an impactful brand presence in various venue settings.</p>
+                    <p>Our design features a modular, foldable system that can be configured in multiple layouts depending on the available space and specific event requirements. The primary structure uses lightweight aluminum frames with fabric tension panels that display the Bareezeman branding and product imagery.</p>
+                    <p>A key innovation is the integrated lighting system that is pre-wired into the framework, eliminating the need for complex on-site electrical work. The LED strips provide even illumination of products while remaining energy-efficient for extended event durations.</p>
+                    <p>The stall includes multiple functional zones: product display areas, a consultation space with seating, and storage compartments concealed within the structure. All components are designed to fit into standardized transport cases for easy shipping.</p>
+                    <p>We developed a distinctive color scheme and material palette that aligns with Bareezeman's brand identity while ensuring durability for repeated setup and teardown. The result is a flexible exhibition solution that maintains a premium look and feel across different implementations.</p>
+                `,
+                specs: [
+                    'Client: Bareezeman Retail Group',
+                    'Project Type: Portable Exhibition System',
+                    'Dimensions: Variable configurations',
+                    'Weight: 220kg (complete system)',
+                    'Setup Time: Under 2 hours (2-person team)',
+                    'Key Features: Modular design, Integrated lighting, Branded fabric panels',
+                    'Materials: Aluminum frame, Tension fabric, LED lighting'
+                ]
+            },
+            'exhibition-stalls': {
+                title: 'Exhibition Stalls',
+                subtitle: 'Brands: Bareeze, Rangja, Urban Culture',
+                images: [
+                    'Images/Exhibition Stall/Multiple Exhibition Stalls.jpg',
+                    'Images/Exhibition Stall/Exhibition Stall.jpg'
+                ],
+                video: null,
+                description: `
+                    <p>Our exhibition stall designs for multiple brands including Bareeze, Rangja, and Urban Culture showcase our ability to create distinctive temporary retail environments that capture brand essence while meeting the practical demands of trade shows and exhibitions.</p>
+                    <p>Each stall design was carefully tailored to reflect the individual brand's identity while maintaining functional requirements for product display, customer interaction, and staff workflow. We developed a system that allows for core structural elements to be reused across events, with interchangeable branded components that can be updated seasonally.</p>
+                    <p>The Bareeze stall features soft, flowing fabric elements that echo the brand's textile focus, with a color palette drawn from their seasonal collections. Rangja's design incorporates vibrant colors and dynamic geometric patterns that reflect their youthful aesthetic. Urban Culture's stall has an industrial-chic vibe with exposed structural elements and raw material finishes.</p>
+                    <p>All designs prioritize ease of assembly and transport, with components that pack flat for shipping and can be quickly installed by a small team. We incorporated innovative solutions like magnetic panel attachments and tool-free connection systems to streamline setup.</p>
+                    <p>Lighting plays a crucial role in each design, with carefully positioned fixtures to highlight products and create inviting atmospheres. We used energy-efficient LED systems that provide excellent illumination while minimizing power requirements - an important consideration for venues with limited electrical access.</p>
+                `,
+                specs: [
+                    'Clients: Multiple brands including Bareeze, Rangja, Urban Culture',
+                    'Project Type: Exhibition & Trade Show Design',
+                    'Typical Size: 6m x 6m footprint',
+                    'Setup Time: 4-6 hours (varies by design)',
+                    'Key Features: Modular systems, Brand-specific aesthetics, Quick assembly',
+                    'Materials: Fabric tension systems, Aluminum framing, Custom graphics'
+                ]
+            },
+            'bareeze-uae': {
+                title: 'Bareeze UAE',
+                subtitle: 'International Project',
+                images: [
+                    'Images/Bareeze UAE/Bareeze UAE 1.jpg',
+                    'Images/Bareeze UAE/Bareeze UAE 2.jpg',
+                    'Images/Bareeze UAE/Bareeze UAE 3.jpg',
+                    'Images/Bareeze UAE/Bareeze UAE 4.jpg',
+                    'Images/Bareeze UAE/Bareeze UAE 5.jpg'
+                ],
+                video: null,
+                description: `
+                    <p>The Bareeze UAE project represents our international design expertise, creating a retail environment that maintains brand consistency while adapting to regional preferences and market expectations in the Middle East.</p>
+                    <p>Our design approach balanced Bareeze's established brand identity with local aesthetic sensibilities, resulting in a space that feels both familiar to the brand's loyal customers and fresh to the UAE market. We incorporated subtle regional design references in patterns and material selections while maintaining the brand's core visual language.</p>
+                    <p>The store layout was optimized for the specific shopping behaviors observed in the UAE market, with more spacious circulation areas and enhanced fitting room facilities compared to typical Bareeze locations. We created dedicated areas for modest wear collections that are particularly popular in the region.</p>
+                    <p>Material selections were chosen for both aesthetic appeal and durability in the local climate. We specified fabrics and finishes that resist fading from intense sunlight and can withstand the high foot traffic typical of UAE shopping malls.</p>
+                    <p>The project involved close coordination with local contractors and suppliers to ensure quality execution while navigating regional building regulations and material availability. Our team managed the entire process remotely from Pakistan with periodic site visits, demonstrating our capability to deliver international projects efficiently.</p>
+                `,
+                specs: [
+                    'Client: Bareeze International',
+                    'Location: UAE (specific location confidential)',
+                    'Project Type: Retail Interior',
+                    'Area: 3200 Sq Ft',
+                    'Completion Date: January 2023',
+                    'Key Features: Regional adaptation, Climate-appropriate materials',
+                    'Services: Design, Remote project management'
+                ]
+            },
+            'rang-ja': {
+                title: 'Rang Ja',
+                subtitle: 'Retail Interior Outlet',
+                images: [
+                    'Images/Rang Ja/Rang Ja 1.jpg',
+                    'Images/Rang Ja/Rang Ja 2.jpg'
+                ],
+                video: null,
+                description: `
+                    <p>Rang Ja at Lucky Mall, Karachi is a vibrant retail space designed to reflect the brand's colorful, youthful identity. This project involved transforming a standard mall unit into an energetic environment that celebrates color and pattern.</p>
+                    <p>Our design concept was inspired by the brand's name, which translates to "Get Colored." We created a dynamic space where color transitions guide customers through different product zones, with each area featuring its own color story while maintaining overall harmony.</p>
+                    <p>The store features several innovative display systems, including rotating color blocks that can be reconfigured to highlight seasonal collections and a central "color mixing" interactive display where customers can explore different color combinations.</p>
+                    <p>Lighting played a crucial role in the design, with color-changing LED systems that can alter the mood of the space for different events or times of day. We also incorporated ample natural light where possible to ensure colors appear true to life.</p>
+                    <p>Material selections were chosen for both durability and their ability to showcase color effectively. High-gloss finishes reflect light and enhance color intensity, while matte surfaces provide visual relief and texture variation.</p>
+                `,
+                specs: [
+                    'Location: Lucky Mall, Karachi',
+                    'Project Type: Retail Interior',
+                    'Area: 2000 Sq Ft',
+                    'Key Features: Color-themed zones, Interactive displays',
+                    'Materials: High-gloss laminates, Powder-coated metal',
+                    'Lighting: Color-changing LED system'
+                ]
+            },
+            'faisalabad-commercial': {
+                title: 'Faisalabad Commercial',
+                subtitle: 'Architecture/Interior Outlet',
+                images: [
+                    'Images/Faislabad Commercial/Faislabad Commercial 1.jpg',
+                    'Images/Faislabad Commercial/Faislabad Commercial 2.jpg',
+                    'Images/Faislabad Commercial/Faislabad Commercial 3.jpg'
+                ],
+                video: null,
+                description: `
+                    <p>The Faisalabad Commercial project involved both architectural interventions to the building exterior and comprehensive interior design for a multi-brand retail space in Sefam, Lahore. This complex project required creating distinct brand areas within a unified overall environment.</p>
+                    <p>Our architectural work included facade improvements to enhance street presence and modernize the building's appearance. We introduced new storefront glazing, updated signage systems, and improved exterior lighting to create a more inviting entrance.</p>
+                    <p>Inside, we designed a flexible retail environment that accommodates multiple brands while maintaining a cohesive shopping experience. The layout includes shared circulation spaces and centralized checkout areas, with each brand zone featuring customized display systems that reflect their individual identities.</p>
+                    <p>A key challenge was creating visual separation between brands without physical barriers that would make the space feel compartmentalized. Our solution involved using varied flooring materials, ceiling treatments, and lighting schemes to subtly define each area while maintaining an open, flowing layout.</p>
+                    <p>The design incorporates several sustainable features, including energy-efficient lighting, locally sourced materials, and a rainwater harvesting system for landscape irrigation. These elements align with our commitment to environmentally responsible design while providing practical benefits for the client.</p>
+                `,
+                specs: [
+                    'Location: Sefam, Lahore',
+                    'Project Type: Commercial Renovation',
+                    'Scope: Architecture & Interior Design',
+                    'Area: 4500 Sq Ft',
+                    'Key Features: Multi-brand environment, Sustainable design elements',
+                    'Materials: Local stone, Recycled content materials'
+                ]
+            },
+            'mall-of-peshawar': {
+                title: 'Mall of Peshawar',
+                subtitle: '5 Brands in one location',
+                images: [
+                    'Images/Mall of Peshawar/Chinyere.jpg',
+                    'Images/Mall of Peshawar/Urban Culture 1.jpg',
+                    'Images/Mall of Peshawar/Urban Culture 2.jpg',
+                ],
+                video: null,
+                description: `
+                    <p>The Mall of Peshawar project involved designing retail spaces for five distinct brands within a single location, creating a unique shopping destination that offers variety while maintaining individual brand identities.</p>
+                    <p>Our design approach created a "store within a store" concept for each brand, with carefully defined zones that allow each to maintain its own aesthetic while contributing to an overall cohesive experience. The layout encourages customers to explore all offerings while making each brand area feel like a destination in itself.</p>
+                    <p>Common elements like flooring, lighting, and circulation paths create unity throughout the space, while customized fixtures, color schemes, and material palettes distinguish each brand area. We developed a wayfinding system that helps customers navigate between brands while reinforcing individual identities.</p>
+                    <p>The central checkout and customer service area was designed as a hub that serves all brands, with flexible stations that can be adapted based on staffing needs and customer flow. This shared resource maximizes operational efficiency while maintaining premium service standards.</p>
+                    <p>Special attention was paid to the transition zones between brand areas, creating natural "moments of discovery" where customers encounter new products as they move through the space. These transitions use subtle changes in lighting, ceiling height, and materiality to signal movement between brand environments.</p>
+                `,
+                specs: [
+                    'Location: Peshawar, Pakistan',
+                    'Project Type: Multi-brand Retail',
+                    'Brands: 5 distinct fashion labels',
+                    'Total Area: 6500 Sq Ft',
+                    'Key Features: Shared infrastructure, Brand-specific zones',
+                    'Materials: Custom millwork, Branded environmental graphics'
+                ]
+            },
+            'chinyere-brands': {
+                title: 'Chinyere Brands',
+                subtitle: 'Retail Architecture/Interior',
+                images: [
+                    'Images/Chinyere/Chinyere.jpg',
+                    'Images/Chinyere/Chinyere 2.jpg'
+
+                ],
+                video: null,
+                description: `
+                    <p>Chinyere Brands on Link Road is a striking retail space that showcases the brand's premium fashion offerings through innovative architectural and interior design solutions. The project involved both building facade renovation and comprehensive interior design.</p>
+                    <p>The exterior design features a dramatic stairwell element that serves as both functional circulation and a bold architectural statement. This sculptural staircase is clad in a distinctive metal panel system that changes appearance depending on viewing angle and lighting conditions.</p>
+                    <p>Inside, we created a series of interconnected spaces that guide customers through different product categories while maintaining visual connections across the store. The layout includes dedicated areas for seasonal collections, accessories, and a premium "designer edit" section with enhanced display treatments.</p>
+                    <p>Material selections emphasize luxury and tactility, with rich textures and refined finishes throughout. We incorporated several custom-designed elements including a feature wall made from interlocking geometric panels that can be reconfigured for different displays.</p>
+                    <p>Lighting design was particularly important for this project, with a layered approach that combines ambient illumination, accent lighting for products, and dramatic feature lighting for architectural elements. The system includes dimming controls to adjust lighting for different times of day and special events.</p>
+                `,
+                specs: [
+                    'Location: Link Road, Pakistan',
+                    'Project Type: Retail Architecture & Interior',
+                    'Area: 3800 Sq Ft',
+                    'Key Features: Sculptural staircase, Custom display systems',
+                    'Materials: Metal panel cladding, Textured stone, Custom millwork'
+                ]
+            },
+            'landscape-design': {
+                title: 'Landscape Design',
+                subtitle: 'Proposal for Mayor of Islamabad',
+                images: [
+                    'Images/Landscaping/Landscaping 1.jpg',
+                    'Images/Landscaping/Landscaping 2.jpg'
+                ],
+                video: null,
+                description: `
+                    <p>Our landscape design proposal for the Mayor of Islamabad represents a vision for transforming public spaces in the city into vibrant, sustainable, and community-focused environments. Sponsored by Etisalat Group, this conceptual project showcases our approach to urban landscape architecture.</p>
+                    <p>The design concept focuses on creating interconnected green spaces that serve multiple functions - ecological, recreational, and social. We proposed a network of pocket parks, green corridors, and enhanced streetscapes that would improve quality of life while addressing environmental challenges like urban heat island effect and stormwater management.</p>
+                    <p>Key elements of the proposal include native plantings that require minimal irrigation, permeable paving systems to reduce runoff, and shaded gathering spaces that encourage community interaction. The design incorporates public art installations and interactive features that celebrate Islamabad's cultural heritage.</p>
+                    <p>We developed a phased implementation strategy that allows for gradual transformation while minimizing disruption. The proposal includes cost estimates, maintenance plans, and community engagement strategies to ensure long-term success.</p>
+                    <p>While this remains a conceptual project, it demonstrates our capability to think holistically about urban environments and create landscape solutions that balance aesthetic, functional, and ecological considerations. The design approach could be adapted to specific sites as opportunities arise.</p>
+                `,
+                specs: [
+                    'Sponsor: Etisalat Group',
+                    'Project Type: Conceptual Landscape Design',
+                    'Scope: Urban public spaces',
+                    'Key Features: Sustainable systems, Community-focused design',
+                    'Elements: Native plantings, Permeable surfaces, Public art'
+                ]
+            },
+            'bench-mark-45': {
+                title: 'Bench Mark 45',
+                subtitle: 'Entertainment & Corporate Project',
+                images: [
+                    'Images/Benchmark 45/Benchmark 45 {1}.jpg',
+                    'Images/Benchmark 45/Benchmark 45 {2}.jpg'
+                ],
+                video: null,
+                description: `
+                    <p>Bench Mark 45 in Bahawalpur is a unique hybrid space combining entertainment facilities with corporate meeting and event spaces. This project required designing diverse environments that could accommodate everything from casual social gatherings to formal business functions.</p>
+                    <p>Our design solution organized the space into distinct zones with flexible boundaries that allow for different configurations. The entertainment area features a contemporary lounge aesthetic with comfortable seating groupings and a central bar, while the corporate spaces have a more refined, professional atmosphere.</p>
+                    <p>A key design challenge was creating acoustic separation between active and quiet areas without compromising the open, welcoming feel of the space. We achieved this through strategic placement of sound-absorbing materials, careful space planning, and subtle level changes that define areas without physical barriers.</p>
+                    <p>The material palette combines durable, easy-to-maintain surfaces in high-traffic areas with premium finishes in feature elements. We incorporated local craftsmanship where possible, including custom metalwork and textile elements that reflect regional design traditions.</p>
+                    <p>Lighting design was particularly important for this multi-use space. We developed a system with multiple control zones that can adjust lighting for different functions, from bright task lighting for meetings to atmospheric accent lighting for evening events.</p>
+                `,
+                specs: [
+                    'Location: Bahawalpur',
+                    'Client: Confidential (Army-affiliated)',
+                    'Project Type: Mixed-use Entertainment & Corporate',
+                    'Area: 8500 Sq Ft',
+                    'Key Features: Flexible spaces, Acoustic design',
+                    'Materials: Sound-absorbing panels, Local craftsmanship'
+                ]
+            },
+            'one-canal-residence': {
+                title: 'One Canal Residence',
+                subtitle: 'Residential Project',
+                images: [
+                    'Images/10 Marla Residence UET/10 Marla Residence UET.jpg'
+                ],
+                video: null,
+                description: `
+                    <p>One Canal Residence at 314/A UET Society Lahore is a contemporary home designed for modern living while respecting traditional architectural principles. This project involved creating a residence that balances privacy and openness, with spaces that adapt to both family life and entertaining.</p>
+                    <p>The design organizes living spaces around a central courtyard that brings natural light into the heart of the home while creating a private outdoor retreat. This traditional element is reinterpreted with modern materials and detailing, featuring a water feature and carefully curated planting.</p>
+                    <p>Material selections emphasize natural textures and local craftsmanship, with stone, wood, and handmade tile features throughout. The color palette is neutral and calming, with strategic use of color in artwork and soft furnishings to add personality.</p>
+                    <p>We paid special attention to the relationship between indoor and outdoor spaces, with large sliding glass doors that blur the boundaries in good weather. The landscaping design extends the architectural language into the garden, with geometric planting beds and a seamless transition from interior flooring to exterior paving.</p>
+                    <p>The home includes several sustainable features such as solar water heating, rainwater collection for irrigation, and high-performance glazing to reduce energy consumption. These elements were integrated into the design aesthetic rather than treated as add-ons, creating a home that is both environmentally responsible and visually cohesive.</p>
+                `,
+                specs: [
+                    'Location: 314/A UET Society Lahore',
+                    'Project Type: Residential',
+                    'Area: 10 Marla plot',
+                    'Key Features: Central courtyard, Indoor-outdoor connection',
+                    'Materials: Local stone, Custom woodwork, Handmade tiles',
+                    'Sustainable Features: Solar water heating, Rainwater harvesting'
+                ]
+            },
+            '10-marla-residence': {
+                title: '10 Marla Residence',
+                subtitle: 'Residential Project',
+                images: [
+                    'Images/1 Canal Residence/1 Canal Residence.jpg'
+                ],
+                video: null,
+                description: `
+                    <p>The 10 Marla Residence in Bahria Orchard, Lahore is a family home designed for comfortable, contemporary living. This project involved creating functional, beautiful spaces that accommodate the daily routines of a busy family while providing opportunities for relaxation and entertainment.</p>
+                    <p>Our design organizes living spaces on the ground floor around a central family room that serves as the heart of the home. The open-plan kitchen, dining, and living area creates a sense of spaciousness while maintaining defined functional zones. Upstairs, private bedrooms each have their own character while sharing a cohesive design language.</p>
+                    <p>Material selections prioritize durability and ease of maintenance without sacrificing aesthetic appeal. We used high-quality, low-maintenance finishes throughout, with special attention to areas that receive heavy use like the kitchen and children's spaces.</p>
+                    <p>The outdoor areas were designed as extensions of the interior living spaces, with a covered patio for outdoor dining and a lawn area for play and relaxation. The landscaping uses drought-tolerant plants and efficient irrigation to minimize water use.</p>
+                    <p>Special features include custom built-in storage throughout the home to maximize space efficiency, a dedicated home office with soundproofing for remote work, and a rooftop terrace with panoramic views that serves as a private retreat for the homeowners.</p>
+                `,
+                specs: [
+                    'Location: Bahria Orchard, Lahore',
+                    'Project Type: Residential',
+                    'Area: 10 Marla plot',
+                    'Key Features: Family-focused design, Integrated storage',
+                    'Materials: Durable surfaces, Quality fixtures',
+                    'Outdoor Features: Covered patio, Efficient landscaping'
+                ]
+            },
+           '10-marla-house-eden': {
+                title: '10 Marla House',
+                subtitle: 'Eden Housing Society',
+                images: [
+                    'Images/10 Marla House/10 Marla House Exterior.jpg',
+                    'Images/10 Marla House/Bridge.jpg',
+                    'Images/10 Marla House/Garden.jpg'
+                ],
+                videos: [
+                    {url: 'https://www.youtube.com/embed/10_MARLA_HOUSE_MAIN_VIDEO', title: 'House Tour'},
+                    {url: 'https://www.youtube.com/embed/10_MARLA_HOUSE_SHORT', title: 'Quick View', isShort: true}
+                ],
+                description: `
+                    <p>The 10 Marla House in Eden Housing Society is a masterpiece of residential architecture that blends modern aesthetics with functional family living. This project showcases our ability to create spacious, light-filled homes on standard plots without compromising on design quality or comfort.</p>
+                    <p>Designed for a growing family, the house features an open-plan living area that flows seamlessly into a modern kitchen with a breakfast bar. Large sliding glass doors connect the interior to a landscaped backyard, creating an ideal space for both daily family life and entertaining guests.</p>
+                    <p>The exterior design combines clean contemporary lines with warm material selections, including a mix of stone cladding and wood-effect finishes that give the home a timeless appeal. A covered carport provides convenient parking while maintaining the home's elegant street presence.</p>
+                    <p>Upstairs, the private quarters include four bedrooms, each with ample closet space and large windows for natural light. The master suite features a walk-in wardrobe and a luxurious en-suite bathroom with premium fixtures. A dedicated study area on this level provides a quiet workspace for family members.</p>
+                    <p>Special attention was paid to energy efficiency throughout the design. Features include high-performance glazing, strategic window placement for cross-ventilation, and roof insulation to minimize cooling requirements. The landscaping incorporates drought-resistant plants and an efficient drip irrigation system.</p>
+                    <p>The project was completed within a strict 10-month timeline, demonstrating our ability to deliver high-quality residential projects on schedule. The homeowners were involved throughout the design process, ensuring the final result perfectly matched their lifestyle needs and aesthetic preferences.</p>
+                `,
+                specs: [
+                    'Location: Eden Housing Society',
+                    'Plot Size: 10 Marla',
+                    'Construction Area: 4200 Sq Ft',
+                    'Key Features: Open-plan living, Energy-efficient design',
+                    'Materials: Stone cladding, Wood-effect finishes, High-performance glazing',
+                    'Special Features: Landscaped backyard, Covered carport, Dedicated study',
+                    'Sustainability: Cross-ventilation design, Roof insulation, Drought-resistant landscaping'
+                ]
+            },
+            'sourcing-solutions': {
+                title: 'Sourcing Solutions',
+                subtitle: 'Corporate Office Design',
+                images: [
+                    'Images/Sourcing Solution/Sourcing Solutions Office.jpg',
+                    'Images/Sourcing Solution/Sourcing Solutions CEO Office.jpg',
+                    'Images/Sourcing Solution/کپڑے سینے کی دکان.jpg',
+                    'Images/Sourcing Solution/Big Office.jpg',
+                    'Images/Sourcing Solution/Cleaning Services.jpg',
+                    'Images/Sourcing Solution/Meeting Room.jpg'
+                ],
+                video: null,
+                description: `
+                    <p>The Sourcing Solutions office project represents our approach to creating functional, inspiring workspaces that reflect a company's brand and culture. For this international sourcing firm, we designed an office environment that facilitates collaboration while providing spaces for focused work.</p>
+                    <p>The design concept revolves around an open central hub that serves as the heart of the office, featuring a communal worktable and casual meeting areas. Radiating from this central space are various work zones, including private offices, team rooms, and quiet focus pods, allowing employees to choose the environment that best suits their task.</p>
+                    <p>A neutral base palette of whites and greys provides a clean backdrop, accented with the company's signature blue in strategic locations. Natural wood elements add warmth, while glass partitions maintain visual connections between spaces and allow natural light to penetrate deep into the floor plan.</p>
+                    <p>The reception area makes a strong first impression with a custom-designed feature wall incorporating the company logo and a dynamic lighting installation. A large conference room with state-of-the-art AV equipment serves as both a meeting space and a showroom for client presentations.</p>
+                    <p>Special attention was paid to acoustics throughout the space, with sound-absorbing ceiling panels, carpet tiles, and fabric-wrapped wall panels in key areas. The break-out area includes a fully-equipped kitchenette and comfortable seating, creating an inviting space for informal meetings or employee downtime.</p>
+                    <p>The project was completed while the company remained operational, requiring careful phasing to minimize disruption. Our team worked closely with the client to schedule work during off-hours and weekends, delivering the completed office on time and within budget.</p>
+                `,
+                specs: [
+                    'Client: Sourcing Solutions',
+                    'Project Type: Corporate Office',
+                    'Area: 6500 Sq Ft',
+                    'Key Features: Flexible work zones, Branded environment',
+                    'Materials: Glass partitions, Acoustic panels, Custom millwork',
+                    'Furniture: Ergonomic workstations, Modular seating',
+                    'Technology: Integrated AV systems, Video conferencing'
+                ]
+            },
+
+            '2-kanal-residence-dha': {
+                title: '2 Kanal Residence',
+                subtitle: 'DHA Islamabad',
+                images: [
+                    'Images/2 kanal House/House 1.jpeg',
+                    'Images/2 kanal House/House 2.jpg',
+                    'Images/2 kanal House/House 3.jpg'
+                ],
+                video: null,
+                description: `
+                    <p>The 2 Kanal Residence in DHA Islamabad is a luxurious family home designed for modern living while incorporating traditional architectural elements. This expansive property showcases our ability to create sophisticated residential spaces that blend functionality with aesthetic appeal.</p>
+                    
+                    <p>Spread across two floors with a built-up area of 12,500 square feet, the residence features 6 bedrooms, each with ensuite bathrooms, a grand double-height living area, formal and informal dining spaces, and a state-of-the-art kitchen. The design emphasizes natural light and ventilation, with large windows and skylights strategically placed throughout the home.</p>
+                    
+                    <p>The exterior architecture combines contemporary lines with classic elements, featuring a stone and wood facade that provides both visual interest and durability. The landscaped gardens include a swimming pool, outdoor dining area, and carefully planned greenery that provides privacy while enhancing the property's curb appeal.</p>
+                    
+                    <p>Special attention was paid to the interior finishes, with premium materials including imported marble flooring, custom woodwork, and handcrafted tile details. The color palette transitions from warm neutrals in public spaces to more personalized schemes in private areas, creating distinct moods throughout the home.</p>
+                    
+                    <p>Smart home technology is seamlessly integrated, including automated lighting, climate control, and security systems. The property also includes a basement level with a home theater, gym, and staff quarters, demonstrating our ability to design for all aspects of modern family life.</p>
+                `,
+                specs: [
+                    'Location: DHA Phase 2, Islamabad',
+                    'Plot Size: 2 Kanal (9000 sq ft)',
+                    'Built-up Area: 10,500 sq ft',
+                    'Project Duration: 24 months',
+                    'Architectural Style: Contemporary with traditional influences',
+                    'Key Features: Double-height living area ,Smart home technology',
+                    'Materials: Imported marble, Teak wood, Handcrafted tiles',
+                    'Landscape: Designed for privacy with native plants and water features',
+                    'Special Rooms: Home theater, Gym, Jacuzzi, Staff quarters',
+                    'Sustainability Features: Energy-efficient lighting, Water conservation systems'
+                ]
+            },
+        };
+
+        function showProjectDetail(title, subtitle, projectId) {
+            const project = projects[projectId];
+            if (!project) return;
+
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('project-detail').style.display = 'block';
+            
+            document.body.style.overflow = 'hidden';
+
+            document.getElementById('project-detail-title').textContent = title;
+            document.getElementById('project-detail-subtitle').textContent = subtitle;
+
+            const gallery = document.getElementById('project-gallery');
+            gallery.innerHTML = '';
+            project.images.forEach(image => {
+                const img = document.createElement('img');
+                img.src = image;
+                img.alt = title;
+                gallery.appendChild(img);
+            });
+
+            document.querySelector('.back-to-projects').addEventListener('click', handleBackToProjects);
+
+            const videoContainer = document.getElementById('project-video-container');
+            const videoIframe = document.getElementById('project-video');
+            if (project.video) {
+                videoContainer.style.display = 'block';
+                videoIframe.src = project.video;
+            } else {
+                videoContainer.style.display = 'none';
+                videoIframe.src = '';
+            }
+
+            document.getElementById('project-description-content').innerHTML = project.description;
+
+            const specsList = document.getElementById('project-specs-list');
+            specsList.innerHTML = '';
+            project.specs.forEach(spec => {
+                const li = document.createElement('li');
+                li.textContent = spec;
+                specsList.appendChild(li);
+            });
+
+            window.scrollTo(0, 0);
+        }
+
+            function handleBackToProjects(e) {
+                e.preventDefault();
+                
+                document.getElementById('main-content').style.display = 'block';
+                document.getElementById('project-detail').style.display = 'none';
+                
+                document.body.style.overflow = 'auto';
+                
+                setTimeout(() => {
+                    const projectsSection = document.getElementById('projects');
+                    if (projectsSection) {
+                        projectsSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            }
         window.addEventListener('load', function() {
             const loadingBar = document.getElementById('loadingBar');
             let progress = 0;
@@ -1844,16 +2453,19 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             const slides = [
-                'Images/Benchmark 45.jpg',
-                'Images/Islamabad Experience Center.jpg',
-                'Images/House Solar.jpg',
-                'Images/Urban Culture.jpg',
-                'Images/Brands Town Interior.jpg',
-                'Images/Faislabad Commercial.jpg',
-                'Images/Bareezeman Lahore.jpg',
-                'Images/Naqshi design.jpg',
-                'Images/Rang Ja.jpg',
-                'Images/Lanscaping.jpg'
+                'Images/Benchmark 45/Benchmark 45 {1}.jpg',
+                'Images/Experience Center/Islamabad Experience Center 1.jpg',
+                'Images/Solar/House Solar.jpg',
+                'Images/Mall of Peshawar/Urban Culture 1.jpg',
+                'Images/Brands Town/Brands Town 1.jpg',
+                'Images/Faislabad Commercial/Faislabad Commercial 1.jpg',
+                'Images/Bareezeman Lahore/Bareezeman Lahore 1.jpg',
+                'Images/Naqshi Emporium/Naqshi emp facade.jpeg',
+                'Images/Rang Ja/Rang Ja 1.jpg',
+                'Images/Landscaping/Landscaping 1.jpg',
+                'Images/Aroshi/Aroshi 3.jpg',
+                'Images/Chinyere/Chinyere.jpg',
+                'Images/2 kanal House/House 1.jpeg'
             ];
 
             const heroSlideshow = document.querySelector('.hero-slideshow');
@@ -2160,6 +2772,16 @@
             "https://www.linkedin.com/company/azes-consultants"
         ] 
     }
+    </script>
+
+      <script>
+        document.getElementById('loadingVideo').addEventListener('ended', function() {
+            document.body.classList.add('loaded');
+        });
+        
+        setTimeout(function() {
+            document.body.classList.add('loaded');
+        }, 10000);
     </script>
 </body>
 </html>
