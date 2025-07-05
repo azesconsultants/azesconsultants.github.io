@@ -965,6 +965,10 @@
             margin-bottom: 20px;
         }
 
+        .project-card {
+        cursor: pointer; 
+        }
+
         .project-description p {
             margin-bottom: 15px;
             line-height: 1.8;
@@ -1504,7 +1508,7 @@
 
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="Images/Project Management.jpg" alt="Project Management">
+                        <img src="Images/Project Management/Project Management.png" alt="Project Management">
                     </div>
                     <div class="service-overlay">
                         <h3>Project Management</h3>
