@@ -19,6 +19,41 @@
     <meta property="twitter:description" content="International architecture firm offering innovative design solutions in UAE, UK and Pakistan.">
     <meta property="twitter:image" content="https://azesconsultants.github.io/Images/Azes%20Logo.png">
     <style>
+    /* ❌ Hide Cart Icon */
+    #cart-link {
+        display: none !important;
+    }
+
+    /* ❌ Hide Products Section */
+    #products,
+    .products,
+    .products-section {
+        display: none !important;
+    }
+
+    /* ❌ Hide Videos Section */
+    #videos,
+    .videos,
+    .video-section {
+        display: none !important;
+    }
+
+    /* ❌ Hide header menu links for Products, Videos & Cart */
+
+    /* Target by link destination */
+    a[href="#products"],
+    a[href="#videos"],
+    a[href="#cart"] {
+        display: none !important;
+    }
+
+    /* Extra safety (in case different naming is used) */
+    nav a[href*="product"],
+    nav a[href*="video"],
+    nav a[href*="cart"] {
+        display: none !important;
+    }
+
         :root {
             --deep-sea-green: #006a6a;
             --white: #ffffff;
@@ -1855,7 +1890,9 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#products">Products</a></li>
                     <li><a href="#team">Team</a></li>
+                    <li><a href="#videos">Videos</a></li>
                     <li><a href="#worldwide-offices">Worldwide Offices</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li>
@@ -1885,7 +1922,9 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#products">Products</a></li>
             <li><a href="#team">Team</a></li>
+            <li><a href="#videos">Videos</a></li>
             <li><a href="#worldwide-offices">Worldwide Offices</a></li>
             <li><a href="#contact">Contact</a></li>
             <li>
@@ -2387,8 +2426,138 @@
                 </div>
             </div>
         </section>
+        
+        <!-- New Products Section -->
+        <section id="products">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Products</h2>
+                </div>
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x300" alt="Embroidered Lawn Suit">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Embroidered Lawn Suit</h3>
+                            <p class="product-description">Premium quality embroidered lawn suit with intricate handwork. Perfect for summer weddings and parties.</p>
+                            <div class="product-pricing">
+                                <span class="product-price">PKR 8,500</span>
+                                <span class="product-compare-price">PKR 12,000</span>
+                            </div>
+                            <div class="product-meta">SKU: AZ-LS-001 | Barcode: 123456789012</div>
+                            <div class="product-meta">Quantity: 10 | Weight: 0.7kg</div>
+                            <div class="product-meta">Country of Origin: Pakistan | HS Code: 6204.42</div>
+                            <div class="product-meta">Locations: Camberly, UK | Lahore, Pakistan | Dubai, UAE</div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
 
-         <section id="team">
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x300" alt="Printed Cotton Kameez">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Printed Cotton Kameez</h3>
+                            <p class="product-description">Lightweight printed cotton kameez with matching dupatta. Comfortable for daily wear.</p>
+                            <div class="product-pricing">
+                                <span class="product-price">PKR 5,500</span>
+                                <span class="product-compare-price">PKR 7,500</span>
+                            </div>
+                            <div class="product-meta">SKU: AZ-PK-002 | Barcode: 123456789013</div>
+                            <div class="product-meta">Quantity: 10 | Weight: 0.7kg</div>
+                            <div class="product-meta">Country of Origin: Pakistan | HS Code: 6204.42</div>
+                            <div class="product-meta">Locations: Camberly, UK | Lahore, Pakistan | Dubai, UAE</div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x300" alt="Designer Silk Saree">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Designer Silk Saree</h3>
+                            <p class="product-description">Elegant designer silk saree with zari border and matching blouse piece.</p>
+                            <div class="product-pricing">
+                                <span class="product-price">PKR 12,000</span>
+                                <span class="product-compare-price">PKR 15,000</span>
+                            </div>
+                            <div class="product-meta">SKU: AZ-SS-003 | Barcode: 123456789014</div>
+                            <div class="product-meta">Quantity: 10 | Weight: 0.7kg</div>
+                            <div class="product-meta">Country of Origin: Pakistan | HS Code: 6204.42</div>
+                            <div class="product-meta">Locations: Camberly, UK | Lahore, Pakistan | Dubai, UAE</div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x300" alt="Handwoven Shawl">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Handwoven Shawl</h3>
+                            <p class="product-description">Premium handwoven shawl with traditional patterns. Perfect for winter wear.</p>
+                            <div class="product-pricing">
+                                <span class="product-price">PKR 6,500</span>
+                                <span class="product-compare-price">PKR 8,500</span>
+                            </div>
+                            <div class="product-meta">SKU: AZ-HS-004 | Barcode: 123456789015</div>
+                            <div class="product-meta">Quantity: 10 | Weight: 0.7kg</div>
+                            <div class="product-meta">Country of Origin: Pakistan | HS Code: 6214.20</div>
+                            <div class="product-meta">Locations: Camberly, UK | Lahore, Pakistan | Dubai, UAE</div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x300" alt="Embroidered Velvet Jacket">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Embroidered Velvet Jacket</h3>
+                            <p class="product-description">Luxurious velvet jacket with intricate embroidery. Perfect for formal occasions.</p>
+                            <div class="product-pricing">
+                                <span class="product-price">PKR 9,500</span>
+                                <span class="product-compare-price">PKR 12,000</span>
+                            </div>
+                            <div class="product-meta">SKU: AZ-VJ-005 | Barcode: 123456789016</div>
+                            <div class="product-meta">Quantity: 10 | Weight: 0.7kg</div>
+                            <div class="product-meta">Country of Origin: Pakistan | HS Code: 6204.32</div>
+                            <div class="product-meta">Locations: Camberly, UK | Lahore, Pakistan | Dubai, UAE</div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x300" alt="Traditional Kurta Set">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Traditional Kurta Set</h3>
+                            <p class="product-description">Traditional kurta set with hand-block prints and comfortable fabric.</p>
+                            <div class="product-pricing">
+                                <span class="product-price">PKR 7,500</span>
+                                <span class="product-compare-price">PKR 9,500</span>
+                            </div>
+                            <div class="product-meta">SKU: AZ-TK-006 | Barcode: 123456789017</div>
+                            <div class="product-meta">Quantity: 10 | Weight: 0.7kg</div>
+                            <div class="product-meta">Country of Origin: Pakistan | HS Code: 6205.20</div>
+                            <div class="product-meta">Locations: Camberly, UK | Lahore, Pakistan | Dubai, UAE</div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team">
             <div class="container">
                 <div class="section-title">
                     <h2>Our Team</h2>
@@ -2420,7 +2589,53 @@
                 </div>
             </div>
         </section>
-        
+
+        <section id="videos">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Videos & Shorts</h2>  
+                </div>
+                <div class="videos-grid">
+                    <div class="video-item">
+                        <div class="video-container">
+                            <iframe src="Videos/Brand's town😁😁.mp4" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <h3 class="video-title">Retail Interior/Construction Brands Town</h3>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-container">
+                            <iframe src="Videos/Brand's Town(Short).mp4" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <h3 class="video-title">Construction/Retail Interior Brands Town <span class="shorts-badge">SHORTS</span></h3>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/REGULAR_VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <h3 class="video-title">Office Interior Design Process</h3>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/SHORT_ID_2" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <h3 class="video-title">Behind-the-Scenes: Dubai Project <span class="shorts-badge">SHORTS</span></h3>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/REGULAR_VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <h3 class="video-title">Sustainable Architecture Showcase</h3>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/SHORT_ID_3" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <h3 class="video-title">Construction Timelapse <span class="shorts-badge">SHORTS</span></h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="worldwide-offices">
             <div class="container">
                 <div class="section-title">
@@ -3360,7 +3575,10 @@
                         'Images/10 Marla House/Bridge.jpg',
                         'Images/10 Marla House/Garden.jpg'
                     ],
-                    video: null,
+                    videos: [
+                        {url: 'https://www.youtube.com/embed/10_MARLA_HOUSE_MAIN_VIDEO', title: 'House Tour'},
+                        {url: 'https://www.youtube.com/embed/10_MARLA_HOUSE_SHORT', title: 'Quick View', isShort: true}
+                    ],
                     description: `
                         <p>The 10 Marla House in Eden Housing Society is a masterpiece of residential architecture that blends modern aesthetics with functional family living. This project showcases our ability to create spacious, light-filled homes on standard plots without compromising on design quality or comfort.</p>
                         <p>Designed for a growing family, the house features an open-plan living area that flows seamlessly into a modern kitchen with a breakfast bar. Large sliding glass doors connect the interior to a landscaped backyard, creating an ideal space for both daily family life and entertaining guests.</p>
@@ -3526,6 +3744,370 @@
         ] 
     }
     </script>
+
+    <script>
+    // Shopping Cart Functionality
+    let cart = [];
+
+    // Initialize cart from localStorage if available
+    if (localStorage.getItem('cart')) {
+        cart = JSON.parse(localStorage.getItem('cart'));
+        updateCartCount();
+    }
+
+    // Add to cart function
+    function addToCart(product) {
+        // Check if product already exists in cart (same ID and size)
+        const existingItem = cart.find(item => 
+            item.id === product.id && item.size === product.size
+        );
+        
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({
+                ...product,
+                quantity: 1
+            });
+        }
+        
+        updateCart();
+        showCartNotification();
+    }
+
+    // Update cart in localStorage and UI
+    function updateCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        renderCartItems();
+    }
+
+    // Update cart count in header
+    function updateCartCount() {
+        const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+        document.querySelector('.cart-count').textContent = totalItems;
+    }
+
+    // Show notification when item is added to cart
+    function showCartNotification() {
+        const notification = document.createElement('div');
+        notification.className = 'cart-notification';
+        notification.textContent = 'Item added to cart!';
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            setTimeout(() => notification.remove(), 300);
+        }, 2000);
+    }
+
+    function renderCartItems() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        cartItemsContainer.innerHTML = '';
+        
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty</p>';
+            document.getElementById('cart-total-amount').textContent = 'PKR 0';
+            document.getElementById('checkout-btn').style.display = 'none';
+            return;
+        }
+        
+        let total = 0;
+        
+        cart.forEach((item, index) => {
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+            
+            cartItem.innerHTML = `
+                <div class="cart-item-image">
+                    <img src="${item.image}" alt="${item.title}" width="60">
+                </div>
+                <div class="cart-item-info">
+                    <h4>${item.title}</h4>
+                    <p>Size: ${item.size}</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-decrease" data-index="${index}">-</button>
+                        <span class="quantity">${item.quantity}</span>
+                        <button class="quantity-increase" data-index="${index}">+</button>
+                    </div>
+                </div>
+                <div class="cart-item-price">
+                    PKR ${(item.price * item.quantity).toLocaleString()}
+                </div>
+                <span class="cart-item-remove" data-index="${index}">&times;</span>
+            `;
+            
+            cartItemsContainer.appendChild(cartItem);
+            total += item.price * item.quantity;
+        });
+
+        document.getElementById('cart-total-amount').textContent = `PKR ${total.toLocaleString()}`;
+        document.getElementById('checkout-btn').style.display = 'block';
+        
+        // Add event listeners
+        document.querySelectorAll('.quantity-increase').forEach(button => {
+            button.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                increaseQuantity(index);
+            });
+        });
+        
+        document.querySelectorAll('.quantity-decrease').forEach(button => {
+            button.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                decreaseQuantity(index);
+            });
+        });
+        
+        document.querySelectorAll('.cart-item-remove').forEach(button => {
+            button.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                removeFromCart(index);
+            });
+        });
+    }
+
+    function increaseQuantity(index) {
+        if (index >= 0 && index < cart.length) {
+            cart[index].quantity += 1;
+            updateCart();
+        }
+    }
+
+    function decreaseQuantity(index) {
+        if (index >= 0 && index < cart.length) {
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+            } else {
+                cart.splice(index, 1);
+            }
+            updateCart();
+        }
+    }
+
+    function removeFromCart(index) {
+        if (index >= 0 && index < cart.length) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+    }
+
+    // Remove item from cart
+    function removeFromCart(id, size) {
+        cart = cart.filter(item => !(item.id === id && item.size === size));
+        updateCart();
+    }
+
+    // Cart modal functionality
+    const cartModal = document.getElementById('cart-modal');
+    const checkoutModal = document.getElementById('checkout-modal');
+    const cartLink = document.getElementById('cart-link');
+    const closeButtons = document.querySelectorAll('.close-modal');
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+    cartLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        cartModal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            cartModal.style.display = 'none';
+            checkoutModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    });
+
+    checkoutBtn.addEventListener('click', function() {
+        cartModal.style.display = 'none';
+        checkoutModal.style.display = 'block';
+        renderCheckoutForm();
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(e) {
+        if (e.target === cartModal) {
+            cartModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        if (e.target === checkoutModal) {
+            checkoutModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Render checkout form
+
+function renderCheckoutForm() {
+    const checkoutItems = document.getElementById('checkout-items');
+    checkoutItems.innerHTML = '';
+    
+    let total = 0;
+    
+    cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'checkout-item';
+        itemElement.innerHTML = `
+            <span>${item.title} (${item.size}) x${item.quantity}</span>
+            <span>PKR ${(item.price * item.quantity).toLocaleString()}</span>
+        `;
+        checkoutItems.appendChild(itemElement);
+        total += item.price * item.quantity;
+    });
+    
+    document.getElementById('checkout-total-amount').textContent = `PKR ${total.toLocaleString()}`;
+    
+    // Payment method selection
+    document.querySelectorAll('.payment-option').forEach(option => {
+        option.addEventListener('click', function() {
+            console.log('Payment option clicked:', this.getAttribute('data-method'));
+            document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('active'));
+            this.classList.add('active');
+            
+            const method = this.getAttribute('data-method');
+            console.log('Selected method:', method);
+            
+            if (method === 'paypal') {
+                console.log('Showing PayPal, hiding Place Order');
+                document.getElementById('paypal-button-container').style.display = 'block';
+                document.getElementById('place-order-btn').style.display = 'none';
+                initPayPal();
+            } else {
+                console.log('Showing Place Order, hiding PayPal');
+                document.getElementById('paypal-button-container').style.display = 'none';
+                document.getElementById('place-order-btn').style.display = 'block';
+            }
+        });
+    });
+    
+    // Place order button
+    document.getElementById('place-order-btn').addEventListener('click', function() {
+        if (validateCheckoutForm()) {
+            placeOrder();
+        }
+    });
+}
+
+function initPayPal() {
+    document.getElementById('paypal-button-container').innerHTML = '';
+    
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: (total / 280).toFixed(2), // Convert PKR to USD
+                        currency_code: 'USD'
+                    },
+                    description: 'AZES Consultants Products'
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                if (validateCheckoutForm()) {
+                    placeOrder(details.id);
+                }
+            });
+        }
+    }).render('#paypal-button-container');
+}
+
+function validateCheckoutForm() {
+    const form = document.getElementById('checkout-form');
+    const required = form.querySelectorAll('[required]');
+    let valid = true;
+    
+    required.forEach(field => {
+        if (!field.value.trim()) {
+            field.style.borderColor = 'red';
+            valid = false;
+        } else {
+            field.style.borderColor = '#ddd';
+        }
+    });
+    
+    if (!valid) {
+        alert('Please fill all required fields');
+    }
+    
+    return valid;
+}
+
+function placeOrder(paymentId = null) {
+    const form = document.getElementById('checkout-form');
+    const paymentMethod = document.querySelector('input[name="payment"]:checked').id;
+    
+    const order = {
+        customer: {
+            name: form.querySelector('#checkout-name').value,
+            email: form.querySelector('#checkout-email').value,
+            phone: form.querySelector('#checkout-phone').value,
+            address: form.querySelector('#checkout-address').value,
+            city: form.querySelector('#checkout-city').value,
+            notes: form.querySelector('#checkout-notes').value
+        },
+        items: cart,
+        total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
+        paymentMethod: paymentMethod,
+        paymentId: paymentId,
+        date: new Date().toISOString()
+    };
+    
+    // In a real implementation, you would send this to your server
+    console.log('Order placed:', order);
+    alert(`Order placed successfully! ${paymentMethod === 'cash-on-delivery' ? 'You will pay when the items are delivered.' : 'Payment completed.'}`);
+    
+    // Clear cart and close modal
+    clearCart();
+    checkoutModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    
+    // Here you would typically redirect to an order confirmation page
+    // or send the order data to your backend
+}
+
+    // Clear cart after successful purchase
+    function clearCart() {
+        cart = [];
+        updateCart();
+    }
+
+    // Add notification CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        .cart-notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--deep-sea-green);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: opacity 0.3s;
+        }
+    `;
+    document.head.appendChild(style);
+
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+            const productCard = this.closest('.product-card');
+            const product = {
+                id: productCard.querySelector('.product-title').textContent,
+                title: productCard.querySelector('.product-title').textContent,
+                price: parseFloat(productCard.querySelector('.product-price').textContent.replace('PKR ', '').replace(',', '')),
+                size: productCard.querySelector('.size-option') ? productCard.querySelector('.size-option').textContent : 'One Size',
+                image: productCard.querySelector('.product-image img').src
+            };
+            
+            addToCart(product);
+        });
+    });
     </script>
 </body>
 </html>
