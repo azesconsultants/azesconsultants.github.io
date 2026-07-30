@@ -201,7 +201,7 @@
             display: none;
             background-color: var(--deep-sea-green);
             color: var(--white);
-            padding: 10px 15px;
+            padding: 8px 15px;
             position: fixed;
             width: 100%;
             top: 0;
@@ -211,13 +211,35 @@
             align-items: center;
             justify-content: space-between;
         }
-        
+
+        .mobile-header .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mobile-header .logo-img {
+            height: 32px;
+            width: auto;
+        }
+
+        .mobile-header .logo-text {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--white);
+            white-space: nowrap;
+        }
+
         .mobile-menu-btn {
             background: none;
             border: none;
             color: white;
-            font-size: 24px;
+            font-size: 22px;
             cursor: pointer;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .mobile-nav {
@@ -1087,14 +1109,6 @@
             background-color: #f9f9f9;
         }
 
-        .clients-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            align-items: center;
-            justify-items: center;
-        }
-
         .client-item {
             display: flex;
             flex-direction: column;
@@ -1121,6 +1135,49 @@
             color: #666;
             margin: 0 0 10px 0;
             font-style: italic;
+        }
+
+        /* Mobile Clients Section - Vertical Layout */
+        @media (max-width: 992px) {
+            #clients .container {
+                padding: 0 20px;
+            }
+            
+            #clients .section-title {
+                padding: 0 20px;
+            }
+            
+            .clients-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 20px !important;
+                padding: 20px 0 !important;
+                overflow-x: visible !important;
+                width: 100% !important;
+                scroll-snap-type: none !important;
+            }
+            
+            .client-item {
+                min-width: unset !important;
+                scroll-snap-align: none !important;
+                padding: 15px;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            }
+            
+            .client-item h3 {
+                font-size: 14px;
+                text-align: center;
+                margin-bottom: 8px !important;
+            }
+            
+            .client-logo {
+                max-width: 100px;
+                max-height: 50px;
+                margin: 0 auto;
+                display: block;
+            }
         }
 
         /* Project Detail */
@@ -1903,12 +1960,14 @@
                     <li><a href="#videos">Videos</a></li>
                     <li><a href="#worldwide-offices">Worldwide Offices</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <!-- 
                     <li>
                         <a href="#cart" id="cart-link">
                             <i class="fas fa-shopping-cart"></i>
                             <span class="cart-count">0</span>
                         </a>
                     </li>
+                    -->
                 </ul>
             </nav>
         </div>
@@ -1934,12 +1993,14 @@
             <li><a href="#videos">Videos</a></li>
             <li><a href="#worldwide-offices">Worldwide Offices</a></li>
             <li><a href="#contact">Contact</a></li>
+           <!-- 
             <li>
                 <a href="#cart" id="cart-link">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">0</span>
                 </a>
             </li>
+            -->
         </ul>
     </nav>
 
@@ -2430,6 +2491,10 @@
                         <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Sourcing Solutions</h3>
                         <img src="Images/Sourcing Solution/Sourcing Solutions Logo.png" alt="Sourcing Solutions" class="client-logo">
                     </div>
+                    <div class="client-item">
+                        <h3 style="color: var(--deep-sea-green); margin-bottom: 10px;">Unique School System</h3>
+                        <img src="Images/Unique/Unique Logo.png" alt="Unique School System" class="client-logo">
+                    </div>
                 </div>
             </div>
         </section>
@@ -2817,19 +2882,10 @@ REMOVED - PRODUCTS SECTION END -->
                         </div>
                     </div>
                     <div id="paypal-button-container" style="display: none;"></div>
-                    <button id="place-order-btn" class="btn">Place Order</button>
+                   <!-- <button id="place-order-btn" class="btn">Place Order</button> -->
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="payment-option active" data-method="cash">
-        <input type="radio" name="payment" id="cash-on-delivery" checked>
-        <label for="cash-on-delivery">Cash on Delivery</label>
-    </div>
-    <div class="payment-option" data-method="paypal">
-        <input type="radio" name="payment" id="paypal">
-        <label for="paypal">PayPal</label>
     </div>
 
     <script>
