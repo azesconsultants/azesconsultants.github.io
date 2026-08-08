@@ -1384,12 +1384,12 @@
         @media (max-width: 992px) {
             /* Hide desktop header, show mobile header */
             header {
-                display: none;
+                display: flex !important;  /* ← CHANGE THIS */
             }
             
-           /* Mobile Header */
-             .mobile-header {
-                display: none;
+            /* Mobile Header */
+            .mobile-header {
+                display: flex !important;  /* ← CHANGE THIS */
                 background-color: var(--deep-sea-green);
                 color: var(--white);
                 padding: 0 15px;
