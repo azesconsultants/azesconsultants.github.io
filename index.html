@@ -236,6 +236,8 @@
             position: relative;
             height: 100vh;
             overflow: hidden;
+            padding-top: 56px; /* ADD THIS */
+            margin-top: 0; /* KEEP THIS */
         }
 
         .hero-slideshow {
@@ -1389,16 +1391,17 @@
             
             /* Mobile Header */
             .mobile-header {
-                display: flex !important;  /* ← CHANGE THIS */
+                display: flex !important;
                 background-color: var(--deep-sea-green);
                 color: var(--white);
-                padding: 0 15px;
+                padding: 8px 15px;
                 position: fixed;
                 width: 100%;
                 top: 0;
+                left: 0;
                 z-index: 1000;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                height: 56px;
+                min-height: 56px;
                 align-items: center;
                 justify-content: space-between;
                 box-sizing: border-box;
@@ -1412,26 +1415,27 @@
             }
 
             .mobile-header .logo-img {
-                height: 30px;
+                height: 32px;
                 width: auto;
                 display: block;
+                object-fit: contain;
             }
 
             .mobile-header .logo-text {
-                font-size: 15px;
+                font-size: 14px;
                 font-weight: bold;
                 color: var(--white);
                 white-space: nowrap;
-                letter-spacing: 0.5px;
+                letter-spacing: 0.3px;
             }
 
             .mobile-menu-btn {
                 background: none;
                 border: none;
                 color: white;
-                font-size: 22px;
+                font-size: 20px;
                 cursor: pointer;
-                padding: 8px 10px;
+                padding: 5px 8px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -1440,7 +1444,7 @@
             }
 
             .mobile-menu-btn i {
-                font-size: 22px;
+                font-size: 20px;
             }
 
             /* Mobile Nav */
