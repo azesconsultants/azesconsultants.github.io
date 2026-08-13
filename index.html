@@ -271,7 +271,7 @@
             border-radius: 10px;
             max-width: 800px;
             margin: 0 auto;
-            top: 50%;
+            top: calc(50% + 28px);  /* ← CHANGE THIS from '50%' */
             transform: translateY(-50%);
         }
 
@@ -1386,7 +1386,7 @@
         @media (max-width: 992px) {
             /* Hide desktop header, show mobile header */
             header {
-                display: flex !important;  /* ← CHANGE THIS */
+                display: none !important;  /* ← CHANGE THIS */
             }
             
             /* Mobile Header */
